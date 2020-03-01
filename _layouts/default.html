@@ -1,0 +1,114 @@
+---
+layout: default
+title: Home
+---
+
+{% include header.html %}
+  <div class="headerbar">
+    <div class="container">
+        <div class="row">
+            <button type="button" class="navbar-toggle collapsed hidden-xs" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-list-bullets"></span>
+            </button>
+            <div class="logo">
+                <a href="/">
+                    <img class="hidden-xs" src="http://image.exct.net/lib/fe661570776d0d7e7414/m/1/ETMC_logo_blue-390x-2x.png" height="80">
+                    <span class="icon-dedicated-Cloud visible-xs"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="jumbotron main-banner">
+
+    <div class="row homepage_intro">
+      <!-- <div class="col-md-11"> -->
+        <h1>Future of Marketing Tour</h1>
+        <span class="tag_line">Power Your Customer Journeys</span>
+        <p class="hidden-xs">Today's marketers recognize consumer attention is hard to get and they can't leave their success to chance. In this half-day event you'll learn how you create conversations, build communities, and establish loyalty through every step of the customer journey. Discover how you can connect with your customers in a whole new way.</p>
+      <!-- </div> -->
+    </div> <!-- / .homepage_intro -->
+
+    <div class="row homepage-callouts">
+
+      <div class="homepage-callouts__container">
+
+        <div class="homepage-callouts__row">
+          <h3 class="homepage-callouts__title"><strong>Los Angeles</strong><br />Tuesday, June 10th</h3>
+        </div>
+
+        <div class="homepage-callouts__row">
+            <h3 class="homepage-callouts__title"><strong>San Francisco</strong><br />Thursday, June 12th</h3>
+        </div>
+
+        <div class="homepage-callouts__row">
+          <h3 class="homepage-callouts__title"><strong>New York City</strong><br />Tuesday, June 17th</h3>
+        </div>
+
+        <div class="homepage-callouts__row last">
+          <h3 class="homepage-callouts__title"><strong>Chicago</strong><br />Thursday, June 19th</h3>
+        </div>
+
+      </div> <!-- / .homepage-callouts__container -->
+
+    </div> <!-- / .homepage-callouts -->
+
+  </div> <!-- / .jumbotron.main-banner -->
+
+  <div class="vips">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Recent Posts:</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        {% for post in site.posts limit:4 %}
+          <div class="col-xs-12 col-sm-3">
+            <div class="vip">
+              <h3>{{ post.title }}</h3>
+              <p class="vip__caption">
+                {{ post.excerpt }}
+              </p>
+              <a href="{{ post.url }}" class="btn btn-default homepage-callout__btn">Read More</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footerbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9">
+          <h4>866.362.4538</h4>
+          <ul class="footerbar__links">
+            <li><a href="http://pages.exacttarget.com/Redirect.aspx?EQ=dyNKX5lAdoKnCEXmaTwqUOuc-Wbo_P1o1yvDo6FCebp_gDpy4IYrp8F0p83l91AmjEeQR7rkaM2aPznCCZsPhzNq5CJUZmYnYr59YFH3QNY3ZBWw6BcuMQp9gbs-xePtQHPI6U7P_GY39P6VruEjpTTP-YHfbEAKuR6Bt9uA688IGMKS_CQPFY8TJakLcr26Vp8JNvTldxvf_XspG_x0q8Z4WWMxwM3ChnDp4CBOF0jW_ShNMT2ByIwZjTCfrSp4dU2yF52uXydGWJ67mjPP2Q77PMWigpKXxwD-8KfpJTmC25CATuBZP_V9laUP5ftqL2qcauFezUmhyH2Fkxls5R2hA6X4vkHacyQtc-UUOIsIHjW0joNN-BKLUT7kyPE5K_yq1M3OnTipRgRLANV1L_l6-uUC_0rMiNHxNUg3VGp6UZ9pg91zPdANP5IaLsfFpUbLKxm2qLJT3RDI-2ai2jpqRkETYEwLI3BumTEpK1VdD9BDeFmwDTUJ8TwHZNhm1ueK_Vki8Urt-6NV_wy9MYx8TUrnYmpIc10R3ttpYQP5Fy6D5o2WofIpTj7Vm2oa4yZM_A7YVWqOWPjvVCnEvk9fzqMAaFCuOSFhtAJQkMXLDRU4LXAEZjLEvPknEOSu98KwgGLw9uIXrW22cR-P0FUWEPidYldKoRL9tTLp_quV3NLcxKQbFARzpGZO9_sxLwtKf2tX_EJQfDW8We9Yujlhpqeq1E7He_raLmWjlcZJN8fZ4T-Vp9ZpeehdA8yCvomMatA7IMsR7HWD9HemYWrGWRlB5ikpTgCJ0">Privacy Policy</a></li>
+            <li><a href="http://pages.exacttarget.com/Redirect.aspx?EQ=gUM_NF_k7KcjQYg2fF9YSvohzxgG2e4YKry4PJR7ZJ3dQy9jO7dmebMHsHmcFpxOyAu11ORj75OvDIKE7Z41qDBTsRV910T_c3FaQ2JHEr1mc_L5IFh19XZr7RiG3y4hU338sfLSEG0Buywqvc9ohAL4DyME_tYBS7Uph92dqaM408kxBbC7GEBbzb9gGkmxALhT76IC5aZqkg39760hHVshsE07sPwOxuyQJfxAofqaO5pWLjztHnN3BMbiQ8wQv_WGm9s21zdf28VmwIYIl-tk_atG8tpFwae9mOdyO_OUFHOh4e8cT95RkGxSHbZJqYZncgfL8o7NDlgwy-KNXi-iasPP4od95lbb-QS-487Zj0-WPXzJbJIlWDKRV03I5-wzrx-ATW5bX-fkMMe1GjrmeswwsfGAXUD9USiYV1JkbZwJ2Ghiduy6Yna7Gt3fqggGc-h2rZ4j4UQSJLoAzrToKQyXtY4NFf__Rrqqi-S2Wz_kmdAqwldn9mwnz2-7UATup9cIjs4oLot2nMntx6iVRYZ9M7adXrUkoe4IdW28Vv6yUzfn9IBjfVt_nEOcE1AGf66P7xMGUX9m3An-Ov_WSKxfUAQQNgn0Hn9ZMr7N2AdnKPAlrJGZlfWKVq_jYezcZG9YulGHxPuG-SlyDZdS2Bu_D8osde772HlKE-hVrDUvm0vLHC2OZ-DvV3OCjrLA6dtcbRjqHHEm5W9kUkrtKnelf8QgDdRF-KQBebRKbcNoq9xkmEys5GhGe99XY6xaURyo_i6GtiMgqsYqG52_RDGTgOzYPYMu5Mu3IdG-0Mk8ErRnXCULoA2">Anti-SPAM Policy</a></li>
+            <li><a href="http://pages.exacttarget.com/Redirect.aspx?EQ=aghAwmjy0wlarut0moL9ZLVfCW1Ne52kkBxlzmv6miT3ixdkfiRy7IgBJzR019XOZ1sPuzYoQUvvxGLizpNNyB24iz4lQO9Qw1nnL5R2gKc0ys7DiFhENRsM32_cql0CvaD4rmgi-I5P7lNNGjQgIhGUDqigWj-72BFD5DrgS7_hllVlN8UPFrPUESENJWWQmc5tBX82nOUTHitPimyUJFD890WSV7nJjHz3tpYCoYwGURb6GIZ87QDeyWTI_y2JZgs2kUJWpa5b7pjwhwF5cZRyV3JJRDNbCPYOO0aLMSxyS9mj5HdpArOgfGiHSl2EnA5EeSAjNVljyvT69ZZzP9VX0KIrC9aEcTl7KVPVHJJQFROt7TsATeBlcLAflCf6ifpMEoHVcsLDGNBVaWEhHXN94HlR-HPh4-uuGVc2FUaAiy9XTu9nSJE8dEds3E2meNY0_MZCV91qIVVVoOKgMwB08oTvWKsaMa-21iPM7dVmWr1f3KH0cSggSA0axUvgIFXPiOhVOl9uilxJmfiBkupgppGltwrG3ZGfQ1BA7b9DQnFsF94a-7_3B7jWVpPfqJS9MfoFdp3vwn4xVE8JOMkZSU8hOTNUVHRezHOmX4Z9gLLxFZTR9wUqVRUetxPagoWO5rtF5OB6CP35wJlrKZaT1eAE6XnXxRy0EkdSZBIEsqrUeFpYcBLKbl1MF7tb7t3WLnzRgNSX40wtvpaZgOi6g_rrLEpIXPU1TBnci9kvWfUm3BoVtzqn7GBbHhQfJROSXWoK_brCJBt3Cb3T2yAFJRRdev1rovpTwye8lCzLT89eLuBVS_yVrQ2">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <a href="http://pages.exacttarget.com/Redirect.aspx?EQ=Fo001KVUqFDWQOQihkwaBhIORycnN9Idh4eIcY2PgLIXyWN4guX1Fos4Zu170FZZ90LRf_1CoGCVnPUNo6seC523kwPd521giI4x3eGvdCEIny8OWmPFD_ZUqhVAC51teXVI9bL5PMe6rpFOiAIZDLvIY2I1rXEykEH5HHxiw8B3lihywqJPh46cfleu4aF1cvWprbIvsMCkm3FVwjoC9cEuUwbefYMs8qCpf1hwChiXqaQTGclv3l0rkd_m-QmxUEi95k2bH9WkBh0kt1WPHb_fVpxYJkU7-gU-qckKdPmtEpVci7ANueipKbZWCL3b-F1YFaZ5J6QNR2jP9yE2U3R5k4_mN4UROBkDehONBp7PCeyq9d3CcQcXZZGHM-1HvBL0J3tIXHZYD55XxLjnAqR_j9ZHgSSSZcyH_T0n2gxYTyTQ9xr2g4iTAyjictYL7FQAB5vwtiZI-Hy7TGNAvsrrOvCqms7qKOLdJKVU-Rrc8cxOb15r-_kYJcS1bajjWwzpjOALfh2rXNfWLDmKpTPaC5I9uOWUkst6y4thd61xv0Ev1xV_HRYHzYLU9zkyHDWEfz0Ng2c8laP7dvMuFE733tvAPDL53kcz-N3OLGNxEAYpKhzs5qskzADB63Z6QzSiX3r6_RgRuvjMsTKkSiywe8dBFQKX1iyVX_YDonILxJhdUfdIyXjlu9R6QVUxEeKAK_JhOBJg7RBHGxFtn7xNRsIoaOTS6E-em58UwNzeZ0EevEZUwnfbbA2">
+            <img src="http://image.exct.net/lib/fe7415707664047c7015/m/1/ETMC_logo_blue-2x.png" class="img-responsive" width="183" height="80">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="embed-container"><iframe src="//www.youtube.com/embed/fV-Gzkji5Gk" frameborder="0" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% include footer.html %}
