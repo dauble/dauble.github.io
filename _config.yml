@@ -36,7 +36,7 @@ plugins:
 livereload: true
 sass:
   sass_dir: _sass
-  style: compact # possible values: nested expanded compact compressed
+  style: compressed # possible values: nested expanded compact compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.

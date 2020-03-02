@@ -14,31 +14,7 @@ title: Home
         <span class="tag_line">This is a subheadline</span>
         <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet cursus sit amet dictum sit amet justo donec. Volutpat diam ut venenatis tellus in metus. Sed nisi lacus sed viverra tellus in hac habitasse platea. Sapien eget mi proin sed libero enim.</p>
       <!-- </div> -->
-    </div> <!-- / .homepage_intro -->
-
-    <!-- <div class="row homepage-callouts">
-
-      <div class="homepage-callouts__container">
-
-        <div class="homepage-callouts__row">
-          <h3 class="homepage-callouts__title"><strong>Los Angeles</strong><br />Tuesday, June 10th</h3>
-        </div>
-
-        <div class="homepage-callouts__row">
-            <h3 class="homepage-callouts__title"><strong>San Francisco</strong><br />Thursday, June 12th</h3>
-        </div>
-
-        <div class="homepage-callouts__row">
-          <h3 class="homepage-callouts__title"><strong>New York City</strong><br />Tuesday, June 17th</h3>
-        </div>
-
-        <div class="homepage-callouts__row last">
-          <h3 class="homepage-callouts__title"><strong>Chicago</strong><br />Thursday, June 19th</h3>
-        </div>
-
-      </div>  / .homepage-callouts__container
-
-    </div> --> <!-- / .homepage-callouts -->
+    </div>
 
   </div> <!-- / .jumbotron.main-banner -->
 
@@ -76,10 +52,15 @@ title: Home
 
       <div class="row">
         <div class="col-xs-12">
-          {% for track in site.data.tracks.tracks %}
-            <li>Title: {{ track.title }}</li>
-          {% endfor %}
-
+          <table class="table">
+            {% for track in site.data.tracks.tracks %}
+              <tr>
+                <td>ID: {{ track.id }}</td>
+                <td>Title: {{ track.title }}</td>
+                <td>Name: {{ track.name }}</td>
+              </tr>
+            {% endfor %}
+          </table>
         </div>
       </div>
     </div>
