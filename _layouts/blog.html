@@ -5,65 +5,70 @@ title: Blog
 
 {% include header.html %}
 
-  <div class="jumbotron main-banner">
+  <section class="hero interior">
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        <div class="col-xs-12">
+          <div class="hero-background vb--home">
+            <div class="hero-background__contain">
+              <h1 class="hero-background__contain__title"><?php the_title(); ?></h1>
+            </div>
 
-    <div class="row homepage_intro">
-      <!-- <div class="col-md-11"> -->
-        <h1>Future of Marketing Tour</h1>
-        <span class="tag_line">Power Your Customer Journeys</span>
-        <p class="hidden-xs">Today's marketers recognize consumer attention is hard to get and they can't leave their success to chance. In this half-day event you'll learn how you create conversations, build communities, and establish loyalty through every step of the customer journey. Discover how you can connect with your customers in a whole new way.</p>
-      <!-- </div> -->
-    </div> <!-- / .homepage_intro -->
-
-    <div class="row homepage-callouts">
-
-      <div class="homepage-callouts__container">
-
-        <div class="homepage-callouts__row">
-          <h3 class="homepage-callouts__title"><strong>Los Angeles</strong><br />Tuesday, June 10th</h3>
+            <div class="intro-banner js-parallax" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="homepage-callouts__row">
-            <h3 class="homepage-callouts__title"><strong>San Francisco</strong><br />Thursday, June 12th</h3>
-        </div>
-
-        <div class="homepage-callouts__row">
-          <h3 class="homepage-callouts__title"><strong>New York City</strong><br />Tuesday, June 17th</h3>
-        </div>
-
-        <div class="homepage-callouts__row last">
-          <h3 class="homepage-callouts__title"><strong>Chicago</strong><br />Thursday, June 19th</h3>
-        </div>
-
-      </div> <!-- / .homepage-callouts__container -->
-
-    </div> <!-- / .homepage-callouts -->
-
-  </div> <!-- / .jumbotron.main-banner -->
-
-  <div class="vips">
+  <section class="blog">
     <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <?php the_excerpt(); ?>
+          <a href="<?php the_permalink(); ?>" class="btn btn-secondary">Continue reading</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="view-archives">
+    <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h2>All Posts:</h2>
+          <h2>Older Posts</h2>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="row">
-        {% for post in site.posts %}
-          <div class="col-xs-12 col-sm-3">
-            <div class="vip">
-              <h3>{{ post.title }}</h3>
-              <p class="vip__caption">
-                {{ post.excerpt }}
-              </p>
-              <a href="{{ post.url }}" class="btn btn-default homepage-callout__btn">Read More</a>
-            </div>
+  <section class="blog-grid">
+    <div class="container-fluid">
+      <div class="row no-gutter js-posts">
+        <?php foreach($posts as $post): ?>
+          <?php setup_postdata($post); ?>
+          <div class="col-sm-6">
+            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
+            <a href="<?php the_permalink(); ?>" class="blog-grid__item">
+              <div class="blog-grid__item--screen"></div>
+              <div class="blog-grid__item--image" style="background-image: url('<?php echo $image[0]; ?>');"></div>
+              <h3 class="blog-grid__item--title"><?php the_title(); ?></h3>
+            </a>
           </div>
-        {% endfor %}
+        <?php endforeach; wp_reset_postdata(); ?>
       </div>
 
+      <div class="row js-more-posts">
+        <div class="col-xs-12">
+          <div class="view-archives">
+            <br><br>
+            <input type="hidden" class="js-hid-input" id="hidInput">
+            <a href="" class="btn btn-secondary js-load-more">Load more posts</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
 {% include footer.html %}

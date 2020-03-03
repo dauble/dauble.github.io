@@ -4,19 +4,36 @@ layout: post
 
 {% include header.html %}
 
-<div class="vips">
-  <div class="container">
+  <section class="hero interior">
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        <div class="col-xs-12">
+          <div class="hero-background vb--home">
+            <div class="hero-background__contain">
+              <h1 class="hero-background__contain__title">{{ page.title }}</h1>
+            </div>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <h1>{{ page.title }}</h1>
-        <h4>{{ page.date | date_to_string }} - {{ page.author }}</h4>
-
-        {{ content }}
+            <div class="intro-banner js-parallax" style=""></div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</div>
+  <section class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <h1>{{ page.title }}</h1>
+
+          {{ content }}
+
+          <div class="view-archives">
+            <a href="/blog/" class="btn btn-secondary">View the archives</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 {% include footer.html %}

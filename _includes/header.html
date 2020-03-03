@@ -1,26 +1,54 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+
+    <meta charset="UTF-8"/>
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimal-ui">
+    <meta name="google-site-verification" content="mSvQDj528SrivJO3707MQV4uw5aUBxBXMfO9FTZz_sI" />
+    <meta name="msvalidate.01" content="581C4BBEDA8127FA57A7F2B93320F97F" />
+
     <title>{{ page.title }}</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
     <script src="{{ '/assets/scripts/scripts.js' | relative_url }}" type="text/javascript"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16309361-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-16309361-1');
+    </script>
   </head>
 
-  <div class="headerbar">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
-        <div class="row">
-            <button type="button" class="navbar-toggle collapsed hidden-xs" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon icon-list-bullets"></span>
-            </button>
-            <div class="logo">
-                <a href="/">
-                    <img src="https://via.placeholder.com/150x80" alt="" class="hidden-xs">
-                    <span class="icon-dedicated-Cloud visible-xs"></span>
-                </a>
-            </div>
-        </div>
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand page-scroll js-navbar-brand" href="#page-top">
+          <span class="logo"></span>
+          <span class="logo-text">David M. Auble</span>
+        </a>
+
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul id="menu-primary" class="nav navbar-nav"><li id="menu-item-251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-251"><a href="#who-i-am">About</a></li>
+          <li id="menu-item-252" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-252"><a href="#services">Services</a></li>
+          <li id="menu-item-253" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-253"><a href="#what-i-think">Blog</a></li>
+          <li id="menu-item-317" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-317"><a href="#clients">Work</a></li>
+          <li id="menu-item-254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-254"><a href="#twitter">Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
