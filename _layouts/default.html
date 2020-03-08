@@ -46,7 +46,7 @@ title: Home
       </div>
 
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 js-match-height">
           <div class="service">
             <h3>
               <span class="fa fa-code"></span>&nbsp;
@@ -57,7 +57,7 @@ title: Home
           </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 js-match-height">
           <div class="service">
             <h3>
               <span class="fa fa-picture-o"></span>&nbsp;
@@ -68,7 +68,7 @@ title: Home
           </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 js-match-height">
           <div class="service">
             <h3>
               <span class="fa fa-bitbucket"></span>&nbsp;
@@ -79,7 +79,7 @@ title: Home
           </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 js-match-height">
           <div class="service">
             <h3>
               <span class="fa fa-code"></span>&nbsp;
@@ -95,7 +95,7 @@ title: Home
 
   <section id="what-i-think" class="blog">
     <div class="container">
-      {% for post in site.data.posts.rss.channel.item limit:1 %}
+      {% for post in site.data.posts.posts.item limit:1 %}
 
         <div class="row">
           <div class="col-xs-12 text-center">
@@ -105,10 +105,10 @@ title: Home
 
         <div class="row">
           <div class="col-sm-4">
-            <img src="" alt="" class="img-responsive">
+            <img src="{{ post.image }}" alt="" class="img-responsive">
           </div>
           <div class="col-sm-8">
-            <p>{{ post.encoded[0].__cdata | strip_html | truncatewords:50 }}</p>
+            <p>{{ post.post_content | strip_html | truncatewords:50 }}</p>
             <a href="{{ post.link }}" class="btn btn-secondary">Continue reading</a>
           </div>
         </div>
@@ -127,16 +127,16 @@ title: Home
 
       <div class="row">
         <div class="row">
-          <div class="col-sm-6 col-md-3 text-center">
+          <div class="col-sm-3 text-center">
             <img src="/assets/images/iuhealth.png" alt="" class="clients__logo img-responsive">
           </div>
-          <div class="col-sm-6 col-md-3 text-center">
+          <div class="col-sm-3 text-center">
             <img src="/assets/images/lilly.png" alt="" class="clients__logo img-responsive">
           </div>
-          <div class="col-sm-6 col-md-3 text-center">
+          <div class="col-sm-3 text-center">
             <img src="/assets/images/etmc.png" alt="" class="clients__logo img-responsive">
           </div>
-          <div class="col-sm-6 col-md-3 text-center">
+          <div class="col-sm-3 text-center">
             <img src="/assets/images/anthem.png" alt="" class="clients__logo img-responsive">
           </div>
           </div>

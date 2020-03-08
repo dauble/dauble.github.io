@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+    <script src="{{ '/assets/scripts/jquery.matchheight.js' | relative_url }}" type="text/javascript"></script>
     <script src="{{ '/assets/scripts/scripts.js' | relative_url }}" type="text/javascript"></script>
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -25,6 +26,7 @@
     </script>
   </head>
 
+  <div id="page-top"></div>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header page-scroll">
@@ -39,15 +41,15 @@
           <span class="logo"></span>
           <span class="logo-text">David M. Auble</span>
         </a>
-
       </div>
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul id="menu-primary" class="nav navbar-nav"><li id="menu-item-251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-251"><a href="#who-i-am">About</a></li>
-          <li id="menu-item-252" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-252"><a href="#services">Services</a></li>
-          <li id="menu-item-253" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-253"><a href="#what-i-think">Blog</a></li>
-          <li id="menu-item-317" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-317"><a href="#clients">Work</a></li>
-          <li id="menu-item-254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-254"><a href="#twitter">Contact</a></li>
+        <ul id="menu-primary" class="nav navbar-nav">
+          <li class="menu-item"><a class="js-scroll-nav" href="#who-i-am">About</a></li>
+          <li class="menu-item"><a class="js-scroll-nav" href="#services">Services</a></li>
+          <li class="menu-item"><a class="js-scroll-nav" href="#what-i-think">Blog</a></li>
+          <li class="menu-item"><a class="js-scroll-nav" href="#clients">Work</a></li>
+          <li class="menu-item"><a class="js-scroll-nav" href="#twitter">Contact</a></li>
         </ul>
       </div>
     </div>

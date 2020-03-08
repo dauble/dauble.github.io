@@ -46,17 +46,15 @@ title: Blog
   <section class="blog-grid">
     <div class="container-fluid">
       <div class="row no-gutter js-posts">
-        <?php foreach($posts as $post): ?>
-          <?php setup_postdata($post); ?>
+        {% for post in site.data.posts.posts.item %}
           <div class="col-sm-6">
-            <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
-            <a href="<?php the_permalink(); ?>" class="blog-grid__item">
+            <a href="{{ post.link }}" class="blog-grid__item">
               <div class="blog-grid__item--screen"></div>
-              <div class="blog-grid__item--image" style="background-image: url('<?php echo $image[0]; ?>');"></div>
-              <h3 class="blog-grid__item--title"><?php the_title(); ?></h3>
+              <div class="blog-grid__item--image" style="background-image: url('{{ post.image }}');"></div>
+              <h3 class="blog-grid__item--title">{{ post.title }}</h3>
             </a>
           </div>
-        <?php endforeach; wp_reset_postdata(); ?>
+        {% endfor %}
       </div>
 
       <div class="row js-more-posts">
