@@ -95,8 +95,7 @@ title: Home
 
   <section id="what-i-think" class="blog">
     <div class="container">
-      {% for post in site.data.posts.posts.item limit:1 %}
-
+      {% for post in site.posts limit:1 %}
         <div class="row">
           <div class="col-xs-12 text-center">
             <h2>{{ post.title }}</h2>
@@ -108,11 +107,10 @@ title: Home
             <img src="{{ post.image }}" alt="" class="img-responsive">
           </div>
           <div class="col-sm-8">
-            <p>{{ post.post_content | strip_html | truncatewords:50 }}</p>
-            <a href="{{ post.link }}" class="btn btn-secondary">Continue reading</a>
+            <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+            <a href="{{ post.url }}" class="btn btn-secondary">Continue reading</a>
           </div>
         </div>
-
       {% endfor %}
     </div>
   </section>
