@@ -5,16 +5,17 @@ title: Blog
 
 {% include header.html %}
 
+  {% for post in site.posts limit:1 %}
   <section class="hero interior">
     <div class="container-fluid">
       <div class="row no-gutter">
         <div class="col-xs-12">
           <div class="hero-background vb--home">
             <div class="hero-background__contain">
-              <h1 class="hero-background__contain__title"><?php the_title(); ?></h1>
+              <h1 class="hero-background__contain__title">{{ post.title }}</h1>
             </div>
 
-            <div class="intro-banner js-parallax" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+            <div class="intro-banner js-parallax" style="background-image:url('{{ post.image }}');"></div>
           </div>
         </div>
       </div>
@@ -25,13 +26,14 @@ title: Blog
     <div class="container">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
-          <?php the_excerpt(); ?>
-          <a href="<?php the_permalink(); ?>" class="btn btn-secondary">Continue reading</a>
+          <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+          <a href="{{ post.url }}" class="btn btn-secondary">Continue reading</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+  {% endfor %}
 
   <section class="view-archives">
     <div class="container">
@@ -46,25 +48,15 @@ title: Blog
   <section class="blog-grid">
     <div class="container-fluid">
       <div class="row no-gutter js-posts">
-        {% for post in site.data.posts.posts.item %}
+        {% for post in site.posts offset:1 %}
           <div class="col-sm-6">
-            <a href="{{ post.link }}" class="blog-grid__item">
+            <a href="{{ post.url }}" class="blog-grid__item">
               <div class="blog-grid__item--screen"></div>
               <div class="blog-grid__item--image" style="background-image: url('{{ post.image }}');"></div>
               <h3 class="blog-grid__item--title">{{ post.title }}</h3>
             </a>
           </div>
         {% endfor %}
-      </div>
-
-      <div class="row js-more-posts">
-        <div class="col-xs-12">
-          <div class="view-archives">
-            <br><br>
-            <input type="hidden" class="js-hid-input" id="hidInput">
-            <a href="" class="btn btn-secondary js-load-more">Load more posts</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
