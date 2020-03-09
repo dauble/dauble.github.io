@@ -3,7 +3,7 @@ layout: post
 title: "My Git Workflow: Introduction to Version Control"
 date: 2016-11-09
 image: "/assets/images/posts/workflow.png"
-------
+---
 ## Git: What is it?
 
 Git is a free and open source distributed version control system designed to handle everything from small to massive projects with speed and efficiency. In layman’s terms, it’s a way to store versions of code that can be managed easily and effortlessly. Git stores revision history in forms of hashes; it does not store files, rather hashes of files to save space and improve speed.
