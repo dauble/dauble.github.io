@@ -11,9 +11,12 @@
     <title>{{ page.title }}</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?{{ site.time | date: '%s%N' }}" />
     <script src="{{ '/assets/scripts/jquery.matchheight.js' | relative_url }}" type="text/javascript"></script>
-    <script src="{{ '/assets/scripts/scripts.js' | relative_url }}" type="text/javascript"></script>
+    <script src="{{ '/assets/scripts/scripts.js' | relative_url }}?{{ site.time | date: '%s%N' }}" type="text/javascript"></script>
+
+    {% feed_meta %}
+    {% seo %}
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16309361-1"></script>

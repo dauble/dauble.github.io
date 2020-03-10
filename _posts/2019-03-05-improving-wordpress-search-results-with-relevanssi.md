@@ -12,47 +12,49 @@ After playing around with several settings, I was able to get the search results
 
 Here's what I ended up with in my functions.php file to display Pages above Posts, then return results newer than two years:
 
-<pre>add_filter('relevanssi_hits_filter', 'products_first');
-                function products_first($hits) {
-                  $types = array();
+<pre>
+add_filter('relevanssi_hits_filter', 'products_first');
+  function products_first($hits) {
+    $types = array();
 
-                  $types['page'] = array();
-                  $types['post'] = array();
+    $types['page'] = array();
+    $types['post'] = array();
 
-                  // Split the post types in array $types
-                  if (!empty($hits)) {
-                    foreach ($hits[0] as $hit) {
+    // Split the post types in array $types
+    if (!empty($hits)) {
+      foreach ($hits[0] as $hit) {
 
-                      $date_cutoff = date('Y-m-d h:i:s', strtotime('-2 years'));
-                      if($hit->post_date > $date_cutoff && $hit->post_type == 'post') {
-                        array_push($types[$hit->post_type], $hit);
-                      }
+        $date_cutoff = date('Y-m-d h:i:s', strtotime('-2 years'));
+        if($hit->post_date > $date_cutoff && $hit->post_type == 'post') {
+          array_push($types[$hit->post_type], $hit);
+        }
 
-                      if($hit->post_type == 'page') {
-                        array_push($types[$hit->post_type], $hit);
-                      }
-                    }
-                  }
+        if($hit->post_type == 'page') {
+          array_push($types[$hit->post_type], $hit);
+        }
+      }
+    }
 
-                  // Merge back to $hits in the desired order
-                  $hits[0] = array_merge($types['page'], $types['post']);
-                  return $hits;
-                }</pre>
+    // Merge back to $hits in the desired order
+    $hits[0] = array_merge($types['page'], $types['post']);
+    return $hits;
+  }
+</pre>
 
 I also noticed that sometimes, plural versions of words weren't displaying properly either. Sometimes searching for "car" would return different results than "cars." To get around this, I added a bit more code, found directly from the [documentation](https://www.relevanssi.com/knowledge-base/simple-french-plurals/):
 
 <pre>add_filter( 'relevanssi_stemmer', 'relevanssi_french_plural_stemmer' );
-                function relevanssi_french_plural_stemmer( $term ) {
-                  $len  = strlen( $term );
-                  $end1 = substr( $term, -1, 1 );
+    function relevanssi_french_plural_stemmer( $term ) {
+      $len  = strlen( $term );
+      $end1 = substr( $term, -1, 1 );
 
-                  if ( 's' === $end1 && $len > 3 ) {
-                    $term = substr( $term, 0, -1 );
-                  } elseif ( 'x' === $end1 && $len > 3 ) {
-                    $term = substr( $term, 0, -1 );
-                  }
+      if ( 's' === $end1 && $len > 3 ) {
+        $term = substr( $term, 0, -1 );
+      } elseif ( 'x' === $end1 && $len > 3 ) {
+        $term = substr( $term, 0, -1 );
+      }
 
-                  return $term;
-                }</pre>
+      return $term;
+    }</pre>
 
 I couldn't be happier with this plugin and hope it solves any problems you might have.
