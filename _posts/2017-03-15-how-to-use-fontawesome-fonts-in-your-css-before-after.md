@@ -4,13 +4,15 @@ title: "How To: Use FontAwesome Fonts in Your CSS :before & :after"
 date: 2017-03-15
 image: /assets/images/posts/code.jpg
 ---
-I've been a fan of [FontAwesome](http://fontawesome.io/) for a long time. I admire their work and appreciate everything they do for fonts, icons and making websites and web apps more user-friendly. Often, I come across instances where I need to use their icons in my CSS and I am constantly forgetting how to use them in CSS. Below are the steps in case you're as forgetful as I am. (Don't forget to include the fonts in your header!)
+I've been a fan of [FontAwesome](http://fontawesome.io/) for a long time. I admire their work and appreciate everything they do for fonts, icons and making websites and web apps more user-friendly.
+
+Often, I come across instances where I need to use their icons in my CSS and I am constantly forgetting how to use them in CSS. Below are the steps in case you're as forgetful as I am. (Don't forget to include the fonts in your header!)
 
 1.  Find the font you want on their collection
 2.  Copy the Unicode code (ie, f10d)
 3.  Use the following CSS:
 
-> :before { font-family: "FontAwesome"; content: "\f10d"; }
+<pre>:before { font-family: "FontAwesome"; content: "\f10d"; }</pre>
 
 You may need to adjust other properties, such as color and position, but this is the process. And, in case you're wanting to incorporate them into a design, follow these steps:
 

@@ -2,8 +2,8 @@
 layout: post
 title: "My Git Workflow: Introduction to Version Control"
 date: 2016-11-09
-image: "/assets/images/posts/workflow.png"
-------
+image: "/assets/images/posts/branching-with-git.jpg"
+---
 ## Git: What is it?
 
 Git is a free and open source distributed version control system designed to handle everything from small to massive projects with speed and efficiency. In layman’s terms, it’s a way to store versions of code that can be managed easily and effortlessly. Git stores revision history in forms of hashes; it does not store files, rather hashes of files to save space and improve speed.
@@ -64,7 +64,11 @@ Branching is a term that will clone the base “trunk” (or Master code version
 
 ### Why two branches?
 
-Most projects have two environments: **Production** and **Staging**. The **Master** branch reflects code that has been reviewed and is ready to be pushed to **Production**, while code that is ready to be reviewed is merged into **Development**. Developers should **NEVER** work from the Master branch. Instead, they should check out the branch, pull the latest changes, and then check out a new branch. You can name your branch whatever you’d like, however it should follow a naming convention and describe what you’re going to be modifying. For example:
+Most projects have two environments: **Production** and **Staging**. The **Master** branch reflects code that has been reviewed and is ready to be pushed to **Production**, while code that is ready to be reviewed is merged into **Development**.
+
+Developers should **NEVER** work from the Master branch. Instead, they should check out the branch, pull the latest changes, and then check out a new branch.
+
+You can name your branch whatever you’d like, however it should follow a naming convention and describe what you’re going to be modifying. For example:
 
 > **hotfix-branch-name**
 
@@ -78,7 +82,24 @@ This should be used to describe a new module, feature or other large addition to
 
 Simple! With branching, making an update couldn’t be easier.
 
-> git checkout master git pull git checkout  -b feature-add-tracking-scripts _..make changes.._ git status git add . git commit – am “Added tracking scripts to site” git checkout dev git pull git merge –no-ff feature-add-tracking-scripts git push Once this new addition has been approved, simply: git checkout master git pull git merge –no-ff feature-add-tracking-scripts git push
+<pre>
+git checkout master
+git pull git checkout -b feature-add-tracking-scripts
+_..make changes.._
+git status
+git add .
+git commit – am “Added tracking scripts to site”
+git checkout dev
+git pull git merge –no-ff feature-add-tracking-scripts
+git push
+</pre>
+
+Once this new addition has been approved, simply:
+<pre>
+git checkout master
+git pull git merge –no-ff feature-add-tracking-scripts
+git push
+</pre>
 
 ### I got a merge conflict. What do I do?
 
