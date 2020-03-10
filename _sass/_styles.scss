@@ -257,6 +257,12 @@ section {
   &__logo {
     margin: 0 auto;
   }
+
+  .logos {
+    img {
+      margin: 2em auto;
+    }
+  }
 }
 
 .view-archives {
