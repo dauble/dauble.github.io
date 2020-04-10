@@ -10,6 +10,6 @@ I sometimes come across a unique error when using Git and always have to look up
 
 The fix is simple: remove the "**git.lock**" file in the "/.git/" directory.
 
-<pre class="EnlighterJSRAW" data-enlighter-language="null">rm -f .git/index.lock</pre>
+<pre>rm -f .git/index.lock</pre>
 
-[Credit: StackOverflow](https://stackoverflow.com/questions/38004148/another-git-process-seems-to-be-running-in-this-repository)
+[Credit: StackOverflow](https://stackoverflow.com/questions/38004148/another-git-process-seems-to-be-running-in-this-repository){:target="_blank"}

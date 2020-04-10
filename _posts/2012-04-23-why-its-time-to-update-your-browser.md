@@ -19,7 +19,7 @@ Here are a few other reasons you should update your browser:\n
 
 *   **Security updates** – Most releases usually have some form of security updates, whether it’s dealing with SSL, HTTPS or other small operating system related fixes
 
-*   **A better web experience** – Take a look at [http://dowebsitesneedtobeexperiencedexactlythesameineverybrowser.com/ ](\"http://www.dowebsitesneedtobeexperiencedexactlythesameineverybrowser.com/\")Crazy URL, but hover over the word you see. Do you see a black background with white text?  How about a blue and purple backgrounds?  Do the words appear differently?
+*   **A better web experience** – Take a look at [http://dowebsitesneedtobeexperiencedexactlythesameineverybrowser.com/ ]("http://www.dowebsitesneedtobeexperiencedexactlythesameineverybrowser.com/"){:target="_blank"}Crazy URL, but hover over the word you see. Do you see a black background with white text?  How about a blue and purple backgrounds?  Do the words appear differently?
 
 *   **Themes** – Everyone likes a little personalization and customization, right?  Why not break away from the typical gray/sandy colors and jazz up your browser with a new theme?
 

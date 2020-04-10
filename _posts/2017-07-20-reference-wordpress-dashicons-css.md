@@ -20,4 +20,4 @@ Then, in your CSS, simply reference them as a new font:
 
 <pre>.item { content: '\f140'; display: inline-block; font-family: dashicons; }</pre>
 
-I found this snippet from [WP Sites](https://wpsites.net/web-design/adding-dashicons-in-wordpress/). For the complete Dashicon library, look at the [WordPress Dashicon Developer Resource](https://developer.wordpress.org/resource/dashicons/).
+I found this snippet from [WP Sites](https://wpsites.net/web-design/adding-dashicons-in-wordpress/){:target="_blank"}. For the complete Dashicon library, look at the [WordPress Dashicon Developer Resource](https://developer.wordpress.org/resource/dashicons/){:target="_blank"}.

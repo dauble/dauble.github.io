@@ -4,9 +4,9 @@ title: Increase Page Views with jQuery Tabs and Google Analytics
 date: 2010-12-12
 image: "/assets/images/posts/computer.jpg"
 ---
-If you're not in e-commerce, I'm sure most of you have seen a decrease in website traffic, due to the holidays.  By now, most web developers use <a href="http://www.google.com/analytics">Google Analytics</a> to monitor traffic, keywords and other metrics.  With a combination of Analytics and Webmaster Tools, I've been able to increase my web traffic significantly.
+If you're not in e-commerce, I'm sure most of you have seen a decrease in website traffic, due to the holidays.  By now, most web developers use [Google Analytics](http://www.google.com/analytics){:target="_blank"} to monitor traffic, keywords and other metrics.  With a combination of Analytics and Webmaster Tools, I've been able to increase my web traffic significantly.
 
-One thing I noticed however, was when I started implementing <a href="http://jqueryui.com/demos/tabs/">jQuery Tabs</a> into a website, I noticed that my overall traffic was decreasing slightly, and I began to wonder which pages were being viewed most.  Turns out, with the help of a coworker and <a href="http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html">asynchronous code from Google</a>, we've been able to track "tab views".
+One thing I noticed however, was when I started implementing [jQuery Tabs](http://jqueryui.com/demos/tabs/){:target="_blank"} into a website, I noticed that my overall traffic was decreasing slightly, and I began to wonder which pages were being viewed most.  Turns out, with the help of a coworker and <a href="http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html">asynchronous code from Google</a>, we've been able to track "tab views".
 
 I present.. the code:
 

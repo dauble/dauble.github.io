@@ -24,7 +24,7 @@ When I printed out the array's contents, I kept discovering my array looked like
 
 Puzzled, I was turning to Google, thinking I'd have to check each index of the array to determine if it's a string or object. Neither was working.
 
-I started looking at my SQL Server connection string and double checked the documentation for the sqlsrv_connect() method I am using, wondering if there were extra parameters I could use. Through who knows how many searches I finally landed on a [Microsoft page which outlined the SQLSRV driver](https://docs.microsoft.com/en-us/sql/connect/php/how-to-retrieve-date-and-time-type-as-strings-using-the-sqlsrv-driver). In the first example, I learned there IS an extra param I can use that will output all DateTime objects as strings!
+I started looking at my SQL Server connection string and double checked the documentation for the sqlsrv_connect() method I am using, wondering if there were extra parameters I could use. Through who knows how many searches I finally landed on a [Microsoft page which outlined the SQLSRV driver](https://docs.microsoft.com/en-us/sql/connect/php/how-to-retrieve-date-and-time-type-as-strings-using-the-sqlsrv-driver){:target="_blank"}. In the first example, I learned there IS an extra param I can use that will output all DateTime objects as strings!
 
 To do so, simply add the following to your sqlsrv_connect() database parameters and SQL Server will start returning all DateTime fields as strings.
 

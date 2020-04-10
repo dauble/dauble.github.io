@@ -24,4 +24,4 @@ We'll want to grab the "protocol" and "host" for the current page:
 <pre>var $url = window.location.protocol + "//" + window.location.host + "/" + "thank-you/";
 console.log("URL: " + $url);</pre>
 
-And voila! Thanks to [this Stackoverflow post](https://stackoverflow.com/questions/2300771/jquery-domain-get-url) for helping with this solution.
+And voila! Thanks to [this Stackoverflow post](https://stackoverflow.com/questions/2300771/jquery-domain-get-url){:target="_blank"} for helping with this solution.

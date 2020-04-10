@@ -6,7 +6,7 @@ image: "/assets/images/posts/common-code.jpg"
 ---
 This is something I've wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I've built are straight-forward "single sites" with a few bits of magic here and there. However, with my job, I manage several mutli-site websites.
 
-For information on getting started with a WordPress multi-site, detailed instructions can be found in the [WordPress documentation](https://codex.wordpress.org/Create_A_Network). For this demo, I'm going to assume you're taking over a multi-site and are needing to make changes locally and there is a main site and two sub-sites. Also, let's assume your local website will be "**http://demo.local**".
+For information on getting started with a WordPress multi-site, detailed instructions can be found in the [WordPress documentation](https://codex.wordpress.org/Create_A_Network){:target="_blank"}. For this demo, I'm going to assume you're taking over a multi-site and are needing to make changes locally and there is a main site and two sub-sites. Also, let's assume your local website will be "**http://demo.local**".
 
 ## Modifying Tables
 
