@@ -2,7 +2,7 @@
 layout: post
 title: "Improving WordPress Search Results with Relevanssi"
 date: 2019-03-05
-image: /assets/images/posts/relevanssi-search.webp
+image: /assets/images/posts/relevanssi-search.jpg
 ---
 I've been managing 17 WordPress sites for the past few years and one thing I've noticed is the default search built into WordPress isn't flexible and doesn't always return the most accurate results. I use Advanced Custom Fields heavily for each of the sites and have noticed the default search doesn't search into these fields; it only searches titles and what's in the page's main content box. Since most of the pages on our sites don't use those, I needed to find a better option.
 

@@ -2,7 +2,7 @@
 layout: post
 title: "How To: Use FontAwesome Fonts in Your CSS :before & :after"
 date: 2017-03-15
-image: /assets/images/posts/code.webp
+image: /assets/images/posts/code.jpg
 ---
 I've been a fan of [FontAwesome](http://fontawesome.io/){:target="_blank"} for a long time. I admire their work and appreciate everything they do for fonts, icons and making websites and web apps more user-friendly.
 

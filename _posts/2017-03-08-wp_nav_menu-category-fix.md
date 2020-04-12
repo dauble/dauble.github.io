@@ -2,7 +2,7 @@
 layout: post
 title: "Solution: wp_nav_menu Not Appearing on Category Template"
 date: 2017-03-08
-image: "/assets/images/posts/new-code.webp"
+image: "/assets/images/posts/new-code.jpg"
 ---
 Today while working on a site I came across a problem that seemed weird to me. The **wp_nav_menu()** was working fine on all the pages except for my category page. When I took a detailed look, I found that it was caused by conflict of custom post type.  So how did I fix it?
 

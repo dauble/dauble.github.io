@@ -2,7 +2,7 @@
 layout: post
 title: "Why It's Time to Update Your Browser"
 date: 2012-04-23
-image: "/assets/images/posts/update-browser.webp"
+image: "/assets/images/posts/update-browser.jpg"
 excerpt: "This is the excerpt"
 ---
 Let me start with a little profanity: Internet Explorer.  Okay, so maybe it’s not the type of profanity you were initially thinking, but in the Internet world, Internet Explorer is one of the foulest, most cruel phrases anyone could say.  Why? Simple.  It’s terrible mainly due to its inability to follow simple web standards and user basics.

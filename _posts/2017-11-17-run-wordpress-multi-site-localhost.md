@@ -2,7 +2,7 @@
 layout: post
 title: "Run WordPress Multi-Site On localhost"
 date: 2017-11-17
-image: "/assets/images/posts/common-code.webp"
+image: "/assets/images/posts/common-code.jpg"
 ---
 This is something I've wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I've built are straight-forward "single sites" with a few bits of magic here and there. However, with my job, I manage several mutli-site websites.
 

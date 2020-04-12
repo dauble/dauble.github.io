@@ -2,7 +2,7 @@
 layout: post
 title: "Reference WordPress Dashicons in CSS"
 date: 2017-07-20
-image: "/assets/images/bg-tools.webp"
+image: "/assets/images/bg-tools.jpg"
 ---
 Recently I had an issue where I needed to remove a mega menu plugin in order to improve a site's PageSpeed score. In breaking it down, I realized the plugin was referencing the WordPress Dashicons, something I would need to add in when rebuilding the navigation menu.
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Parking Assistant: An Arduino-based Program to Help You Park"
 date: 2018-02-23
-image: "/assets/images/posts/parking-assistant.webp"
+image: "/assets/images/posts/parking-assistant.jpg"
 ---
 For Christmas this past year I finally got something I've been wanting for a little while: an Arduino controller and small electronics kit. I've had several ideas of little projects, but have never had the time or parts to start working on them. Over the last several weeks though, I've been playing with them and have come up with a few projects.
 
@@ -10,7 +10,7 @@ My first project was a simple thermometer and humidity gauge. It worked well and
 
 We're looking at getting another car and instead of using a 2"x4" block of wood, why not use my technical skills and make something cool. Something to annoy my wife. Enter Parking Assistant.
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/WnKiokYo1i4/0.webp)](http://www.youtube.com/watch?v=WnKiokYo1i4 "Video Title"){:target="_blank"}
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/WnKiokYo1i4/0.jpg)](http://www.youtube.com/watch?v=WnKiokYo1i4 "Video Title"){:target="_blank"}
 
 This is just a simple project that uses an ultrasonic sensor to determine the range from an object and then display the appropriate color on the matrix. If you get too close though, it displays a flashing red "X" on the matrix.
 

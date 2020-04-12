@@ -2,7 +2,7 @@
 layout: post
 title: "My Git Workflow: Introduction to Version Control"
 date: 2016-11-09
-image: "/assets/images/posts/branching-with-git.webp"
+image: "/assets/images/posts/branching-with-git.jpg"
 ---
 ## Git: What is it?
 

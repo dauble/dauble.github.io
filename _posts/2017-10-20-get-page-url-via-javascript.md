@@ -2,7 +2,7 @@
 layout: post
 title: "Get Page URL via JavaScript"
 date: Fri, 20 Oct 2017 14:37:04
-image: "/assets/images/posts/new-code.webp"
+image: "/assets/images/posts/new-code.jpg"
 ---
 I come across this problem frequently and yet for some reason, can never remember how to get the URL of the current page via JavaScript.
 
