@@ -2,7 +2,7 @@
 layout: post
 title: "Fixing 'Another git process seems to be running in this repository' Error in Git"
 date: 2018-10-23
-image: /assets/images/posts/code.jpg
+image: /assets/images/posts/code.webp
 ---
 I sometimes come across a unique error when using Git and always have to look up how to fix the error. It's a simple error and can be replicated by stopping a Git command before it's finished. Git in turn generates a "index.lock" file, which prevents you from adding any additional files to the commit. The error message I usually receive in full is:
 

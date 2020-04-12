@@ -2,7 +2,7 @@
 layout: post
 title: "Get WordPress Multisite Table Prefix"
 date: 2017-08-09
-image: "/assets/images/posts/blog-banner.jpg"
+image: "/assets/images/posts/blog-banner.webp"
 ---
 A while ago I wrote my first plugin for WordPress. It requires the creation of a table, encrypting some data, saving it to a WP table, then finally pushing clean data to Salesforce. Somewhat straightforward, but I learned a lot.
 

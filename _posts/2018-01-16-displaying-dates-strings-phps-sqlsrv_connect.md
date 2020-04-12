@@ -2,7 +2,7 @@
 layout: post
 title: "Displaying Dates as Strings with PHP's sqlsrv_connect()"
 date: 2018-01-16
-image: "/assets/images/posts/sqlservconnect.jpg"
+image: "/assets/images/posts/sqlservconnect.webp"
 ---
 Over the last few weeks I've been working on a web application that allows me to track how website leads are performing at work. In building this app, I'm interacting with MySQL and SQL Server databases together and using PHP as my language of choice.
 

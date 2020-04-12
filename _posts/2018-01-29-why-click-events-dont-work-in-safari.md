@@ -2,7 +2,7 @@
 layout: post
 title: "Why Click Events Don't Work in Safari"
 date: 2018-01-29
-image: "/assets/images/posts/cup-of-coffee-laptop-office-macbook-89786.jpg"
+image: "/assets/images/posts/cup-of-coffee-laptop-office-macbook-89786.webp"
 ---
 Over the last few months I've been working on a weather dashboard with the goal of developing it into my first mobile app.
 

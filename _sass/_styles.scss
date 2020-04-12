@@ -173,12 +173,7 @@ section {
 
     &__contain__title {
       margin: 0 0 .5rem;
-
-      @mixin breakpoint($mobile) {
-        font-size: 4rem;
-      }
-
-      @mixin breakpoint($tablet) {
+      @include breakpoint(sm) {
         font-size: 5rem;
       }
     }
@@ -187,17 +182,13 @@ section {
       margin: 0 auto 1em;
       width: 90%;
 
-      @mixin breakpoint($mobile) {
-        font-size: 1rem;
-      }
-
-      @mixin breakpoint($tablet) {
+      @include breakpoint(sm) {
         font-size: 2.25rem;
       }
     }
 
     .intro-banner {
-      background-image: url("/assets/images/main-banner.jpg");
+      background-image: url("/assets/images/main-banner.webp");
       background-position: center top;
       background-repeat: no-repeat;
       background-size: cover;
@@ -220,7 +211,7 @@ section {
 }
 
 .services {
-  background: url('/assets/images/bg-services.jpg') center center no-repeat;
+  background: url('/assets/images/bg-services.webp') center center no-repeat;
   background-size: cover;
   color: $color-white;
 
@@ -228,6 +219,13 @@ section {
     padding: 2em;
     text-align: center;
     line-height: 1.75;
+
+    display: grid;
+
+    @include breakpoint(sm) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
   }
 }
 
@@ -237,13 +235,13 @@ section {
 }
 
 .twitter {
-  background: url('/assets/images/bg-twitter.jpg') center center no-repeat;
+  background: url('/assets/images/bg-twitter.webp') center center no-repeat;
   background-size: cover;
   color: $color-white;
 }
 
 .clients {
-  background: url('/assets/images/bg-tools.jpg') center center no-repeat;
+  background: url('/assets/images/bg-tools.webp') center center no-repeat;
   background-size: cover;
   color: $color-white;
 
@@ -259,6 +257,16 @@ section {
   }
 
   .logos {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+
+    @include breakpoint(sm) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
     img {
       margin: 2em auto;
     }

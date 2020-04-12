@@ -2,7 +2,7 @@
 layout: post
 title: "Embedding Google Maps: 'X-Frame-Options' to 'sameorigin'"
 date: 2017-08-25
-image: /assets/images/posts/blog-map.jpg
+image: /assets/images/posts/blog-map.webp
 ---
 This past week, I came across something odd. I was building a real-estate website for a client and the client requested a Google Maps embed of specific property. Simple, right? Not entirely. I was able to locate the address and embed an iframe dynamically by using the following code:
 

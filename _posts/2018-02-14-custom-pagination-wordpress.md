@@ -2,7 +2,7 @@
 layout: post
 title: "Custom Pagination in WordPress"
 date: 2018-02-14
-image: "/assets/images/posts/blog-banner-compressor.jpg"
+image: "/assets/images/posts/blog-banner-compressor.webp"
 ---
 A while ago I was having troubles with the built-in pagination in WordPress and started looking for alternative solutions. I didn't want to use a plugin, since I wanted it to work across the board -- work with blog posts, search results, taxonomies, etc. I stumbled upon this [custom method from WPBeginner](http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/){:target="_blank"} and gave it a shot. It worked brilliantly. After a few months though, I started noticing a problem -- it wasn't pulling the correct number of total pages, resulting in paged pages with zero results. I ended up looking into the code and have modified it for my needs. Feel free to use this -- simply drop this into your **functions.php **file, then call it in your code with:
 
