@@ -4,6 +4,8 @@ title: "Edit Robots.txt with WordPress and Yoast"
 date: 2020-04-14
 image: /assets/images/posts/robots.jpg
 author: dauble
+categories: [wordpress, apache, iis, something, something2]
+tags: [seo]
 ---
 
 An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a `robots.txt` file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.
@@ -22,6 +24,5 @@ Finally, after digging much further, I was able to find that in the Network Admi
 ![Click on Yoast SEO, Edit Files](/assets/images/posts/seo-edit-files.jpg)
 3. Edit robots.txt<br>
 ![Edit robots.txt text input](/assets/images/posts/edit-robots.jpg)
-
 
 **Note** If a robots.txt file does not exist, in the current verion of WordPress, 5.4, clicking the "Generate robots.txt" button will redirect you to a page that has HTML markup not being rendered. Simply click the browser's back button and refresh the page. You will then see the edit text area as seen above.

@@ -234,6 +234,100 @@ section {
   background: url('/assets/images/section-btm.png') center top no-repeat;
 }
 
+.blog {
+
+  article {
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    border-bottom: 1px solid #ccc;
+  }
+
+  h3 {
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  &__categories {
+    margin: 1em 0 2em;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0 5px;
+      display: inline-block;
+
+      &:first-of-type {
+        margin: 0 5px;
+      }
+
+      a {
+
+        display: inline-block;
+        position: relative;
+        background: #eee;
+        padding: 0 8px;
+        text-decoration: none;
+        color: $paragraph-gray;
+        font-weight: 400;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: -5px;
+          content: " ";
+          width: 5px;
+          height: 100%;
+          background: #f00;
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
+        }
+
+        @include transition(all .2s);
+
+        &:hover {
+          background: #ddd;
+        }
+      }
+
+      &:nth-child(1n) {
+        a:before {
+          background: $color-green;
+        }
+      }
+
+      &:nth-child(2n) {
+        a:before {
+          background: $color-red;
+        }
+      }
+
+      &:nth-child(3n) {
+        a:before {
+          background: $color-yellow;
+        }
+      }
+
+      &:nth-child(4n) {
+        a:before {
+          background: $color-teal;
+        }
+      }
+
+      &:nth-child(5n) {
+        a:before {
+          background: $color-dark-blue;
+        }
+      }
+    }
+  }
+}
+
 .twitter {
   background: url('/assets/images/bg-twitter.jpg') center center no-repeat;
   background-size: cover;
