@@ -4,7 +4,7 @@ title: "Edit Robots.txt with WordPress and Yoast"
 date: 2020-04-14
 image: /assets/images/posts/robots.jpg
 author: dauble
-categories: [wordpress, apache, iis, something, something2]
+categories: [wordpress, apache, iis]
 tags: [seo]
 ---
 
