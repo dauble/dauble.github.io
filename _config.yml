@@ -14,6 +14,7 @@ livereload: true
 collections:
   posts:
     output: true
+permalink: /:year/:month/:day/:title:output_ext
 sass:
   sass_dir: _sass
   style: compressed # possible values: nested expanded compact compressed
