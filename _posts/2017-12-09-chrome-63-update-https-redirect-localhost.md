@@ -3,6 +3,9 @@ layout: post
 title: "Chrome 63 Update: HTTPS Redirect on localhost"
 date: 2017-12-09
 image: /assets/images/posts/chrome-update.jpg
+author: dauble
+categories: [chrome]
+tags: [update]
 ---
 I ran into something frustrating yesterday and after extensive research, figured out the problem. With one of Chrome's latest updates, all of my sites on my local machine were consistently being redirected to HTTPS.
 

@@ -3,6 +3,9 @@ layout: post
 title:  "The Panda Effect"
 date: 2011-12-06
 image: "/assets/images/posts/panda-1.jpg"
+author: dauble
+categories: [seo, google]
+tags: [google]
 ---
 By now, most businesses are implementing some form of basic SEO.  Whether it’s optimizing page titles and structure, or optimizing all pictures, content and folder structure, it’s important to build your site with SEO in mind.
 

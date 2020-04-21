@@ -3,6 +3,9 @@ layout: post
 title: "Adding Related Posts in WordPress Without a Plugin"
 date: 2017-10-27
 image: /assets/images/posts/related-posts.jpg
+author: dauble
+categories: [wordpress, categories, tags, php]
+tags: [php]
 ---
 This past week I had yet another challenge: add related posts to a blog entry and make it match a design. It seemed straightforward, especially since all the blog posts are organized by category. As I dug deeper, I realized it wasn't going to be as simple as I'd originally thought.
 

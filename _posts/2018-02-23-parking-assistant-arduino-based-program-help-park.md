@@ -3,6 +3,8 @@ layout: post
 title: "Parking Assistant: An Arduino-based Program to Help You Park"
 date: 2018-02-23
 image: "/assets/images/posts/parking-assistant.jpg"
+author: dauble
+categories: [arduino, projects]
 ---
 For Christmas this past year I finally got something I've been wanting for a little while: an Arduino controller and small electronics kit. I've had several ideas of little projects, but have never had the time or parts to start working on them. Over the last several weeks though, I've been playing with them and have come up with a few projects.
 

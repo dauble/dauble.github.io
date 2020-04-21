@@ -43,7 +43,8 @@ layout: post
 
             {% for category in categories %}
               <li>
-                <a href="/{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+                <!-- <a href="/{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a> -->
+                <span>{{category}}</span>
               </li>
               {% unless forloop.last %}&nbsp;{% endunless %}
             {% endfor %}

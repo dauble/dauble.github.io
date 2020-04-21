@@ -3,6 +3,9 @@ layout: post
 title: "How to Change the WordPress Admin Login Logo"
 date: 2019-01-24
 image: /assets/images/posts/wp-walker.jpg
+author: dauble
+categories: [wordpress]
+tags: [php]
 ---
 Over the years I've had to search for tons of small snippets for WordPress to do simple tasks. This is another one of those little snippets. One of the final little touches I like to do before launching a website over to a client is to override the default WordPress logo with their logo on the WordPress login splash screen. It's a simple trick and can be done with the code below.
 

@@ -3,6 +3,9 @@ layout: post
 title: Increase Page Views with jQuery Tabs and Google Analytics
 date: 2010-12-12
 image: "/assets/images/posts/computer.jpg"
+author: dauble
+categories: [javascript, google analytics]
+tags: [javascript, google]
 ---
 If you're not in e-commerce, I'm sure most of you have seen a decrease in website traffic, due to the holidays.  By now, most web developers use [Google Analytics](http://www.google.com/analytics){:target="_blank"} to monitor traffic, keywords and other metrics.  With a combination of Analytics and Webmaster Tools, I've been able to increase my web traffic significantly.
 

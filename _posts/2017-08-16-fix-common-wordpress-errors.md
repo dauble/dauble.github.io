@@ -3,6 +3,9 @@ layout: post
 title: "How to Fix Common WordPress Errors"
 date: 2017-08-16
 image: /assets/images/posts/stop.jpg
+author: dauble
+categories: [wordpress]
+tags: [php, plugins]
 ---
 WordPress sites are usually straight-forward and not too complicated to build. However, when you start building your own themes and really digging into the core, you're bound to run into a few issues. The most common issues are oftentimes the easiest to troubleshoot. This list should help you solve the most common WordPress errors.
 

@@ -3,6 +3,9 @@ layout: post
 title: "My Git Workflow: Introduction to Version Control"
 date: 2016-11-09
 image: "/assets/images/posts/branching-with-git.jpg"
+author: dauble
+categories: [git]
+tags: [command line]
 ---
 ## Git: What is it?
 

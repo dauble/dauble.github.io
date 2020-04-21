@@ -251,6 +251,12 @@ section {
     padding: 0;
   }
 
+  h5 {
+    margin: 0 0 1em;
+    padding: 0;
+    font-style: italic;
+  }
+
   &__categories {
     margin: 1em 0 2em;
     padding: 0;
@@ -264,7 +270,7 @@ section {
         margin: 0 5px;
       }
 
-      a {
+      span {
 
         display: inline-block;
         position: relative;
@@ -296,31 +302,31 @@ section {
       }
 
       &:nth-child(1n) {
-        a:before {
+        span:before {
           background: $color-green;
         }
       }
 
       &:nth-child(2n) {
-        a:before {
+        span:before {
           background: $color-red;
         }
       }
 
       &:nth-child(3n) {
-        a:before {
+        span:before {
           background: $color-yellow;
         }
       }
 
       &:nth-child(4n) {
-        a:before {
+        span:before {
           background: $color-teal;
         }
       }
 
       &:nth-child(5n) {
-        a:before {
+        span:before {
           background: $color-dark-blue;
         }
       }

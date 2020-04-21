@@ -3,6 +3,8 @@ layout: post
 title: "Three Reasons You Should Ditch Image Sliders"
 image: "/assets/images/posts/carousel.jpg"
 date: 2015-01-16
+author: dauble
+categories: [carousel, seo, modern web]
 ---
 [Carousels, sliders and rotating banners](http://ux.stackexchange.com/questions/13951/what-is-the-difference-between-a-slider-a-gallery-and-a-carousel){:target="_blank"} – chances are you’ve heard one or more of these terms before. Image carousels can be found on nearly any news site, online store or informational site with one goal in mind: force-feed the user as much content as possible, as soon as they land on your site.
 
