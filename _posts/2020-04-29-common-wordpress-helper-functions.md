@@ -24,14 +24,30 @@ As it sounds, this checks to see if the current user is logged in or not. Handy 
 >is_page_template('template-sample.php')
 
 ## is_front_page()
+>is_front_page()
+This function simply checks to see if the current page is set as the Front Page in WordPress. This page is set under Settings -> Reading.
 
 ## is_home()
+>is_home()
+
+This function simply checks to see if the current page is set as the Posts Page in WordPress. This page is set under Settings -> Reading.
 
 ## wp_reset_postdata()
+>wp_reset_postdata()
+
+When using custom loops, this resets the Posts loop so the rest of the page will render properly.
 
 ## restore_current_blog()
+>restore_current_blog()
+
+When working with a multisite setup, this allows you to change which blog to grab content. Pass in the Site ID as an arugment to load that site's content.
 
 ## get_template_part()
+>get_template_part()
+
+This functions like an include for WordPress. Simple pass in the PHP template filename as an argument.
 
 ## bloginfo()
- url, template_directory
+>bloginfo()
+
+One of the more useful functions, this enables you to grab various info about the WordPress site. Some arguments I use frequently are `url` and `template_directory`. These return the site's URL and theme path.
