@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Common WordPress Helper Functions"
-date: 2020-04-20
+date: 2020-04-29
 image: /assets/images/posts/common-wordpress-functions.jpg
 author: dauble
 categories: [wordpress]
