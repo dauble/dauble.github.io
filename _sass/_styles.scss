@@ -367,8 +367,12 @@ section {
       grid-template-rows: 1fr 1fr;
     }
 
-    img {
-      margin: 2em auto;
+    &__logo {
+      text-align: center;
+
+      img {
+        margin: 2em auto;
+      }
     }
   }
 }
