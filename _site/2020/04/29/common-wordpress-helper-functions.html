@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8"/>
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimal-ui">
+    <meta name="google-site-verification" content="mSvQDj528SrivJO3707MQV4uw5aUBxBXMfO9FTZz_sI" />
+    <meta name="msvalidate.01" content="581C4BBEDA8127FA57A7F2B93320F97F" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Common WordPress Helper Functions</title>
+    <link rel="stylesheet" href="/assets/css/styles.css?1614132692495712000" />
+
+    <link type="application/atom+xml" rel="alternate" href="https://davidauble.com/feed.xml" title="Indianapolis Web Developer" />
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Common WordPress Helper Functions | Indianapolis Web Developer</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Common WordPress Helper Functions" />
+<meta name="author" content="dauble" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build." />
+<meta property="og:description" content="I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build." />
+<link rel="canonical" href="https://davidauble.com/2020/04/29/common-wordpress-helper-functions.html" />
+<meta property="og:url" content="https://davidauble.com/2020/04/29/common-wordpress-helper-functions.html" />
+<meta property="og:site_name" content="Indianapolis Web Developer" />
+<meta property="og:image" content="https://davidauble.com/assets/images/posts/common-wordpress-functions.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-29T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Common WordPress Helper Functions","dateModified":"2020-04-29T00:00:00-04:00","datePublished":"2020-04-29T00:00:00-04:00","image":"https://davidauble.com/assets/images/posts/common-wordpress-functions.jpg","author":{"@type":"Person","name":"dauble"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://davidauble.com/2020/04/29/common-wordpress-helper-functions.html"},"description":"I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.","@type":"BlogPosting","url":"https://davidauble.com/2020/04/29/common-wordpress-helper-functions.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16309361-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-16309361-1');
+    </script>
+  </head>
+
+  <body>
+    <div id="page-top"></div>
+    
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+
+        <a class="navbar-brand page-scroll" href="/">
+          <span class="logo"></span>
+          <span class="logo-text">David M. Auble</span>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul id="menu-primary" class="nav navbar-nav">
+          <li class="menu-item"><a href="/#who-i-am">About</a></li>
+          <li class="menu-item"><a href="/#services">Services</a></li>
+          <li class="menu-item"><a href="/blog.html">Blog</a></li>
+          <li class="menu-item"><a href="/#clients">Work</a></li>
+          <li class="menu-item"><a href="/#twitter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero interior">
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        <div class="col-xs-12">
+          <div class="hero-background vb--home">
+            <div class="hero-background__contain">
+              <h1 class="hero-background__contain__title">Common WordPress Helper Functions</h1>
+            </div>
+
+            <div class="intro-banner js-parallax" style="background-image:url('/assets/images/posts/common-wordpress-functions.jpg')"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+
+          <article>
+            <p>I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.</p>
+
+<h2 id="wp_is_mobile">wp_is_mobile()</h2>
+<blockquote>
+  <p>wp_is_mobile()</p>
+</blockquote>
+
+<p>This function detects if someone is using a mobile device or not. Extremely handy for when you want certain features (such as tracking scripts, chat applications, etc) to not appear when users are using mobile devices.</p>
+
+<h2 id="is_user_logged_in">is_user_logged_in()</h2>
+<blockquote>
+  <p>is_user_logged_in()</p>
+</blockquote>
+
+<p>As it sounds, this checks to see if the current user is logged in or not. Handy little script for turning off tracking scripts or other non-essential parts when users are logged in. This can also be used to protect content areas that require membership roles to view.</p>
+
+<h2 id="is_page_template">is_page_template()</h2>
+<blockquote>
+  <p>is_page_template(‘template-sample.php’)</p>
+</blockquote>
+
+<h2 id="is_front_page">is_front_page()</h2>
+<blockquote>
+  <p>is_front_page()</p>
+</blockquote>
+
+<p>This function simply checks to see if the current page is set as the Front Page in WordPress. This page is set under Settings -&gt; Reading.</p>
+
+<h2 id="is_home">is_home()</h2>
+<blockquote>
+  <p>is_home()</p>
+</blockquote>
+
+<p>This function simply checks to see if the current page is set as the Posts Page in WordPress. This page is set under Settings -&gt; Reading.</p>
+
+<h2 id="wp_reset_postdata">wp_reset_postdata()</h2>
+<blockquote>
+  <p>wp_reset_postdata()</p>
+</blockquote>
+
+<p>When using custom loops, this resets the Posts loop so the rest of the page will render properly.</p>
+
+<h2 id="restore_current_blog">restore_current_blog()</h2>
+<blockquote>
+  <p>restore_current_blog(1)</p>
+</blockquote>
+
+<p>When working with a multisite setup, this allows you to change which blog to grab content. Pass in the Site ID as an arugment to load that site’s content.</p>
+
+<h2 id="get_template_part">get_template_part()</h2>
+<blockquote>
+  <p>get_template_part(‘included-template.php’)</p>
+</blockquote>
+
+<p>This functions like an include for WordPress. Simple pass in the PHP template filename as an argument.</p>
+
+<h2 id="bloginfo">bloginfo()</h2>
+<blockquote>
+  <p>bloginfo(‘url’)</p>
+</blockquote>
+
+<p>One of the more useful functions, this enables you to grab various info about the WordPress site. Some arguments I use frequently are <code class="highlighter-rouge">url</code> and <code class="highlighter-rouge">template_directory</code>. These return the site’s URL and theme path.</p>
+
+<p>For more information on these functions and more, visit the <a href="https://developer.wordpress.org/reference/functions/" target="_blank">WordPress Developer reference</a>.</p>
+
+          </article>
+
+          <h3>Filed Under:</h3>
+          <ul class="blog__categories">
+            
+
+            
+              <li>
+                <!-- <a href="///categories/#wordpress">wordpress</a> -->
+                <span>wordpress</span>
+              </li>
+              
+            
+          </ul>
+
+          <div class="view-archives">
+            <a href="/blog.html" class="btn btn-secondary">View the archives</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="container">
+    <div class="col-xs-12 col-sm-4 copyright">
+      <p>&copy; David M. Auble | 2021</p>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <ul class="list-unstyled list-inline social-icons">
+        <li>
+          <a href="https://www.linkedin.com/in/dauble" target="_blank">
+            <i class="fa fa-linkedin fa-2x"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:dauble@davidauble.info" target="_blank">
+            <i class="fa fa-envelope fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: ['Roboto&display=swap'] }
+  };
+  (function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/assets/scripts/scripts.js?1614132692495712000"
+  type="text/javascript"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16309361-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16309361-1');
+</script>
+
+
+</body>
+
+</html>
