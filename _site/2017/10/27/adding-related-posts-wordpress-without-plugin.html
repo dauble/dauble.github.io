@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8"/>
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimal-ui">
+    <meta name="google-site-verification" content="mSvQDj528SrivJO3707MQV4uw5aUBxBXMfO9FTZz_sI" />
+    <meta name="msvalidate.01" content="581C4BBEDA8127FA57A7F2B93320F97F" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Adding Related Posts in WordPress Without a Plugin</title>
+    <link rel="stylesheet" href="/assets/css/styles.css?1614130394466871000" />
+
+    <link type="application/atom+xml" rel="alternate" href="https://davidauble.info/feed.xml" title="Indianapolis Web Developer" />
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Adding Related Posts in WordPress Without a Plugin | Indianapolis Web Developer</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Adding Related Posts in WordPress Without a Plugin" />
+<meta name="author" content="dauble" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This past week I had yet another challenge: add related posts to a blog entry and make it match a design. It seemed straightforward, especially since all the blog posts are organized by category. As I dug deeper, I realized it wasn’t going to be as simple as I’d originally thought." />
+<meta property="og:description" content="This past week I had yet another challenge: add related posts to a blog entry and make it match a design. It seemed straightforward, especially since all the blog posts are organized by category. As I dug deeper, I realized it wasn’t going to be as simple as I’d originally thought." />
+<link rel="canonical" href="https://davidauble.info/2017/10/27/adding-related-posts-wordpress-without-plugin.html" />
+<meta property="og:url" content="https://davidauble.info/2017/10/27/adding-related-posts-wordpress-without-plugin.html" />
+<meta property="og:site_name" content="Indianapolis Web Developer" />
+<meta property="og:image" content="https://davidauble.info/assets/images/posts/related-posts.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-10-27T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Adding Related Posts in WordPress Without a Plugin","dateModified":"2017-10-27T00:00:00-04:00","datePublished":"2017-10-27T00:00:00-04:00","image":"https://davidauble.info/assets/images/posts/related-posts.jpg","author":{"@type":"Person","name":"dauble"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://davidauble.info/2017/10/27/adding-related-posts-wordpress-without-plugin.html"},"description":"This past week I had yet another challenge: add related posts to a blog entry and make it match a design. It seemed straightforward, especially since all the blog posts are organized by category. As I dug deeper, I realized it wasn’t going to be as simple as I’d originally thought.","@type":"BlogPosting","url":"https://davidauble.info/2017/10/27/adding-related-posts-wordpress-without-plugin.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16309361-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-16309361-1');
+    </script>
+  </head>
+
+  <body>
+    <div id="page-top"></div>
+    
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+
+        <a class="navbar-brand page-scroll" href="/">
+          <span class="logo"></span>
+          <span class="logo-text">David M. Auble</span>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul id="menu-primary" class="nav navbar-nav">
+          <li class="menu-item"><a href="/#who-i-am">About</a></li>
+          <li class="menu-item"><a href="/#services">Services</a></li>
+          <li class="menu-item"><a href="/blog.html">Blog</a></li>
+          <li class="menu-item"><a href="/#clients">Work</a></li>
+          <li class="menu-item"><a href="/#twitter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero interior">
+    <div class="container-fluid">
+      <div class="row no-gutter">
+        <div class="col-xs-12">
+          <div class="hero-background vb--home">
+            <div class="hero-background__contain">
+              <h1 class="hero-background__contain__title">Adding Related Posts in WordPress Without a Plugin</h1>
+            </div>
+
+            <div class="intro-banner js-parallax" style="background-image:url('/assets/images/posts/related-posts.jpg')"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+
+          <article>
+            <p>This past week I had yet another challenge: add related posts to a blog entry and make it match a design. It seemed straightforward, especially since all the blog posts are organized by category. As I dug deeper, I realized it wasn’t going to be as simple as I’d originally thought.</p>
+
+<p>Let me preface this post by saying <strong>I don’t like using unnecessary WordPress plugins. </strong>I’d much rather build something from scratch that doesn’t have limitations from a plugin. There are times when plugins are necessary, sure, but I’d much rather have something that doesn’t need to be updated constantly or be limited to a plugin’s design.</p>
+
+<p>I should preface this with there are two ways of doing this: display related posts by <strong>tags </strong>and by <strong>categories</strong>. I’ll first demonstrate by displaying related posts by tags. I feel this is the better way to show related posts. <em>Let’s assume this will be going on your default single.php page.</em></p>
+
+<h2 id="related-posts-by-tags">Related Posts by Tags</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="related-posts"&gt;
+  &lt;?php
+    $tags = wp_get_post_tags($post-&gt;ID);
+
+    if ($tags):
+      $first_tag = $tags[0]-&gt;term_id;
+
+      $args = array(
+        'tag__in' =&gt; array($first_tag),
+        'post__not_in' =&gt; array($post-&gt;ID),
+        'posts_per_page' =&gt; 2,
+        'caller_get_posts' =&gt; 1,
+        'orderby' =&gt; 'rand'
+      );
+
+      $posts = new WP_Query($args);
+  ?&gt;
+
+      &lt;?php if($posts-&gt;have_posts()): while($posts-&gt;have_posts()): $posts-&gt;the_post(); ?&gt;
+
+        &lt;div class="related-posts__post"&gt;
+          &lt;a href="&lt;?php the_permalink(); ?&gt;"&gt;
+            &lt;?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post-&gt;ID), 'medium'); ?&gt;
+            &lt;img src="&lt;?php echo $image[0]; ?&gt;" alt="" class=""&gt;
+
+            &lt;span class="related-posts__post--title"&gt;&lt;?php the_title(); ?&gt;&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+      &lt;?php endwhile; endif; wp_reset_query(); ?&gt;
+
+  &lt;?php endif; ?&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<h2 id="related-posts-by-categories">Related Posts by Categories</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="related-posts"&gt;
+  &lt;?php
+    $tags = wp_get_post_categories($post-&gt;ID);
+
+    if ($tags):
+      $args = array(
+        'current_category' =&gt; $tags,
+        'orderby' =&gt; 'rand',
+        'posts_per_page' =&gt; 2
+      );
+
+      $posts = new WP_Query($args);
+      while ($posts-&gt;have_posts()): $posts-&gt;the_post();
+  ?&gt;
+      &lt;div class="related-posts__post"&gt;
+        &lt;a href="&lt;?php the_permalink(); ?&gt;" class="related-posts__post--link"&gt;
+          &lt;span class="related-posts__post--link--wrap"&gt;
+            &lt;span class="related-posts__post--link--wrap__overlay"&gt;&lt;/span&gt;
+
+            &lt;?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post-&gt;ID), 'blog_image'); ?&gt;
+            &lt;img src="&lt;?php echo $image[0]; ?&gt;" alt="" class="related-posts__post--link--image"&gt;
+
+            &lt;span class="btn btn-secondary"&gt;Read More&lt;/span&gt;
+          &lt;/span&gt;
+          &lt;h4&gt;&lt;?php the_title(); ?&gt;&lt;/h4&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;?php endwhile; ?&gt;
+  &lt;?php wp_reset_query(); endif; ?&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p>And voila! I hope this helps.</p>
+
+          </article>
+
+          <h3>Filed Under:</h3>
+          <ul class="blog__categories">
+            
+
+            
+              <li>
+                <!-- <a href="///categories/#wordpress">wordpress</a> -->
+                <span>wordpress</span>
+              </li>
+              &nbsp;
+            
+              <li>
+                <!-- <a href="///categories/#categories">categories</a> -->
+                <span>categories</span>
+              </li>
+              &nbsp;
+            
+              <li>
+                <!-- <a href="///categories/#tags">tags</a> -->
+                <span>tags</span>
+              </li>
+              &nbsp;
+            
+              <li>
+                <!-- <a href="///categories/#php">php</a> -->
+                <span>php</span>
+              </li>
+              
+            
+          </ul>
+
+          <div class="view-archives">
+            <a href="/blog.html" class="btn btn-secondary">View the archives</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="container">
+    <div class="col-xs-12 col-sm-4 copyright">
+      <p>&copy; David M. Auble | 2021</p>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <ul class="list-unstyled list-inline social-icons">
+        <li>
+          <a href="https://www.linkedin.com/in/dauble" target="_blank">
+            <i class="fa fa-linkedin fa-2x"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:dauble@davidauble.info" target="_blank">
+            <i class="fa fa-envelope fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: ['Roboto&display=swap'] }
+  };
+  (function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/assets/scripts/scripts.js?1614130394466871000"
+  type="text/javascript"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16309361-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16309361-1');
+</script>
+
+
+</body>
+
+</html>
