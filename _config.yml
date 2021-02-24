@@ -1,9 +1,9 @@
 title: "Indianapolis Web Developer"
-email: info@davidauble.info
+email: info@davidauble.com
 description: >- # this means to ignore newlines until "baseurl:"
   Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://davidauble.info" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://davidauble.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  dauble
 
 plugins:
