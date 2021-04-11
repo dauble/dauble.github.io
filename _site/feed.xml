@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://davidauble.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://davidauble.com/" rel="alternate" type="text/html" /><updated>2021-03-04T21:00:00-05:00</updated><id>https://davidauble.com/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">David Auble, Manager</title><link href="https://davidauble.com/2020/09/06/new-job-promotion.html" rel="alternate" type="text/html" title="David Auble, Manager" /><published>2020-09-06T00:00:00-04:00</published><updated>2020-09-06T00:00:00-04:00</updated><id>https://davidauble.com/2020/09/06/new-job-promotion</id><content type="html" xml:base="https://davidauble.com/2020/09/06/new-job-promotion.html">&lt;p&gt;It’s been no secret that I’ve been working towards finishing my MBA in Finance. I am on track to graduate this coming December and am excited to have not only completed the two year program, but for what lies ahead. I’ve been wanting to get into managment and knew this was one of the best ways to learn how to become a manager and leader.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://davidauble.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://davidauble.com/" rel="alternate" type="text/html" /><updated>2021-04-10T20:07:00-04:00</updated><id>https://davidauble.com/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">David Auble, Manager</title><link href="https://davidauble.com/2020/09/06/new-job-promotion.html" rel="alternate" type="text/html" title="David Auble, Manager" /><published>2020-09-06T00:00:00-04:00</published><updated>2020-09-06T00:00:00-04:00</updated><id>https://davidauble.com/2020/09/06/new-job-promotion</id><content type="html" xml:base="https://davidauble.com/2020/09/06/new-job-promotion.html">&lt;p&gt;It’s been no secret that I’ve been working towards finishing my MBA in Finance. I am on track to graduate this coming December and am excited to have not only completed the two year program, but for what lies ahead. I’ve been wanting to get into managment and knew this was one of the best ways to learn how to become a manager and leader.&lt;/p&gt;
 
 &lt;p&gt;A few months back, I left the marketing world in pursuit of something more challenging. Marketing has been in my DNA since my first exposure in 2011, and will always hold a place dear to me, as I love brand generation, fast-paced work environments, and the variety of projects found in typical marketing agencies. The fresh atmosphere of new talent reignites my passion for helping connect people with their dreams.&lt;/p&gt;
 
@@ -159,44 +159,44 @@ gem install eventmachine –platform ruby&lt;/p&gt;
 &lt;p&gt;Here’s what I ended up with in my functions.php file to display Pages above Posts, then return results newer than two years:&lt;/p&gt;
 
 &lt;pre&gt;
-add_filter('relevanssi_hits_filter', 'products_first');
+add_filter(&apos;relevanssi_hits_filter&apos;, &apos;products_first&apos;);
   function products_first($hits) {
     $types = array();
 
-    $types['page'] = array();
-    $types['post'] = array();
+    $types[&apos;page&apos;] = array();
+    $types[&apos;post&apos;] = array();
 
     // Split the post types in array $types
     if (!empty($hits)) {
       foreach ($hits[0] as $hit) {
 
-        $date_cutoff = date('Y-m-d h:i:s', strtotime('-2 years'));
-        if($hit-&amp;gt;post_date &amp;gt; $date_cutoff &amp;amp;&amp;amp; $hit-&amp;gt;post_type == 'post') {
+        $date_cutoff = date(&apos;Y-m-d h:i:s&apos;, strtotime(&apos;-2 years&apos;));
+        if($hit-&amp;gt;post_date &amp;gt; $date_cutoff &amp;amp;&amp;amp; $hit-&amp;gt;post_type == &apos;post&apos;) {
           array_push($types[$hit-&amp;gt;post_type], $hit);
         }
 
-        if($hit-&amp;gt;post_type == 'page') {
+        if($hit-&amp;gt;post_type == &apos;page&apos;) {
           array_push($types[$hit-&amp;gt;post_type], $hit);
         }
       }
     }
 
     // Merge back to $hits in the desired order
-    $hits[0] = array_merge($types['page'], $types['post']);
+    $hits[0] = array_merge($types[&apos;page&apos;], $types[&apos;post&apos;]);
     return $hits;
   }
 &lt;/pre&gt;
 
 &lt;p&gt;I also noticed that sometimes, plural versions of words weren’t displaying properly either. Sometimes searching for “car” would return different results than “cars.” To get around this, I added a bit more code, found directly from the &lt;a href=&quot;https://www.relevanssi.com/knowledge-base/simple-french-plurals/&quot;&gt;documentation&lt;/a&gt;:&lt;/p&gt;
 
-&lt;pre&gt;add_filter( 'relevanssi_stemmer', 'relevanssi_french_plural_stemmer' );
+&lt;pre&gt;add_filter( &apos;relevanssi_stemmer&apos;, &apos;relevanssi_french_plural_stemmer&apos; );
     function relevanssi_french_plural_stemmer( $term ) {
       $len  = strlen( $term );
       $end1 = substr( $term, -1, 1 );
 
-      if ( 's' === $end1 &amp;amp;&amp;amp; $len &amp;gt; 3 ) {
+      if ( &apos;s&apos; === $end1 &amp;amp;&amp;amp; $len &amp;gt; 3 ) {
         $term = substr( $term, 0, -1 );
-      } elseif ( 'x' === $end1 &amp;amp;&amp;amp; $len &amp;gt; 3 ) {
+      } elseif ( &apos;x&apos; === $end1 &amp;amp;&amp;amp; $len &amp;gt; 3 ) {
         $term = substr( $term, 0, -1 );
       }
 
@@ -207,19 +207,19 @@ add_filter('relevanssi_hits_filter', 'products_first');
 
 &lt;pre&gt;// load in admin styles
                 function admin_style() {
-                  wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
+                  wp_enqueue_style(&apos;admin-styles&apos;, get_template_directory_uri().&apos;/admin.css&apos;);
                 }
-                add_action('admin_enqueue_scripts', 'admin_style');&lt;/pre&gt;
+                add_action(&apos;admin_enqueue_scripts&apos;, &apos;admin_style&apos;);&lt;/pre&gt;
 
 &lt;p&gt;Next, you’ll need to simply overwrite the default WordPress styling:&lt;/p&gt;
 
 &lt;pre&gt;body .login h1 a {
-                  background-image: url('path/to/the-logo.png');
+                  background-image: url(&apos;path/to/the-logo.png&apos;);
                 }&lt;/pre&gt;
 
 &lt;p&gt;I hope this helps!&lt;/p&gt;</content><author><name>dauble</name></author><category term="wordpress" /><category term="php" /><summary type="html">Over the years I’ve had to search for tons of small snippets for WordPress to do simple tasks. This is another one of those little snippets. One of the final little touches I like to do before launching a website over to a client is to override the default WordPress logo with their logo on the WordPress login splash screen. It’s a simple trick and can be done with the code below.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/wp-walker.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/wp-walker.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Using PHP to Determine Server Protocol</title><link href="https://davidauble.com/2018/11/05/using-php-to-determine-server-protocol.html" rel="alternate" type="text/html" title="Using PHP to Determine Server Protocol" /><published>2018-11-05T00:00:00-05:00</published><updated>2018-11-05T00:00:00-05:00</updated><id>https://davidauble.com/2018/11/05/using-php-to-determine-server-protocol</id><content type="html" xml:base="https://davidauble.com/2018/11/05/using-php-to-determine-server-protocol.html">&lt;p&gt;For various projects I build, I always have three environments: local, staging and production. On my staging and production environments, I have HTTPS enabled, but to keep things simple, I never set up HTTPS on my local environment. A lot of sites I build require forms that redirect the user to a thank you page, once the data is sent and processed to Salesforce. The redirect though requires an absolute path, so I cannot use something like “/contact/thank-you/”. To accomplish this, I use this simple line in PHP to display the appropriate protocol, regardless of dev environment.&lt;/p&gt;
 
-&lt;pre&gt;$protocol = (!empty($_SERVER['HTTPS']) &amp;amp;&amp;amp; $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? &quot;https://&quot; : &quot;http://&quot;;
+&lt;pre&gt;$protocol = (!empty($_SERVER[&apos;HTTPS&apos;]) &amp;amp;&amp;amp; $_SERVER[&apos;HTTPS&apos;] !== &apos;off&apos; || $_SERVER[&apos;SERVER_PORT&apos;] == 443) ? &quot;https://&quot; : &quot;http://&quot;;
                 $page_url = $protocol . $_SERVER[&quot;SERVER_NAME&quot;] . $_SERVER[&quot;REQUEST_URI&quot;];&lt;/pre&gt;
 
 &lt;p&gt;Then, in the form’s retURL hidden input, I echo out the page URL:&lt;/p&gt;
