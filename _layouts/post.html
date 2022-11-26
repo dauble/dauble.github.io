@@ -4,54 +4,54 @@ layout: post
 
 {% include header.html %}
 
-  <section class="hero interior">
-    <div class="container-fluid">
-      <div class="row no-gutter">
-        <div class="col-xs-12">
-          <div class="hero-background vb--home">
-            <div class="hero-background__contain">
-              <h1 class="hero-background__contain__title">{{ page.title }}</h1>
-            </div>
-
-            <div class="intro-banner js-parallax" style="background-image:url('{{ page.image }}')"></div>
+<section class="hero interior">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="col-xs-12">
+        <div class="hero-background vb--home">
+          <div class="hero-background__contain">
+            <h1 class="hero-background__contain__title">{{ page.title }}</h1>
           </div>
+
+          <div class="intro-banner js-parallax" style="background-image:url('{{ page.image }}')"></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="blog">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
 
-          <article>
-            {{ content }}
-          </article>
+        <article>
+          {{ content }}
+        </article>
 
-          <h3>Filed Under:</h3>
-          <ul class="blog__categories">
-            {% if post %}
-              {% assign categories = post.categories %}
-            {% else %}
-              {% assign categories = page.categories %}
-            {% endif %}
+        <h3>Filed Under:</h3>
+        <ul class="blog__categories">
+          {% if post %}
+          {% assign categories = post.categories %}
+          {% else %}
+          {% assign categories = page.categories %}
+          {% endif %}
 
-            {% for category in categories %}
-              <li>
-                <!-- <a href="/{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a> -->
-                <span>{{category}}</span>
-              </li>
-              {% unless forloop.last %}&nbsp;{% endunless %}
-            {% endfor %}
-          </ul>
+          {% for category in categories %}
+          <li>
+            <!-- <a href="/{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a> -->
+            <span>{{category}}</span>
+          </li>
+          {% unless forloop.last %}&nbsp;{% endunless %}
+          {% endfor %}
+        </ul>
 
-          <div class="view-archives">
-            <a href="/blog.html" class="btn btn-secondary">View the archives</a>
-          </div>
+        <div class="view-archives">
+          <a href="/blog.html" class="btn btn-secondary">View the archives</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 {% include footer.html %}
