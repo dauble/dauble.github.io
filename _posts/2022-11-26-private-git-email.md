@@ -10,7 +10,7 @@ categories:
 
 I'm constantly learning new things and most recently learned a little tidbit about a feature about Git, allowing for private email addresses during commits. Let's take a look.
 
-The scenario is that I went to make a commit to a repo on a new computer. I hadn't set up my personal settings or configured my Git user.name or user.email settings yet, and Git warned me about it. My GitHub profile is set to private, and details about my repos are also private. When I was notified to update these settings, without thinking I entered my name and email address and saved the information to the global config. Live went on.
+The scenario is that I went to make a commit to a repo on a new computer. I hadn't set up my personal settings or configured my Git user.name or user.email settings yet, and Git warned me about it. My GitHub profile is set to private, and details about my repos are also private. When I was notified to update these settings, without thinking I entered my name and email address and saved the information to the global config. Life went on.
 
 When I went to commit code later in the day, however, I was notified by Git that my personal email would be exposed, as it was tied to the commit history, thus violating my privacy settings, and ultimately refusing my commit. So what to do? I tried resetting my Git config but that didn't work. I didn't feel like uninstallling and reinstalling Git entirely from my system, so looked online for another solution. Enter, Tower.
 
