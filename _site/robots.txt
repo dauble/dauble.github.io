@@ -1,1 +1,1 @@
-Sitemap: https://davidauble.com/sitemap.xml
+Sitemap: https://dauble.github.io/sitemap.xml
