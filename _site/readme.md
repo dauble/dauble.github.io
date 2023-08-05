@@ -1,7 +1,7 @@
 # Useful commands
-jekyll s
+bundle exec jekyll serve
 
-jekyll build
+bundle exec jekyll build
 
 ## Browser URL
 http://localhost:4000
