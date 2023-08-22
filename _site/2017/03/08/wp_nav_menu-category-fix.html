@@ -28,12 +28,12 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>Solution: wp_nav_menu Not Appearing on Category Template</title>
-  <link rel="stylesheet" href="/assets/css/styles.css?1692744425832807000" />
+  <link rel="stylesheet" href="/assets/css/styles.css?1692747160037456000" />
 
   <link type="application/atom+xml" rel="alternate" href="https://davidauble.com/feed.xml" title="Indianapolis Web Developer" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Solution: wp_nav_menu Not Appearing on Category Template | Indianapolis Web Developer</title>
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.0.1" />
 <meta property="og:title" content="Solution: wp_nav_menu Not Appearing on Category Template" />
 <meta name="author" content="dauble" />
 <meta property="og:locale" content="en_US" />
@@ -57,7 +57,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3ZEK1EKQH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-N3ZEK1EKQH');
@@ -116,19 +116,19 @@
 
 <p>Here is a quick fix. Copy and paste the following code right above the place where you have called the <strong>wp_nav_menu()</strong> function.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
-  if(is_category()) {
-    $wp_query = NULL;
-    $wp_query = new WP_Query(array('post_type' =&gt; 'post','page'));
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+  <span class="k">if</span><span class="p">(</span><span class="nf">is_category</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nv">$wp_query</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">;</span>
+    <span class="nv">$wp_query</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WP_Query</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'post_type'</span> <span class="o">=&gt;</span> <span class="s1">'post'</span><span class="p">,</span><span class="s1">'page'</span><span class="p">));</span>
 
-    wp_nav_menu(array(
-      'menu'=&gt;'your_nav_menu',
-      'fallback_cb' =&gt; 'false')
-    );
+    <span class="nf">wp_nav_menu</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+      <span class="s1">'menu'</span><span class="o">=&gt;</span><span class="s1">'your_nav_menu'</span><span class="p">,</span>
+      <span class="s1">'fallback_cb'</span> <span class="o">=&gt;</span> <span class="s1">'false'</span><span class="p">)</span>
+    <span class="p">);</span>
 
-    wp_reset_query();
-  }
-?&gt;
+    <span class="nf">wp_reset_query</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="cp">?&gt;</span>
 </code></pre></div></div>
 
         </article>
@@ -192,7 +192,7 @@
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="/assets/scripts/scripts.js?1692744425832807000"
+<script src="/assets/scripts/scripts.js?1692747160037456000"
   type="text/javascript"></script>
 </body>
 

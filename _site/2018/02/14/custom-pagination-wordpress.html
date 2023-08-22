@@ -28,12 +28,12 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>Custom Pagination in WordPress</title>
-  <link rel="stylesheet" href="/assets/css/styles.css?1692744425832807000" />
+  <link rel="stylesheet" href="/assets/css/styles.css?1692747160037456000" />
 
   <link type="application/atom+xml" rel="alternate" href="https://davidauble.com/feed.xml" title="Indianapolis Web Developer" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Custom Pagination in WordPress | Indianapolis Web Developer</title>
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.0.1" />
 <meta property="og:title" content="Custom Pagination in WordPress" />
 <meta name="author" content="dauble" />
 <meta property="og:locale" content="en_US" />
@@ -57,7 +57,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3ZEK1EKQH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-N3ZEK1EKQH');
@@ -114,11 +114,11 @@
         <article>
           <p>A while ago I was having troubles with the built-in pagination in WordPress and started looking for alternative solutions. I didn’t want to use a plugin, since I wanted it to work across the board – work with blog posts, search results, taxonomies, etc. I stumbled upon this <a href="http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/" target="_blank">custom method from WPBeginner</a> and gave it a shot. It worked brilliantly. After a few months though, I started noticing a problem – it wasn’t pulling the correct number of total pages, resulting in paged pages with zero results. I ended up looking into the code and have modified it for my needs. Feel free to use this – simply drop this into your <strong>functions.php </strong>file, then call it in your code with:</p>
 
-<p><code class="language-plaintext highlighter-rouge">&lt;?php wpbeginner_numeric_posts_nav(); ?&gt;</code></p>
+<p><code class="highlighter-rouge"><span class="cp">&lt;?php</span> <span class="nf">wpbeginner_numeric_posts_nav</span><span class="p">();</span> <span class="cp">?&gt;</span></code></p>
 
 <p>  Here’s the code:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function wpbeginner_numeric_posts_nav() {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function wpbeginner_numeric_posts_nav() {
 
     if( is_singular() )
         return;
@@ -246,7 +246,7 @@
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="/assets/scripts/scripts.js?1692744425832807000"
+<script src="/assets/scripts/scripts.js?1692747160037456000"
   type="text/javascript"></script>
 </body>
 
