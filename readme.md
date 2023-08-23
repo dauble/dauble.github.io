@@ -1,3 +1,7 @@
+[![pages-build-deployment](https://github.com/dauble/dauble.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=master)](https://github.com/dauble/dauble.github.io/actions/workflows/pages/pages-build-deployment)
+
+[![CodeQL](https://github.com/dauble/dauble.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/dauble/dauble.github.io/actions/workflows/github-code-scanning/codeql)
+
 # Useful commands
 bundle exec jekyll serve
 
