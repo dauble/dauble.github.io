@@ -1,9 +1,12 @@
 ---
 layout: post
-title: Common Misconceptions About WordPress
+title: "Common Misconceptions About WordPress"
 date: 2023-09-01
-author: Your Name
-categories: [WordPress, Development]
+image: /assets/images/posts/git-1.jpg
+author: dauble
+categories:
+  - "wordpress"
+  - "development"
 ---
 
 WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we'll debunk some of these myths.
