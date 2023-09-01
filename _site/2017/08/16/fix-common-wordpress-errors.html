@@ -28,12 +28,12 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>How to Fix Common WordPress Errors</title>
-  <link rel="stylesheet" href="/assets/css/styles.css?1692747160037456000" />
+  <link rel="stylesheet" href="/assets/css/styles.css?1693601770786640000" />
 
   <link type="application/atom+xml" rel="alternate" href="https://davidauble.com/feed.xml" title="Indianapolis Web Developer" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>How to Fix Common WordPress Errors | Indianapolis Web Developer</title>
-<meta name="generator" content="Jekyll v4.0.1" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="How to Fix Common WordPress Errors" />
 <meta name="author" content="dauble" />
 <meta property="og:locale" content="en_US" />
@@ -117,12 +117,12 @@
 <p>1.<strong>WP_DEBUG</strong>
 By enabling WP_DEBUG in your wp-config.php file, you’re able to see what WordPress is doing behind the scenes. This is my go-to solution for most issues I encounter. Is the footer suddenly missing? Maybe you’ve forgotten to close a loop. Part of an included template missing? Maybe there’s an error in the embedded template causing it to not display. To call this function, simply:</p>
 
-<p><code class="highlighter-rouge"><span class="cp">&lt;?php</span> <span class="nb">define</span><span class="p">(</span><span class="s1">'WP_DEBUG'</span><span class="p">,</span> <span class="kc">true</span><span class="err">'</span><span class="p">);</span> <span class="cp">?&gt;</span></code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;?php define('WP_DEBUG', true'); ?&gt;</code></p>
 
 <p>2.<strong>PHP memory</strong>
 Sometimes I get an error when parsing through large amounts of records, or when trying to upload larger files through a post, page or custom post type. Generally, increasing the memory WordPress is allowed to use solves this problem. Add this to your wp-config.php file.</p>
 
-<p><code class="highlighter-rouge"><span class="cp">&lt;?php</span> <span class="nb">define</span><span class="p">(</span> <span class="s1">'WP_MEMORY_LIMIT'</span><span class="p">,</span> <span class="s1">'64M'</span> <span class="p">);</span> <span class="cp">?&gt;</span></code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;?php define( 'WP_MEMORY_LIMIT', '64M' ); ?&gt;</code></p>
 
 <p>3.<strong>Permalinks</strong>
 Sometimes a simple change affects how WordPress handles pages. Did you create a new custom post type that’s not displaying? What about changing a category? Sometimes, setting up a new environment or deploying to Staging/Production will break a site. In these situations, it’s best to reset the permalinks. To do so, in the WordPress admin area, click on <strong>Settings</strong> -&gt; <strong>Permalinks</strong>. Then, choose your URL structure and click Save Changes.</p>
@@ -194,7 +194,7 @@ The most basic and simplest step, disabling all plugins. It’s trivial determin
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="/assets/scripts/scripts.js?1692747160037456000"
+<script src="/assets/scripts/scripts.js?1693601770786640000"
   type="text/javascript"></script>
 </body>
 
