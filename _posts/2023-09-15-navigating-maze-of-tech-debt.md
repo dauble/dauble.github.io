@@ -2,7 +2,7 @@
 layout: post
 title: "Navigating the Maze of Technical Debt"
 date: 2023-09-15
-image: "/assets/images/tech-debt.jpg"
+image: "/assets/images/posts/tech-debt.jpg"
 author: dauble
 categories: [general]
 ---
