@@ -2,7 +2,7 @@
 layout: post
 title: "Stop WordPress from adding 10px padding to Images"
 date: 2018-09-11
-image: /assets/images/posts/new-code.jpg
+image: /assets/images/banners/new-code.jpg
 author: dauble
 categories: [wordpress]
 tags: [php]

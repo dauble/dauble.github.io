@@ -2,7 +2,7 @@
 layout: post
 title: "How to Change the WordPress Admin Login Logo"
 date: 2019-01-24
-image: /assets/images/posts/wp-walker.jpg
+image: /assets/images/banners/wp-walker.jpg
 author: dauble
 categories: [wordpress]
 tags: [php]

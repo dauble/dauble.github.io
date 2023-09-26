@@ -2,7 +2,7 @@
 layout: post
 title: "Run WordPress Multi-Site On localhost"
 date: 2017-11-17
-image: "/assets/images/posts/common-code.jpg"
+image: "/assets/images/banners/common-code.jpg"
 author: dauble
 categories: [wordpress, mysql]
 tags: [phpmyadmin, wamp, mamp]

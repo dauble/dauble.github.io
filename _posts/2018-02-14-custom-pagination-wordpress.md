@@ -2,7 +2,7 @@
 layout: post
 title: "Custom Pagination in WordPress"
 date: 2018-02-14
-image: "/assets/images/posts/blog-banner-compressor.jpg"
+image: "/assets/images/banners/blog-banner-compressor.jpg"
 author: dauble
 categories: [wordpress, pagination]
 tags: [php]

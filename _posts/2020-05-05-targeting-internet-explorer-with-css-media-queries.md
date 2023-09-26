@@ -2,10 +2,13 @@
 layout: post
 title: "Targeting Internet Explorer with CSS Media Queries"
 date: 2020-05-05
-image: /assets/images/posts/ie-11-background.jpg
+banner:
+  image: /assets/images/banners/ie-11-background.jpg
+  opacity: .35
+  background: "#000"
 author: dauble
 categories: [css]
-tags: [ie,internet explorer]
+tags: [ie, internet explorer, css]
 ---
 
 I've been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don't fully support it.

@@ -2,7 +2,7 @@
 layout: post
 title: "Parking Assistant: An Arduino-based Program to Help You Park"
 date: 2018-02-23
-image: "/assets/images/posts/parking-assistant.jpg"
+image: "/assets/images/banners/parking-assistant.jpg"
 author: dauble
 categories: [arduino, projects]
 ---

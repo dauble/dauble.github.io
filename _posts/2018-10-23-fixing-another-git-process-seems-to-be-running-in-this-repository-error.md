@@ -2,7 +2,7 @@
 layout: post
 title: "Fixing 'Another git process seems to be running in this repository' Error in Git"
 date: 2018-10-23
-image: /assets/images/posts/code.jpg
+image: /assets/images/banners/code.jpg
 author: dauble
 categories: [git]
 tags: [command line]

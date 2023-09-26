@@ -2,7 +2,7 @@
 layout: post
 title: "Why Click Events Don't Work in Safari"
 date: 2018-01-29
-image: "/assets/images/posts/cup-of-coffee-laptop-office-macbook-89786.jpg"
+image: "/assets/images/banners/cup-of-coffee-laptop-office-macbook-89786.jpg"
 author: dauble
 categories: [css, safari, rwd]
 tags: [browsers]

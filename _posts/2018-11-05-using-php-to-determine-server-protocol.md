@@ -2,7 +2,7 @@
 layout: post
 title: "Using PHP to Determine Server Protocol"
 date: 2018-11-05
-image: /assets/images/posts/new-code.jpg
+image: /assets/images/banners/new-code.jpg
 author: dauble
 categories: [php]
 tags: [php]

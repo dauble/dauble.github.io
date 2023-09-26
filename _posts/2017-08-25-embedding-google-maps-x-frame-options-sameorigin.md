@@ -2,7 +2,7 @@
 layout: post
 title: "Embedding Google Maps: 'X-Frame-Options' to 'sameorigin'"
 date: 2017-08-25
-image: /assets/images/posts/blog-map.jpg
+image: /assets/images/banners/blog-map.jpg
 author: dauble
 categories: [google]
 tags: [google, google maps]

@@ -2,7 +2,7 @@
 layout: post
 title: "Improving WordPress Search Results with Relevanssi"
 date: 2019-03-05
-image: /assets/images/posts/relevanssi-search.jpg
+image: /assets/images/banners/relevanssi-search.jpg
 author: dauble
 categories: [wordpress, relevanssi]
 tags: [php]

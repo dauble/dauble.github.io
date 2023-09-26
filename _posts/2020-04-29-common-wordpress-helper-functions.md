@@ -2,10 +2,13 @@
 layout: post
 title: "Common WordPress Helper Functions"
 date: 2020-04-29
-image: /assets/images/posts/common-wordpress-functions.jpg
+banner:
+  image: /assets/images/banners/common-wordpress-functions.jpg
+  opacity: .35
+  background: "#000"
 author: dauble
 categories: [wordpress]
-tags: [php]
+tags: [php, development]
 ---
 
 I've used WordPress almost daily for the past six years and thought it'd be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.

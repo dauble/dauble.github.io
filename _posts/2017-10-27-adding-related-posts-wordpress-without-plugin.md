@@ -2,7 +2,7 @@
 layout: post
 title: "Adding Related Posts in WordPress Without a Plugin"
 date: 2017-10-27
-image: /assets/images/posts/related-posts.jpg
+image: /assets/images/banners/related-posts.jpg
 author: dauble
 categories: [wordpress, categories, tags, php]
 tags: [php]

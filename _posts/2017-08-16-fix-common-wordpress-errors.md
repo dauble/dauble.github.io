@@ -2,7 +2,7 @@
 layout: post
 title: "How to Fix Common WordPress Errors"
 date: 2017-08-16
-image: /assets/images/posts/stop.jpg
+image: /assets/images/banners/stop.jpg
 author: dauble
 categories: [wordpress]
 tags: [php, plugins]

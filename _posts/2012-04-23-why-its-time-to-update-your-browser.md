@@ -2,7 +2,7 @@
 layout: post
 title: "Why It's Time to Update Your Browser"
 date: 2012-04-23
-image: "/assets/images/posts/update-browser.jpg"
+image: "/assets/images/banners/update-browser.jpg"
 excerpt: "This is the excerpt"
 author: dauble
 categories: [rwd, modern web]

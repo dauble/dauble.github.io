@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Jekyll Running on Windows 10 x64"
 date: 2020-04-19
-image: /assets/images/posts/page-speed-insights.jpg
+image: /assets/images/banners/page-speed-insights.jpg
 author: dauble
 categories: [jekyll]
 tags: [command line]
