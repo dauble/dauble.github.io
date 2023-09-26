@@ -17,14 +17,12 @@
 <link rel="canonical" href="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html">
 <meta property="og:url" content="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html">
 <meta property="og:site_name" content="Indianapolis Web Developer">
-<meta property="og:image" content="http://localhost:4000/assets/images/banners/robots.jpg">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-04-14T00:00:00-04:00">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="http://localhost:4000/assets/images/banners/robots.jpg">
+<meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Edit Robots.txt with WordPress and Yoast">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2020-04-14T00:00:00-04:00","datePublished":"2020-04-14T00:00:00-04:00","description":"An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a robots.txt file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.","headline":"Edit Robots.txt with WordPress and Yoast","image":"http://localhost:4000/assets/images/banners/robots.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"},"url":"http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2020-04-14T00:00:00-04:00","datePublished":"2020-04-14T00:00:00-04:00","description":"An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a robots.txt file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.","headline":"Edit Robots.txt with WordPress and Yoast","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"},"url":"http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="canonical" href="http://localhost:4000">
@@ -324,7 +322,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-<header class="site-header " role="banner">
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
 
   <div class="wrapper">
     <div class="site-header-inner">
@@ -508,7 +516,7 @@ function googleTranslateElementInit() {
     var documentElement = document.documentElement;
 
     function storeScrollData() {
-      var y = getScrollPos().y;var scrollStatus = "";
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
 
       if (y <= 0) {
         scrollStatus = "top";
@@ -675,7 +683,83 @@ function googleTranslateElementInit() {
 
 
 
-<script>
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.35;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.2513;
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/assets/images/banners/robots.jpg)"></div>
+        <img class="img-placeholder" src="/assets/images/banners/robots.jpg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Edit Robots.txt with WordPress and Yoast</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <div class="post-meta">
+    <time class="dt-published" datetime="2020-04-14T00:00:00-04:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Apr 14, 2020
+    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+  </div>
+<div class="post-tags"><a class="post-tag" href="/tags.html#seo">#seo</a></div></header>
+</div>
+    </div>
+  </section><script>
   function hashLocate(hashValue) {
     hashValue = hashValue.replace(/^.*#h-/, '');
     hashValue = decodeURIComponent(hashValue);
@@ -860,49 +944,6 @@ function googleTranslateElementInit() {
 
 
 
-<header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">Edit Robots.txt with WordPress and Yoast</h1>
-  <h2 class="post-subtitle"></h2>
-
-  <div class="post-meta">
-    <time class="dt-published" datetime="2020-04-14T00:00:00-04:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Apr 14, 2020
-    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
-  </div>
-<div class="post-tags"><a class="post-tag" href="/tags.html#seo">#seo</a></div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
@@ -942,24 +983,8 @@ function googleTranslateElementInit() {
       <div>Related Articles</div>
       <ul>
         <li class="">
-          <a class="post-link" href="/2022/11/26/private-git-email.html" title="Private Email Address via Git Config">
-            Private Email Address via Git Config<span class="post-badges">
-  <span class="post-badge badge-top">TOP</span>
-  <span class="post-badge badge-new">NEW</span>
-</span>
-</a>
-        </li>
-<li class="">
-          <a class="post-link" href="/2017/12/09/chrome-63-update-https-redirect-localhost.html" title="Chrome 63 Update: HTTPS Redirect on localhost">
-            Chrome 63 Update: HTTPS Redirect on localhost<span class="post-badges">
-  <span class="post-badge badge-top">TOP</span>
-  <span class="post-badge badge-new">NEW</span>
-</span>
-</a>
-        </li>
-<li class="">
-          <a class="post-link" href="/2015/01/16/three-reasons-you-should-ditch-image-sliders.html" title="Three Reasons You Should Ditch Image Sliders">
-            Three Reasons You Should Ditch Image Sliders<span class="post-badges">
+          <a class="post-link" href="/2018/10/23/fixing-another-git-process-seems-to-be-running-in-this-repository-error.html" title="Fixing 'Another git process seems to be running in this repository' Error in Git">
+            Fixing 'Another git process seems to be running in this repository' Error...<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
@@ -968,6 +993,22 @@ function googleTranslateElementInit() {
 <li class="">
           <a class="post-link" href="/2019/03/05/improving-wordpress-search-results-with-relevanssi.html" title="Improving WordPress Search Results with Relevanssi">
             Improving WordPress Search Results with Relevanssi<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/2020/04/29/common-wordpress-helper-functions.html" title="Common WordPress Helper Functions">
+            Common WordPress Helper Functions<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
+          <a class="post-link" href="/2022/11/26/private-git-email.html" title="Private Email Address via Git Config">
+            Private Email Address via Git Config<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
@@ -1114,9 +1155,9 @@ function googleTranslateElementInit() {
     <div class="site-footer-inner">
 <div></div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
-      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
-      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
-      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+      generator." href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat" target="_blank">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml" target="_blank">via RSS</a>
 </div>
     </div>
   </div>

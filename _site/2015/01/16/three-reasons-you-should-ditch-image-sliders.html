@@ -17,14 +17,12 @@
 <link rel="canonical" href="http://localhost:4000/2015/01/16/three-reasons-you-should-ditch-image-sliders.html">
 <meta property="og:url" content="http://localhost:4000/2015/01/16/three-reasons-you-should-ditch-image-sliders.html">
 <meta property="og:site_name" content="Indianapolis Web Developer">
-<meta property="og:image" content="http://localhost:4000/assets/images/banners/carousel.jpg">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2015-01-16T00:00:00-05:00">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="http://localhost:4000/assets/images/banners/carousel.jpg">
+<meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Three Reasons You Should Ditch Image Sliders">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2015-01-16T00:00:00-05:00","datePublished":"2015-01-16T00:00:00-05:00","description":"Carousels, sliders and rotating banners – chances are you’ve heard one or more of these terms before. Image carousels can be found on nearly any news site, online store or informational site with one goal in mind: force-feed the user as much content as possible, as soon as they land on your site.","headline":"Three Reasons You Should Ditch Image Sliders","image":"http://localhost:4000/assets/images/banners/carousel.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2015/01/16/three-reasons-you-should-ditch-image-sliders.html"},"url":"http://localhost:4000/2015/01/16/three-reasons-you-should-ditch-image-sliders.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2015-01-16T00:00:00-05:00","datePublished":"2015-01-16T00:00:00-05:00","description":"Carousels, sliders and rotating banners – chances are you’ve heard one or more of these terms before. Image carousels can be found on nearly any news site, online store or informational site with one goal in mind: force-feed the user as much content as possible, as soon as they land on your site.","headline":"Three Reasons You Should Ditch Image Sliders","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2015/01/16/three-reasons-you-should-ditch-image-sliders.html"},"url":"http://localhost:4000/2015/01/16/three-reasons-you-should-ditch-image-sliders.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="canonical" href="http://localhost:4000">
@@ -324,7 +322,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-<header class="site-header " role="banner">
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
 
   <div class="wrapper">
     <div class="site-header-inner">
@@ -508,7 +516,7 @@ function googleTranslateElementInit() {
     var documentElement = document.documentElement;
 
     function storeScrollData() {
-      var y = getScrollPos().y;var scrollStatus = "";
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
 
       if (y <= 0) {
         scrollStatus = "top";
@@ -675,7 +683,82 @@ function googleTranslateElementInit() {
 
 
 
-<script>
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.35;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.2513;
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/assets/images/banners/carousel.jpg)"></div>
+        <img class="img-placeholder" src="/assets/images/banners/carousel.jpg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Three Reasons You Should Ditch Image Sliders</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <div class="post-meta">
+    <time class="dt-published" datetime="2015-01-16T00:00:00-05:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 16, 2015
+    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+  </div></header>
+</div>
+    </div>
+  </section><script>
   function hashLocate(hashValue) {
     hashValue = hashValue.replace(/^.*#h-/, '');
     hashValue = decodeURIComponent(hashValue);
@@ -860,48 +943,6 @@ function googleTranslateElementInit() {
 
 
 
-<header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">Three Reasons You Should Ditch Image Sliders</h1>
-  <h2 class="post-subtitle"></h2>
-
-  <div class="post-meta">
-    <time class="dt-published" datetime="2015-01-16T00:00:00-05:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 16, 2015
-    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
-  </div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
@@ -956,32 +997,32 @@ function googleTranslateElementInit() {
       <div>Related Articles</div>
       <ul>
         <li class="">
-          <a class="post-link" href="/2020/04/29/common-wordpress-helper-functions.html" title="Common WordPress Helper Functions">
-            Common WordPress Helper Functions<span class="post-badges">
+          <a class="post-link" href="/2020/04/14/edit-robots-txt-wordpress-yoast.html" title="Edit Robots.txt with WordPress and Yoast">
+            Edit Robots.txt with WordPress and Yoast<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2020/05/05/targeting-internet-explorer-with-css-media-queries.html" title="Targeting Internet Explorer with CSS Media Queries">
-            Targeting Internet Explorer with CSS Media Queries<span class="post-badges">
+          <a class="post-link" href="/2016/11/09/my-git-workflow-introduction-to-version-control.html" title="My Git Workflow: Introduction to Version Control">
+            My Git Workflow: Introduction to Version Control<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2017/08/16/fix-common-wordpress-errors.html" title="How to Fix Common WordPress Errors">
-            How to Fix Common WordPress Errors<span class="post-badges">
+          <a class="post-link" href="/2017/03/30/how-to-remove-extra-tags-from-wordpress-wysiwyg-editor.html" title="How To: Remove Extra Tags from WordPress WYSIWYG Editor">
+            How To: Remove Extra Tags from WordPress WYSIWYG Editor<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2017/03/08/wp_nav_menu-category-fix.html" title="Solution: wp_nav_menu Not Appearing on Category Template">
-            Solution: wp_nav_menu Not Appearing on Category Template<span class="post-badges">
+          <a class="post-link" href="/2020/04/10/2020-blog-update.html" title="2020 Blog Update">
+            2020 Blog Update<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
@@ -1128,9 +1169,9 @@ function googleTranslateElementInit() {
     <div class="site-footer-inner">
 <div></div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
-      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
-      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
-      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+      generator." href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat" target="_blank">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml" target="_blank">via RSS</a>
 </div>
     </div>
   </div>

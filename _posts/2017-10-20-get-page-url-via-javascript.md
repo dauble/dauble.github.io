@@ -1,8 +1,11 @@
 ---
 layout: post
 title: "Get Page URL via JavaScript"
-date: Fri, 20 Oct 2017 14:37:04
-image: "/assets/images/banners/new-code.jpg"
+date: 2017-10-20
+banner:
+  image: "/assets/images/banners/new-code.jpg"
+  opacity: .35
+  background: "#000"
 author: dauble
 categories: [javascript]
 tags: [javascript]

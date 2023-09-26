@@ -17,14 +17,12 @@
 <link rel="canonical" href="http://localhost:4000/2010/12/12/increase-page-views-with-jquery-tabs-and-google-analytics.html">
 <meta property="og:url" content="http://localhost:4000/2010/12/12/increase-page-views-with-jquery-tabs-and-google-analytics.html">
 <meta property="og:site_name" content="Indianapolis Web Developer">
-<meta property="og:image" content="http://localhost:4000/assets/images/banners/computer.jpg">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-12-12T00:00:00-05:00">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="http://localhost:4000/assets/images/banners/computer.jpg">
+<meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Increase Page Views with jQuery Tabs and Google Analytics">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2010-12-12T00:00:00-05:00","datePublished":"2010-12-12T00:00:00-05:00","description":"If you’re not in e-commerce, I’m sure most of you have seen a decrease in website traffic, due to the holidays.  By now, most web developers use Google Analytics to monitor traffic, keywords and other metrics.  With a combination of Analytics and Webmaster Tools, I’ve been able to increase my web traffic significantly.","headline":"Increase Page Views with jQuery Tabs and Google Analytics","image":"http://localhost:4000/assets/images/banners/computer.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/12/12/increase-page-views-with-jquery-tabs-and-google-analytics.html"},"url":"http://localhost:4000/2010/12/12/increase-page-views-with-jquery-tabs-and-google-analytics.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2010-12-12T00:00:00-05:00","datePublished":"2010-12-12T00:00:00-05:00","description":"If you’re not in e-commerce, I’m sure most of you have seen a decrease in website traffic, due to the holidays.  By now, most web developers use Google Analytics to monitor traffic, keywords and other metrics.  With a combination of Analytics and Webmaster Tools, I’ve been able to increase my web traffic significantly.","headline":"Increase Page Views with jQuery Tabs and Google Analytics","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/12/12/increase-page-views-with-jquery-tabs-and-google-analytics.html"},"url":"http://localhost:4000/2010/12/12/increase-page-views-with-jquery-tabs-and-google-analytics.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="canonical" href="http://localhost:4000">
@@ -324,7 +322,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-<header class="site-header " role="banner">
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
 
   <div class="wrapper">
     <div class="site-header-inner">
@@ -508,7 +516,7 @@ function googleTranslateElementInit() {
     var documentElement = document.documentElement;
 
     function storeScrollData() {
-      var y = getScrollPos().y;var scrollStatus = "";
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
 
       if (y <= 0) {
         scrollStatus = "top";
@@ -675,7 +683,85 @@ function googleTranslateElementInit() {
 
 
 
-<script>
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.35;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.2513;
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/assets/images/banners/computer.jpg)"></div>
+        <img class="img-placeholder" src="/assets/images/banners/computer.jpg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Increase Page Views with jQuery Tabs and Google Analytics</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <div class="post-meta">
+    <time class="dt-published" datetime="2010-12-12T00:00:00-05:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Dec 12, 2010
+    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+  </div>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#javascript">#javascript</a><a class="post-tag" href="/tags.html#google">#google</a>
+</div></header>
+</div>
+    </div>
+  </section><script>
   function hashLocate(hashValue) {
     hashValue = hashValue.replace(/^.*#h-/, '');
     hashValue = decodeURIComponent(hashValue);
@@ -860,51 +946,6 @@ function googleTranslateElementInit() {
 
 
 
-<header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">Increase Page Views with jQuery Tabs and Google Analytics</h1>
-  <h2 class="post-subtitle"></h2>
-
-  <div class="post-meta">
-    <time class="dt-published" datetime="2010-12-12T00:00:00-05:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Dec 12, 2010
-    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
-  </div>
-<div class="post-tags">
-<a class="post-tag" href="/tags.html#javascript">#javascript</a><a class="post-tag" href="/tags.html#google">#google</a>
-</div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
@@ -940,32 +981,32 @@ $(document).ready(function () {
       <div>Related Articles</div>
       <ul>
         <li class="">
-          <a class="post-link" href="/2017/12/09/chrome-63-update-https-redirect-localhost.html" title="Chrome 63 Update: HTTPS Redirect on localhost">
-            Chrome 63 Update: HTTPS Redirect on localhost<span class="post-badges">
+          <a class="post-link" href="/2018/11/05/using-php-to-determine-server-protocol.html" title="Using PHP to Determine Server Protocol">
+            Using PHP to Determine Server Protocol<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2017/08/25/embedding-google-maps-x-frame-options-sameorigin.html" title="Embedding Google Maps: 'X-Frame-Options' to 'sameorigin'">
-            Embedding Google Maps: 'X-Frame-Options' to 'sameorigin'<span class="post-badges">
+          <a class="post-link" href="/2018/10/23/fixing-another-git-process-seems-to-be-running-in-this-repository-error.html" title="Fixing 'Another git process seems to be running in this repository' Error in Git">
+            Fixing 'Another git process seems to be running in this repository' Error...<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2018/02/23/parking-assistant-arduino-based-program-help-park.html" title="Parking Assistant: An Arduino-based Program to Help You Park">
-            Parking Assistant: An Arduino-based Program to Help You Park<span class="post-badges">
+          <a class="post-link" href="/2017/10/20/get-page-url-via-javascript.html" title="Get Page URL via JavaScript">
+            Get Page URL via JavaScript<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2020/04/29/common-wordpress-helper-functions.html" title="Common WordPress Helper Functions">
-            Common WordPress Helper Functions<span class="post-badges">
+          <a class="post-link" href="/2017/10/27/adding-related-posts-wordpress-without-plugin.html" title="Adding Related Posts in WordPress Without a Plugin">
+            Adding Related Posts in WordPress Without a Plugin<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
@@ -1112,9 +1153,9 @@ $(document).ready(function () {
     <div class="site-footer-inner">
 <div></div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
-      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
-      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
-      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+      generator." href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat" target="_blank">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml" target="_blank">via RSS</a>
 </div>
     </div>
   </div>

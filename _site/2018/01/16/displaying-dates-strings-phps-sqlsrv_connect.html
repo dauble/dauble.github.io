@@ -17,14 +17,12 @@
 <link rel="canonical" href="http://localhost:4000/2018/01/16/displaying-dates-strings-phps-sqlsrv_connect.html">
 <meta property="og:url" content="http://localhost:4000/2018/01/16/displaying-dates-strings-phps-sqlsrv_connect.html">
 <meta property="og:site_name" content="Indianapolis Web Developer">
-<meta property="og:image" content="http://localhost:4000/assets/images/banners/sqlservconnect.jpg">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-01-16T00:00:00-05:00">
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="http://localhost:4000/assets/images/banners/sqlservconnect.jpg">
+<meta name="twitter:card" content="summary">
 <meta property="twitter:title" content="Displaying Dates as Strings with PHP’s sqlsrv_connect()">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2018-01-16T00:00:00-05:00","datePublished":"2018-01-16T00:00:00-05:00","description":"Over the last few weeks I’ve been working on a web application that allows me to track how website leads are performing at work. In building this app, I’m interacting with MySQL and SQL Server databases together and using PHP as my language of choice.","headline":"Displaying Dates as Strings with PHP’s sqlsrv_connect()","image":"http://localhost:4000/assets/images/banners/sqlservconnect.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/01/16/displaying-dates-strings-phps-sqlsrv_connect.html"},"url":"http://localhost:4000/2018/01/16/displaying-dates-strings-phps-sqlsrv_connect.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2018-01-16T00:00:00-05:00","datePublished":"2018-01-16T00:00:00-05:00","description":"Over the last few weeks I’ve been working on a web application that allows me to track how website leads are performing at work. In building this app, I’m interacting with MySQL and SQL Server databases together and using PHP as my language of choice.","headline":"Displaying Dates as Strings with PHP’s sqlsrv_connect()","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/01/16/displaying-dates-strings-phps-sqlsrv_connect.html"},"url":"http://localhost:4000/2018/01/16/displaying-dates-strings-phps-sqlsrv_connect.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="icon" href="">
   <link rel="canonical" href="http://localhost:4000">
@@ -324,7 +322,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 
-<header class="site-header " role="banner">
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
 
   <div class="wrapper">
     <div class="site-header-inner">
@@ -508,7 +516,7 @@ function googleTranslateElementInit() {
     var documentElement = document.documentElement;
 
     function storeScrollData() {
-      var y = getScrollPos().y;var scrollStatus = "";
+      var y = getScrollPos().y;documentElement.setAttribute("data-header-transparent", "");var scrollStatus = "";
 
       if (y <= 0) {
         scrollStatus = "top";
@@ -675,7 +683,83 @@ function googleTranslateElementInit() {
 
 
 
-<script>
+
+
+
+
+
+
+
+
+
+
+<style>
+    html .page-banner {
+      background: #000;
+    }
+  </style>
+<style>
+    html .page-banner .page-banner-img > *:first-child {
+      opacity: 0.35;
+    }
+
+    html[data-theme="dark"] .page-banner .page-banner-img > *:first-child {
+      opacity: 0.2513;
+    }
+  </style>
+<section class="page-banner">
+    <div class="page-banner-img">
+<div style="background-image: url(/assets/images/banners/sqlservconnect.jpg)"></div>
+        <img class="img-placeholder" src="/assets/images/banners/sqlservconnect.jpg">
+</div>
+    <div class="wrapper">
+      <div class="page-banner-inner">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Displaying Dates as Strings with PHP's sqlsrv_connect()</h1>
+  <h2 class="post-subtitle"></h2>
+
+  <div class="post-meta">
+    <time class="dt-published" datetime="2018-01-16T00:00:00-05:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 16, 2018
+    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+  </div>
+<div class="post-tags"><a class="post-tag" href="/tags.html#php">#php</a></div></header>
+</div>
+    </div>
+  </section><script>
   function hashLocate(hashValue) {
     hashValue = hashValue.replace(/^.*#h-/, '');
     hashValue = decodeURIComponent(hashValue);
@@ -860,49 +944,6 @@ function googleTranslateElementInit() {
 
 
 
-<header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">Displaying Dates as Strings with PHP's sqlsrv_connect()</h1>
-  <h2 class="post-subtitle"></h2>
-
-  <div class="post-meta">
-    <time class="dt-published" datetime="2018-01-16T00:00:00-05:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jan 16, 2018
-    </time><span class="post-author left-vsplit"><i class="fa fa-pencil"></i> dauble</span>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
-  </div>
-<div class="post-tags"><a class="post-tag" href="/tags.html#php">#php</a></div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
@@ -950,6 +991,14 @@ function googleTranslateElementInit() {
       <div>Related Articles</div>
       <ul>
         <li class="">
+          <a class="post-link" href="/2017/10/20/get-page-url-via-javascript.html" title="Get Page URL via JavaScript">
+            Get Page URL via JavaScript<span class="post-badges">
+  <span class="post-badge badge-top">TOP</span>
+  <span class="post-badge badge-new">NEW</span>
+</span>
+</a>
+        </li>
+<li class="">
           <a class="post-link" href="/2017/08/09/get-wordpress-multisite-table-prefix.html" title="Get WordPress Multisite Table Prefix">
             Get WordPress Multisite Table Prefix<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
@@ -958,24 +1007,16 @@ function googleTranslateElementInit() {
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2019/01/24/how-to-change-the-wordpress-admin-login-logo.html" title="How to Change the WordPress Admin Login Logo">
-            How to Change the WordPress Admin Login Logo<span class="post-badges">
+          <a class="post-link" href="/2017/07/20/reference-wordpress-dashicons-css.html" title="Reference WordPress Dashicons in CSS">
+            Reference WordPress Dashicons in CSS<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
 </a>
         </li>
 <li class="">
-          <a class="post-link" href="/2012/04/23/why-its-time-to-update-your-browser.html" title="Why It's Time to Update Your Browser">
-            Why It's Time to Update Your Browser<span class="post-badges">
-  <span class="post-badge badge-top">TOP</span>
-  <span class="post-badge badge-new">NEW</span>
-</span>
-</a>
-        </li>
-<li class="">
-          <a class="post-link" href="/2017/03/15/how-to-use-fontawesome-fonts-in-your-css-before-after.html" title="How To: Use FontAwesome Fonts in Your CSS :before &amp; :after">
-            How To: Use FontAwesome Fonts in Your CSS :before &amp; :after<span class="post-badges">
+          <a class="post-link" href="/2018/02/23/parking-assistant-arduino-based-program-help-park.html" title="Parking Assistant: An Arduino-based Program to Help You Park">
+            Parking Assistant: An Arduino-based Program to Help You Park<span class="post-badges">
   <span class="post-badge badge-top">TOP</span>
   <span class="post-badge badge-new">NEW</span>
 </span>
@@ -1122,9 +1163,9 @@ function googleTranslateElementInit() {
     <div class="site-footer-inner">
 <div></div>
       <div>Powered by <a title="Jekyll is a simple, blog-aware, static site
-      generator." href="https://jekyllrb.com/">Jekyll</a> &amp; <a title="Yat, yet
-      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a>.</div>
-      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml">via RSS</a>
+      generator." href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a title="Yat, yet
+      another theme." href="https://github.com/jeffreytse/jekyll-theme-yat" target="_blank">Yat Theme</a>.</div>
+      <div class="footer-col rss-subscribe">Subscribe <a href="/feed.xml" target="_blank">via RSS</a>
 </div>
     </div>
   </div>

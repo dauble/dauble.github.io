@@ -2,7 +2,10 @@
 layout: post
 title: "Reference WordPress Dashicons in CSS"
 date: 2017-07-20
-image: "/assets/images/banners/bg-tools.jpg"
+banner:
+  image: "/assets/images/banners/bg-tools.jpg"
+  opacity: .35
+  background: "#000"
 author: dauble
 categories: [wordpress, dashicons, css]
 tags: [php, css]
