@@ -2,7 +2,10 @@
 layout: post
 title: "Get WordPress Multisite Table Prefix"
 date: 2017-08-09
-image: "/assets/images/posts/blog-banner.jpg"
+banner:
+  image: "/assets/images/banners/blog-banner.jpg"
+  opacity: .35
+  background: "#000"
 author: dauble
 categories: [wordpress, php]
 tags: [mysql, php]

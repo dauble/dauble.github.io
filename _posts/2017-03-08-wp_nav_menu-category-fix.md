@@ -2,7 +2,10 @@
 layout: post
 title: "Solution: wp_nav_menu Not Appearing on Category Template"
 date: 2017-03-08
-image: "/assets/images/posts/new-code.jpg"
+banner:
+  image: "/assets/images/banners/new-code.jpg"
+  opacity: .35
+  background: "#000"
 author: dauble
 categories: [wordpress]
 tags: [php]

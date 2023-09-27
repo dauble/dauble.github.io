@@ -2,9 +2,13 @@
 layout: post
 title: "Navigating the Maze of Technical Debt"
 date: 2023-09-15
-image: "/assets/images/posts/tech-debt.jpg"
+banner:
+  image: "/assets/images/banners/tech-debt.jpg"
+  opacity: .35
+  background: "#000"
 author: dauble
-categories: [general]
+tags: general development
+categories: general development
 ---
 
 Web development, in its dynamic and ever-evolving nature, often involves a trade-off between delivering solutions quickly and building a rock-solid foundation. This trade-off is where technical debt comes into play. In this blog post, we'll explore technical debt from the perspective of a web developer, understanding what it is, how it accumulates, its impact on projects, and strategies for managing it effectively.

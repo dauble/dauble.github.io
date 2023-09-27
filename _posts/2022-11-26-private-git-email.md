@@ -2,10 +2,13 @@
 layout: post
 title: "Private Email Address via Git Config"
 date: 2022-11-26
-image: /assets/images/posts/git-1.jpg
+banner:
+  image: /assets/images/banners/git-1.jpg
+  opacity: .35
+  background: "#000"
 author: dauble
-categories:
-  - "git"
+categories: git
+tags: git
 ---
 
 I'm constantly learning new things and most recently learned a little tidbit about a feature about Git, allowing for private email addresses during commits. Let's take a look.
