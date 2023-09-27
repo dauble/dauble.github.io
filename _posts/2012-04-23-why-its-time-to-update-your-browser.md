@@ -6,7 +6,6 @@ banner:
   image: "/assets/images/banners/update-browser.jpg"
   opacity: .35
   background: "#000"
-excerpt: "This is the excerpt"
 author: dauble
 categories: [rwd, modern web]
 ---
