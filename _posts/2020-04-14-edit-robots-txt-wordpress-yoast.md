@@ -2,12 +2,9 @@
 layout: post
 title: "Edit Robots.txt with WordPress and Yoast"
 date: 2020-04-14
-banner:
-  image: /assets/images/banners/robots.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/robots.jpg
 author: dauble
-categories: [wordpress apache iis]
+categories: [wordpress, apache, iis]
 tags: [seo]
 ---
 

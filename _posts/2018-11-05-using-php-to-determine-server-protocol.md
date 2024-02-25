@@ -2,10 +2,7 @@
 layout: post
 title: "Using PHP to Determine Server Protocol"
 date: 2018-11-05
-banner: 
-  image: /assets/images/banners/new-code.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/new-code.jpg
 author: dauble
 categories: [php]
 tags: [php]

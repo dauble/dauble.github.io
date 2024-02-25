@@ -1,0 +1,43 @@
+<footer>
+  <div class="container">
+    <div class="col-xs-12 col-sm-4 copyright">
+      <p>&copy; David M. Auble | {{ site.time | date: '%Y' }}</p>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <ul class="list-unstyled list-inline social-icons">
+        <li>
+          <a href="https://www.linkedin.com/in/dauble" target="_blank">
+            <i class="fa fa-linkedin fa-2x"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:dauble@davidauble.info" target="_blank">
+            <i class="fa fa-envelope fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: ['Roboto&display=swap'] }
+  };
+  (function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="{{ '/assets/scripts/scripts.js' | relative_url }}?{{ site.time | date: '%s%N' }}"
+  type="text/javascript"></script>
+</body>
+
+</html>

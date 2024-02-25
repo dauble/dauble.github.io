@@ -2,10 +2,7 @@
 layout: post
 title: Increase Page Views with jQuery Tabs and Google Analytics
 date: 2010-12-12
-banner:
-  image: "/assets/images/banners/computer.jpg"
-  opacity: .35
-  background: "#000"
+image: "/assets/images/posts/computer.jpg"
 author: dauble
 categories: [javascript, google analytics]
 tags: [javascript, google]

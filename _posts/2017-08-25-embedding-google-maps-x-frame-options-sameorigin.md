@@ -2,10 +2,7 @@
 layout: post
 title: "Embedding Google Maps: 'X-Frame-Options' to 'sameorigin'"
 date: 2017-08-25
-banner:
-  image: /assets/images/banners/blog-map.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/blog-map.jpg
 author: dauble
 categories: [google]
 tags: [google, google maps]

@@ -2,10 +2,7 @@
 layout: post
 title: "How To: Remove Extra Tags from WordPress WYSIWYG Editor"
 date: 2017-03-30
-banner:
-  image: /assets/images/banners/computer.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/computer.jpg
 author: dauble
 categories: [wordpress, php]
 tags: [php]

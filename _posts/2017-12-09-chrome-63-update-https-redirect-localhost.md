@@ -2,10 +2,7 @@
 layout: post
 title: "Chrome 63 Update: HTTPS Redirect on localhost"
 date: 2017-12-09
-banner:
-  image: /assets/images/banners/chrome-update.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/chrome-update.jpg
 author: dauble
 categories: [chrome]
 tags: [update]

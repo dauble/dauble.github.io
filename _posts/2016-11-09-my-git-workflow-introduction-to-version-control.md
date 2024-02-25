@@ -2,10 +2,7 @@
 layout: post
 title: "My Git Workflow: Introduction to Version Control"
 date: 2016-11-09
-banner:
-  image: "/assets/images/banners/branching-with-git.jpg"
-  opacity: .35
-  background: "#000"
+image: "/assets/images/posts/branching-with-git.jpg"
 author: dauble
 categories: [git]
 tags: [command line]
