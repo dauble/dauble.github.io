@@ -2,13 +2,8 @@
 layout: post
 title: "David Auble, Manager"
 date: 2020-09-06
-banner:
-  image: /assets/images/banners/david-auble-manager.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/david-auble-manager.jpg
 author: dauble
-categories: general
-tags: general
 ---
 
 It's been no secret that I've been working towards finishing my MBA in Finance. I am on track to graduate this coming December and am excited to have not only completed the two-year program, but also for what lies ahead. I've been striving to enter into management for several years and knew an MBA would help add value to my professional experience.

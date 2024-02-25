@@ -2,10 +2,7 @@
 layout: post
 title:  "The Panda Effect"
 date: 2011-12-06
-banner:
-  image: "/assets/images/banners/panda-1.jpg"
-  opacity: .35
-  background: "#000"
+image: "/assets/images/posts/panda-1.jpg"
 author: dauble
 categories: [seo, google]
 tags: [google]

@@ -1,10 +1,7 @@
 ---
 layout: post
 title: "Three Reasons You Should Ditch Image Sliders"
-banner:
-  image: "/assets/images/banners/carousel.jpg"
-  opacity: .35
-  background: "#000"
+image: "/assets/images/posts/carousel.jpg"
 date: 2015-01-16
 author: dauble
 categories: [carousel, seo, modern web]

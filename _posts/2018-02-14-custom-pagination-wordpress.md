@@ -2,10 +2,7 @@
 layout: post
 title: "Custom Pagination in WordPress"
 date: 2018-02-14
-banner:
-    image: "/assets/images/banners/blog-banner-compressor.jpg"
-    opacity: .35
-    background: "#000"
+image: "/assets/images/posts/blog-banner-compressor.jpg"
 author: dauble
 categories: [wordpress, pagination]
 tags: [php]

@@ -2,10 +2,7 @@
 layout: post
 title: "How to Fix Common WordPress Errors"
 date: 2017-08-16
-banner:
-  image: /assets/images/banners/stop.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/stop.jpg
 author: dauble
 categories: [wordpress]
 tags: [php, plugins]

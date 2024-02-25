@@ -2,10 +2,7 @@
 layout: post
 title: "Displaying Dates as Strings with PHP's sqlsrv_connect()"
 date: 2018-01-16
-banner:
-    image: "/assets/images/banners/sqlservconnect.jpg"
-    opacity: .35
-    background: "#000"
+image: "/assets/images/posts/sqlservconnect.jpg"
 author: dauble
 categories: [sql server, php]
 tags: [php]

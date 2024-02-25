@@ -2,10 +2,7 @@
 layout: post
 title: "How To: Use FontAwesome Fonts in Your CSS :before & :after"
 date: 2017-03-15
-banner:
-  image: /assets/images/banners/code.jpg
-  opacity: .35
-  background: "#000"
+image: /assets/images/posts/code.jpg
 author: dauble
 categories: [fontawesome, css]
 tags: [css]

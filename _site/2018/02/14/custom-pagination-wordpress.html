@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="google-site-verification" content="mSvQDj528SrivJO3707MQV4uw5aUBxBXMfO9FTZz_sI" />
+  <meta name="msvalidate.01" content="581C4BBEDA8127FA57A7F2B93320F97F" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Custom Pagination in WordPress</title>
+  <link rel="stylesheet" href="/assets/css/styles.css?1708873308550424000" />
+
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Indianapolis Web Developer" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Custom Pagination in WordPress | Indianapolis Web Developer</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Custom Pagination in WordPress" />
+<meta name="author" content="dauble" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A while ago I was having troubles with the built-in pagination in WordPress and started looking for alternative solutions. I didn’t want to use a plugin, since I wanted it to work across the board – work with blog posts, search results, taxonomies, etc. I stumbled upon this custom method from WPBeginner and gave it a shot. It worked brilliantly. After a few months though, I started noticing a problem – it wasn’t pulling the correct number of total pages, resulting in paged pages with zero results. I ended up looking into the code and have modified it for my needs. Feel free to use this – simply drop this into your functions.php file, then call it in your code with:" />
+<meta property="og:description" content="A while ago I was having troubles with the built-in pagination in WordPress and started looking for alternative solutions. I didn’t want to use a plugin, since I wanted it to work across the board – work with blog posts, search results, taxonomies, etc. I stumbled upon this custom method from WPBeginner and gave it a shot. It worked brilliantly. After a few months though, I started noticing a problem – it wasn’t pulling the correct number of total pages, resulting in paged pages with zero results. I ended up looking into the code and have modified it for my needs. Feel free to use this – simply drop this into your functions.php file, then call it in your code with:" />
+<link rel="canonical" href="http://localhost:4000/2018/02/14/custom-pagination-wordpress.html" />
+<meta property="og:url" content="http://localhost:4000/2018/02/14/custom-pagination-wordpress.html" />
+<meta property="og:site_name" content="Indianapolis Web Developer" />
+<meta property="og:image" content="http://localhost:4000/assets/images/posts/blog-banner-compressor.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-14T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/posts/blog-banner-compressor.jpg" />
+<meta property="twitter:title" content="Custom Pagination in WordPress" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2018-02-14T00:00:00-05:00","datePublished":"2018-02-14T00:00:00-05:00","description":"A while ago I was having troubles with the built-in pagination in WordPress and started looking for alternative solutions. I didn’t want to use a plugin, since I wanted it to work across the board – work with blog posts, search results, taxonomies, etc. I stumbled upon this custom method from WPBeginner and gave it a shot. It worked brilliantly. After a few months though, I started noticing a problem – it wasn’t pulling the correct number of total pages, resulting in paged pages with zero results. I ended up looking into the code and have modified it for my needs. Feel free to use this – simply drop this into your functions.php file, then call it in your code with:","headline":"Custom Pagination in WordPress","image":"http://localhost:4000/assets/images/posts/blog-banner-compressor.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/02/14/custom-pagination-wordpress.html"},"url":"http://localhost:4000/2018/02/14/custom-pagination-wordpress.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3ZEK1EKQH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-N3ZEK1EKQH');
+  </script>
+</head>
+
+<body>
+  <div id="page-top"></div>
+  
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+
+        <a class="navbar-brand page-scroll" href="/">
+          <span class="logo"></span>
+          <span class="logo-text">David M. Auble</span>
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul id="menu-primary" class="nav navbar-nav">
+          <li class="menu-item"><a href="/#who-i-am">About</a></li>
+          <li class="menu-item"><a href="/#services">Services</a></li>
+          <li class="menu-item"><a href="/blog.html">Blog</a></li>
+          <li class="menu-item"><a href="/#clients">Work</a></li>
+          <li class="menu-item"><a href="/#twitter">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<section class="hero interior">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="col-xs-12">
+        <div class="hero-background vb--home">
+          <div class="hero-background__contain">
+            <h1 class="hero-background__contain__title">Custom Pagination in WordPress</h1>
+          </div>
+
+          <div class="intro-banner js-parallax" style="background-image:url('/assets/images/posts/blog-banner-compressor.jpg')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+
+        <article>
+          <p>A while ago I was having troubles with the built-in pagination in WordPress and started looking for alternative solutions. I didn’t want to use a plugin, since I wanted it to work across the board – work with blog posts, search results, taxonomies, etc. I stumbled upon this <a href="http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/" target="_blank">custom method from WPBeginner</a> and gave it a shot. It worked brilliantly. After a few months though, I started noticing a problem – it wasn’t pulling the correct number of total pages, resulting in paged pages with zero results. I ended up looking into the code and have modified it for my needs. Feel free to use this – simply drop this into your <strong>functions.php </strong>file, then call it in your code with:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;?php wpbeginner_numeric_posts_nav(); ?&gt;</code></p>
+
+<p>  Here’s the code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function wpbeginner_numeric_posts_nav() {
+
+    if( is_singular() )
+        return;
+
+    global $wp_query;
+
+    if( $wp_query-&gt;max_num_pages &lt;= 1 )
+        return;
+
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max   = intval( $wp_query-&gt;posts-&gt;max_num_pages );
+
+    if ( $paged &gt;= 1 )
+        $links[] = $paged;
+
+    if ( $paged &gt;= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
+    }
+
+    if ( ( $paged + 2 ) &lt;= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
+    }
+
+    echo '&lt;div class="navigation"&gt;&lt;ul&gt;' . "\n";
+
+    if ( get_previous_posts_link() )
+        printf( '&lt;li&gt;%s&lt;/li&gt;' . "\n", get_previous_posts_link('&amp;laquo; Previous Page', $max) );
+
+    if ( ! in_array( 1, $links ) ) {
+        $class = 1 == $paged ? ' class="active"' : '';
+
+        printf( '&lt;li&gt;&lt;a href="%s"&gt;%s&lt;/a&gt;&lt;/li&gt;' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+        if ( ! in_array( 2, $links ) )
+            echo '&lt;li&gt;…&lt;/li&gt;';
+    }
+
+    sort( $links );
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="active"' : '';
+        printf( '&lt;li&gt;&lt;a href="%s"&gt;%s&lt;/a&gt;&lt;/li&gt;' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+    }
+
+    if ( ! in_array( $max, $links ) ) {
+        if ( ! in_array( $max - 1, $links ) )
+            echo '&lt;li&gt;…&lt;/li&gt;' . "\n";
+
+        $class = $paged == $max ? ' class="active"' : '';
+        printf( '&lt;li&gt;&lt;a href="%s"&gt;%s&lt;/a&gt;&lt;/li&gt;' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+    }
+
+    if ( get_next_posts_link() )
+        printf( '&lt;li&gt;%s&lt;/li&gt;' . "\n", get_next_posts_link('Next Page &amp;raquo;', $max) );
+
+    echo '&lt;/ul&gt;&lt;/div&gt;' . "\n";
+  }
+</code></pre></div></div>
+
+        </article>
+
+        <h3>Filed Under:</h3>
+        <ul class="blog__categories">
+          
+
+          
+          <li>
+            <!-- <a href="///categories/#wordpress">wordpress</a> -->
+            <span>wordpress</span>
+          </li>
+          &nbsp;
+          
+          <li>
+            <!-- <a href="///categories/#pagination">pagination</a> -->
+            <span>pagination</span>
+          </li>
+          
+          
+        </ul>
+
+        <div class="view-archives">
+          <a href="/blog.html" class="btn btn-secondary">View the archives</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="col-xs-12 col-sm-4 copyright">
+      <p>&copy; David M. Auble | 2024</p>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <ul class="list-unstyled list-inline social-icons">
+        <li>
+          <a href="https://www.linkedin.com/in/dauble" target="_blank">
+            <i class="fa fa-linkedin fa-2x"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:dauble@davidauble.info" target="_blank">
+            <i class="fa fa-envelope fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: ['Roboto&display=swap'] }
+  };
+  (function () {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/assets/scripts/scripts.js?1708873308550424000"
+  type="text/javascript"></script>
+</body>
+
+</html>

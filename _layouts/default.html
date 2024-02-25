@@ -1,27 +1,149 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+---
+layout: default
+---
 
-  {%- include head.html -%}
+{% include header.html %}
 
-  <body>
+<section class="hero">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="col-xs-12">
+        <div class="hero-background vb--home" data-parallax="scroll">
+          <div class="hero-background__contain">
+            <h1 class="hero-background__contain__title">Hey, I'm David.</h1>
+            <h4 class="hero-background__contain__subtitle">I'm an Indianapolis-based software development manager doing my part in helping keep the Internet beautiful</h4>
+            <a href="#services" class="btn btn-primary js-scroll-nav">See what I do</a>
+          </div>
 
-    {%- include views/header.html -%}
-
-    {%- include views/banner.html -%}
-
-    {%- include extensions/hashlocate.html -%}
-
-    {%- include extensions/theme-toggle.html -%}
-
-    {%- include extensions/click-to-top.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
+          <div class="intro-banner"></div>
+        </div>
       </div>
-    </main>
+    </div>
+  </div>
+</section>
 
-    {%- include views/footer.html -%}
+<section id="who-i-am" class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Meet David</h2>
+        <p>I'm just a local web geek who's passionate about pixel-perfect designs, cutting-edge trends, and thinking about the road ahead. I strive for excellence in every project I complete.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </body>
-</html>
+<section id="services" class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Services</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="service">
+        <div class="service__item">
+          <h3>
+            <i class="fa fa-code" aria-hidden="true"></i>&nbsp;
+            Web Development
+          </h3>
+          <br>
+          <p>Javascript. React. Node. These are just a few of the languages I use to build highly-customized, advanced
+            applications for the modern web.</p>
+        </div>
+
+        <div class="service__item">
+          <h3>
+            <i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;
+            Disaster Recovery
+          </h3>
+          <br>
+          <p>We live in a connected world where no one is safe. I can help recover information and get your application back online from hacks and provide guidance on further locking down your application.</p>
+        </div>
+
+        <div class="service__item">
+          <h3>
+            <i class="fa fa-bitbucket" aria-hidden="true"></i>&nbsp;
+            Version Control
+          </h3>
+          <br>
+          <p>All of my code is kept in the cloud. This means easy backups and restore points in the event of an outage.
+            All code is logged, each change is carefully documented, providing an extensive outline of your website.</p>
+        </div>
+
+        <div class="service__item">
+          <h3>
+            <i class="fa fa-code" aria-hidden="true"></i>&nbsp;
+            Custom Development
+          </h3>
+          <br>
+          <p>Software dashboards, big data management, customer insights. I've worked with global companies providing these services and can share this experience for your next project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what-i-think" class="blog">
+  <div class="container">
+    {% for post in site.posts limit:1 %}
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>{{ post.title }}</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="{{ post.image }}" alt="" class="img-responsive">
+      </div>
+      <div class="col-sm-8">
+        <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+        <a href="{{ post.url }}" class="btn btn-secondary">Continue reading</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="clients" class="clients">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <h2>Who I've Worked With</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 logos">
+        <div class="logos__logo">
+          <img src="/assets/images/iuhealth.svg" alt="" class="clients__logo img-responsive">
+        </div>
+        <div class="logos__logo">
+          <img src="/assets/images/lilly.png" alt="" class="clients__logo img-responsive">
+        </div>
+        <div class="logos__logo">
+          <img src="/assets/images/salesforce.png" alt="" class="clients__logo" height="88">
+        </div>
+        <div class="logos__logo">
+          <img src="/assets/images/anthem.svg" alt="" class="clients__logo img-responsive">
+        </div>
+        <div class="logos__logo">
+          <img src="/assets/images/loyola.svg" alt="" class="clients__logo img-responsive">
+        </div>
+        <div class="logos__logo">
+          <img src="/assets/images/marian.svg" alt="" class="clients__logo img-responsive">
+        </div>
+        <div class="logos__logo">
+          <img src="/assets/images/neu.svg" alt="" class="clients__logo img-responsive">
+        </div>
+        <div class="logos__logo">
+          <img src="/assets/images/xavier.svg" alt="" class="clients__logo img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}
