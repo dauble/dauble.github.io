@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started with GitHub Actions"
 date: 2024-02-28
-image: /assets/images/posts/wordpress-misconceptions.jpg
+image: /assets/images/posts/pexels-realtoughcandycom-11035544.jpg
 author: dauble
 categories:
   - "github"
