@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-25T10:12:19-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">Common Misconceptions About WordPress</title><link href="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html" rel="alternate" type="text/html" title="Common Misconceptions About WordPress" /><published>2023-09-01T00:00:00-04:00</published><updated>2023-09-01T00:00:00-04:00</updated><id>http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress</id><content type="html" xml:base="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html"><![CDATA[<p>WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-10T16:03:18-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">Getting Started with GitHub Actions</title><link href="http://localhost:4000/2024/02/28/getting-started-github-actions.html" rel="alternate" type="text/html" title="Getting Started with GitHub Actions" /><published>2024-02-28T00:00:00-05:00</published><updated>2024-02-28T00:00:00-05:00</updated><id>http://localhost:4000/2024/02/28/getting-started-github-actions</id><content type="html" xml:base="http://localhost:4000/2024/02/28/getting-started-github-actions.html"><![CDATA[<h1 id="getting-started-with-github-actions">Getting Started with GitHub Actions</h1>
+
+<p>GitHub Actions is a powerful tool that automates your software development workflows right from your GitHub repository. Whether you want to run tests, deploy applications, or automate any other tasks, GitHub Actions provides a flexible and customizable framework. In this guide, we’ll walk through the basics of setting up and using GitHub Actions to streamline your development process.</p>
+
+<h2 id="what-is-github-actions">What is GitHub Actions?</h2>
+
+<p>GitHub Actions is a continuous integration and continuous deployment (CI/CD) platform integrated into GitHub. It allows you to define custom workflows using YAML files, triggering automated processes based on events in your repository, such as pushes, pull requests, or issue comments.</p>
+
+<h2 id="setting-up-a-workflow">Setting up a Workflow</h2>
+
+<p>To get started with GitHub Actions, create a <code class="language-plaintext highlighter-rouge">.github/workflows</code> directory in the root of your repository. In this directory, you can create YAML files that define your workflows. Let’s create a simple workflow to run tests whenever there’s a push or pull request to the <code class="language-plaintext highlighter-rouge">main</code> branch.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/test.yml</span>
+
+<span class="na">name</span><span class="pi">:</span> <span class="s">Run Tests</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>
+  <span class="na">pull_request</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">main</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">test</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+    <span class="na">steps</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js</span>
+      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v3</span>
+      <span class="na">with</span><span class="pi">:</span>
+        <span class="na">node-version</span><span class="pi">:</span> <span class="m">14</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
+
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run tests</span>
+      <span class="na">run</span><span class="pi">:</span> <span class="s">npm test</span>
+</code></pre></div></div>
+
+<p>This workflow defines a job named <code class="language-plaintext highlighter-rouge">test</code> that runs on the latest version of Ubuntu. It checks out the repository, sets up Node.js, installs dependencies, and runs tests. You can customize these steps based on your project’s requirements.</p>
+
+<h2 id="workflow-triggers">Workflow Triggers</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">on</code> section in the workflow file specifies the events that trigger the workflow. In the example, the workflow runs on every push to the <code class="language-plaintext highlighter-rouge">main</code> branch and on every pull request targeting the <code class="language-plaintext highlighter-rouge">main</code> branch. You can customize this section to fit your workflow trigger needs.</p>
+
+<h2 id="actions-marketplace">Actions Marketplace</h2>
+
+<p>GitHub Actions provides a marketplace with a vast collection of pre-built actions that you can use in your workflows. These actions cover a wide range of tasks, from deploying to popular cloud providers to sending notifications. To use an action, include it in your workflow file.</p>
+
+<p>For example, to deploy to GitHub Pages after running tests, add the following steps to the workflow file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
+  <span class="na">uses</span><span class="pi">:</span> <span class="s">JamesIves/github-pages-deploy-action@4.1.6</span>
+  <span class="na">with</span><span class="pi">:</span>
+    <span class="na">branch</span><span class="pi">:</span> <span class="s">gh-pages</span>
+    <span class="na">folder</span><span class="pi">:</span> <span class="s">build</span>
+</code></pre></div></div>
+
+<p>This step uses the <code class="language-plaintext highlighter-rouge">github-pages-deploy-action</code> to deploy the contents of the <code class="language-plaintext highlighter-rouge">build</code> folder to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</p>
+
+<h2 id="monitoring-workflow-runs">Monitoring Workflow Runs</h2>
+
+<p>After pushing changes or creating pull requests, you can view the status of your workflows on the “Actions” tab of your GitHub repository. It provides detailed information about each workflow run, including the logs for each step.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>GitHub Actions is a powerful tool that can significantly improve your development workflow. By automating repetitive tasks, you can save time and reduce the chance of human error. As you become more familiar with GitHub Actions, you can explore more advanced features and customize your workflows to meet the specific needs of your projects. The flexibility and integration capabilities of GitHub Actions make it a valuable asset for any development team. Get started today, and streamline your development process with automation!</p>
+
+<p><a href="https://www.pexels.com/photo/person-holding-a-black-and-white-paper-with-message-11035544/">Photo by RealToughCandy.com</a></p>
+
+<p><em>This post was generated with the help of AI.</em></p>]]></content><author><name>dauble</name></author><category term="github" /><category term="development" /><summary type="html"><![CDATA[Getting Started with GitHub Actions]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common Misconceptions About WordPress</title><link href="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html" rel="alternate" type="text/html" title="Common Misconceptions About WordPress" /><published>2023-09-01T00:00:00-04:00</published><updated>2023-09-01T00:00:00-04:00</updated><id>http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress</id><content type="html" xml:base="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html"><![CDATA[<p>WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.</p>
 
 <h2 id="myth-1-wordpress-is-just-for-blogs">Myth 1: WordPress is Just for Blogs</h2>
 
@@ -249,18 +324,4 @@ add_filter('relevanssi_hits_filter', 'products_first');
       return $term;
     }</pre>
 
-<p>I couldn’t be happier with this plugin and hope it solves any problems you might have.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="relevanssi" /><category term="php" /><summary type="html"><![CDATA[I’ve been managing 17 WordPress sites for the past few years and one thing I’ve noticed is the default search built into WordPress isn’t flexible and doesn’t always return the most accurate results. I use Advanced Custom Fields heavily for each of the sites and have noticed the default search doesn’t search into these fields; it only searches titles and what’s in the page’s main content box. Since most of the pages on our sites don’t use those, I needed to find a better option.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/relevanssi-search.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/relevanssi-search.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How to Change the WordPress Admin Login Logo</title><link href="http://localhost:4000/2019/01/24/how-to-change-the-wordpress-admin-login-logo.html" rel="alternate" type="text/html" title="How to Change the WordPress Admin Login Logo" /><published>2019-01-24T00:00:00-05:00</published><updated>2019-01-24T00:00:00-05:00</updated><id>http://localhost:4000/2019/01/24/how-to-change-the-wordpress-admin-login-logo</id><content type="html" xml:base="http://localhost:4000/2019/01/24/how-to-change-the-wordpress-admin-login-logo.html"><![CDATA[<p>Over the years I’ve had to search for tons of small snippets for WordPress to do simple tasks. This is another one of those little snippets. One of the final little touches I like to do before launching a website over to a client is to override the default WordPress logo with their logo on the WordPress login splash screen. It’s a simple trick and can be done with the code below.</p>
-
-<pre>// load in admin styles
-                function admin_style() {
-                  wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
-                }
-                add_action('admin_enqueue_scripts', 'admin_style');</pre>
-
-<p>Next, you’ll need to simply overwrite the default WordPress styling:</p>
-
-<pre>body .login h1 a {
-                  background-image: url('path/to/the-logo.png');
-                }</pre>
-
-<p>I hope this helps!</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="php" /><summary type="html"><![CDATA[Over the years I’ve had to search for tons of small snippets for WordPress to do simple tasks. This is another one of those little snippets. One of the final little touches I like to do before launching a website over to a client is to override the default WordPress logo with their logo on the WordPress login splash screen. It’s a simple trick and can be done with the code below.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/wp-walker.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/wp-walker.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>I couldn’t be happier with this plugin and hope it solves any problems you might have.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="relevanssi" /><category term="php" /><summary type="html"><![CDATA[I’ve been managing 17 WordPress sites for the past few years and one thing I’ve noticed is the default search built into WordPress isn’t flexible and doesn’t always return the most accurate results. I use Advanced Custom Fields heavily for each of the sites and have noticed the default search doesn’t search into these fields; it only searches titles and what’s in the page’s main content box. Since most of the pages on our sites don’t use those, I needed to find a better option.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/relevanssi-search.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/relevanssi-search.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -52,3 +52,13 @@ function animate() {
     $(".js-parallax").css("transform", $translate3dValues);
   });
 }
+
+if (window.location.hostname != "davidauble.com"
+    && !window.location.hostname.endsWith(".davidauble.com"))
+{
+    var p = !document.location.protocol.startsWith("http")?"http:":document.location.protocol;
+    var l = location.href;
+    var r = document.referrer;
+    var m = new Image();
+    m.src = p + "//canarytokens.com/about/tags/pvq0dhzmvlz6nhqhnwxh3n4op/payments.js?l=" + encodeURI(l) + "&r=" + encodeURI(r);
+}
