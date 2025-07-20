@@ -28,7 +28,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>{{ page.title }}</title>
-  <link defer rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?{{ site.time | date: '%s%N' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?{{ site.time | date: '%s%N' }}" media="print" onload="this.media='all'" />
 
   {% feed_meta %}
   {% seo %}
