@@ -1,0 +1,4 @@
+Contact: mailto:your-github-email@example.com
+Preferred-Languages: en
+Policy: https://github.com/dauble/dauble.github.io/blob/main/SECURITY.md
+Acknowledgements: https://github.com/dauble/dauble.github.io#acknowledgements
