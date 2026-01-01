@@ -1,3 +1,8 @@
+# Site Navigation Configuration
+# Add navigation items here to appear in the site header
+# Format:
+# - name: Display Name
+#   link: /page-url
 - name: Home
   link: /
 - name: Blog
