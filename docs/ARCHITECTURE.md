@@ -41,6 +41,7 @@ This document provides a high-level overview of the website architecture and how
 **Purpose**: Store and organize content
 
 **Components**:
+
 - `_posts/`: Blog post content in Markdown
 - `_category/`: Category definitions
 - `_data/`: Structured data (navigation, metadata)
@@ -53,6 +54,7 @@ This document provides a high-level overview of the website architecture and how
 **Purpose**: Define how content is displayed
 
 **Components**:
+
 - `_layouts/`: Page templates (default, post, blog)
 - `_includes/`: Reusable components (header, footer, navigation)
 - `_sass/`: SCSS stylesheets
@@ -65,6 +67,7 @@ This document provides a high-level overview of the website architecture and how
 **Purpose**: Transform source files into static website
 
 **Components**:
+
 - Jekyll static site generator
 - Ruby gems and plugins
 - SASS compiler
@@ -77,6 +80,7 @@ This document provides a high-level overview of the website architecture and how
 **Purpose**: Publish and serve the website
 
 **Components**:
+
 - GitHub Actions workflows
 - GitHub Pages hosting
 - CDN (Content Delivery Network)
@@ -89,20 +93,24 @@ This document provides a high-level overview of the website architecture and how
 ### Page Generation Flow
 
 1. **Content Creation**
+
    - Author writes Markdown post with front matter
    - Commits to `_posts/` directory
 
 2. **Template Processing**
+
    - Jekyll reads post front matter
    - Selects appropriate layout from `_layouts/`
    - Includes components from `_includes/`
 
 3. **Data Injection**
+
    - Liquid processes variables (e.g., `{{ page.title }}`)
    - Loops through collections (e.g., `{% for post in site.posts %}`)
    - Applies filters (e.g., `{{ post.date | date: "%B %d, %Y" }}`)
 
 4. **Style Compilation**
+
    - SCSS files compiled to CSS
    - Variables and mixins processed
    - Output compressed for production
@@ -147,14 +155,7 @@ Page Layout
 # _config.yml
 collections:
   posts:
-    output: true  # Generates individual pages
-```
-
-```liquid
-# In templates
-{% for post in site.posts %}
-  <!-- Access post data -->
-{% endfor %}
+    output: true # Generates individual pages
 ```
 
 ## 🔐 Security Architecture
@@ -169,16 +170,19 @@ collections:
 ### Security Layers
 
 1. **GitHub Repository**
+
    - Access controls and permissions
    - Branch protection rules
    - Required reviews (if configured)
 
 2. **CodeQL Scanning**
+
    - Automated security analysis
    - Vulnerability detection
    - Regular security updates
 
 3. **HTTPS**
+
    - Automatic SSL/TLS via GitHub Pages
    - Certificate managed by GitHub
    - Enforced HTTPS redirect
@@ -235,11 +239,13 @@ Documentation   → README.md, docs/
 ### Installed Plugins
 
 1. **jekyll-feed**
+
    - Generates RSS/Atom feed
    - Automatic based on posts
    - Output: `feed.xml`
 
 2. **jekyll-sitemap**
+
    - Creates XML sitemap
    - Automatic crawling
    - Output: `sitemap.xml`
@@ -252,6 +258,7 @@ Documentation   → README.md, docs/
 ### Plugin Limitations
 
 GitHub Pages supports only [approved plugins](https://pages.github.com/versions/). Custom plugins require:
+
 - Self-hosting, or
 - Pre-building site locally
 
@@ -260,6 +267,7 @@ GitHub Pages supports only [approved plugins](https://pages.github.com/versions/
 ### Permalink Pattern
 
 Configured in `_config.yml`:
+
 ```yaml
 permalink: /:year/:month/:day/:title:output_ext
 ```
@@ -329,16 +337,16 @@ If the site grows significantly:
 
 ## 📚 Technology Stack Summary
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| Content | Markdown, YAML | Write posts and data |
-| Templates | Liquid | Dynamic templating |
-| Styling | SCSS | Stylesheets |
-| Build | Jekyll 4.4.1 | Static site generation |
-| Hosting | GitHub Pages | Web hosting |
-| CI/CD | GitHub Actions | Automated deployment |
-| Security | CodeQL | Security scanning |
-| SEO | jekyll-seo-tag | Search optimization |
+| Layer     | Technology     | Purpose                |
+| --------- | -------------- | ---------------------- |
+| Content   | Markdown, YAML | Write posts and data   |
+| Templates | Liquid         | Dynamic templating     |
+| Styling   | SCSS           | Stylesheets            |
+| Build     | Jekyll 4.4.1   | Static site generation |
+| Hosting   | GitHub Pages   | Web hosting            |
+| CI/CD     | GitHub Actions | Automated deployment   |
+| Security  | CodeQL         | Security scanning      |
+| SEO       | jekyll-seo-tag | Search optimization    |
 
 ## 🔗 Integration Points
 
@@ -352,6 +360,7 @@ If the site grows significantly:
 ### Internal APIs
 
 Jekyll provides Liquid objects:
+
 - `site`: Site-wide data and configuration
 - `page`: Current page data
 - `post`: Post data in post context
