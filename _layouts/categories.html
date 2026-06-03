@@ -1,81 +1,45 @@
 ---
-layout: categories
 ---
 
 {% include header.html %}
 
-  {% for post in site.posts limit:1 %}
-  <section class="hero interior">
-    <div class="container-fluid">
-      <div class="row no-gutter">
-        <div class="col-xs-12">
-          <div class="hero-background vb--home">
-            <div class="hero-background__contain">
-              <h1 class="hero-background__contain__title">{{ post.title }}</h1>
-            </div>
+{% for post in site.posts limit:1 %}
+<section class="aurora-mesh-hero" style="min-height: 60vh;">
+  <div class="hero-content">
+    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem);">{{ post.title }}</h1>
+    <p>{{ post.content | strip_html | truncatewords:30 }}</p>
+    <a href="{{ post.url }}" class="aurora-btn aurora-btn-primary">Continue reading</a>
+  </div>
+</section>
+{% endfor %}
 
-            <div class="intro-banner js-parallax" style="background-image:url('{{ post.image }}');"></div>
-          </div>
-        </div>
+<section class="aurora-section dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Categories</h2>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="blog">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
-          <p>{{ post.content | strip_html | truncatewords:50 }}</p>
-          <a href="{{ post.url }}" class="btn btn-secondary">Continue reading</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endfor %}
-
-  <section class="view-archives">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2>Categories</h2>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="blog-grid">
-    <div class="container-fluid">
-      <div class="row no-gutter js-posts">
-        {% for category in site.categories %}
-          <div class="col-sm-6">
-            <a href="{{ post.url }}" class="blog-grid__item">
-              <div class="blog-grid__item--screen"></div>
-              <div class="blog-grid__item--image" style="background-image: url('{{ post.image }}');"></div>
-              <h3 class="blog-grid__item--title">{{ post.title }}</h3>
-            </a>
-          </div>
+<section class="aurora-section light">
+  <div class="container">
+    <div id="archives">
+      {% for category in site.categories %}
+      <div class="archive-group aurora-card" style="margin-bottom: 2rem;">
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <h3 class="category-head" style="margin-bottom: 1rem;">{{ category_name }}</h3>
+        <a name="{{ category_name | slugize }}"></a>
+        {% for post in site.categories[category_name] %}
+        <article class="archive-item">
+          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+        </article>
         {% endfor %}
       </div>
-    </div>
-  </section>
-
-  <div id="archives">
-  {% for category in site.categories %}
-    <div class="archive-group">
-      {% capture category_name %}{{ category | first }}{% endcapture %}
-      <div id="#{{ category_name | slugize }}"></div>
-      <p></p>
-
-      <h3 class="category-head">{{ category_name }}</h3>
-      <a name="{{ category_name | slugize }}"></a>
-      {% for post in site.categories[category_name] %}
-      <article class="archive-item">
-        <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-      </article>
       {% endfor %}
     </div>
-  {% endfor %}
   </div>
+</section>
 
 {% include footer.html %}
