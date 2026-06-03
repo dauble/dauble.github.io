@@ -1,48 +1,88 @@
 ---
-layout: blog
+layout: default
 ---
 
-{% include header.html %}
+{% assign featured = site.posts | first %}
+{% assign all_cats = site.categories | map: 'name' | sort %}
 
-<!-- Hero with latest post -->
-{% for post in site.posts limit:1 %}
-<section class="aurora-mesh-hero" style="min-height: 60vh;">
-  <div class="hero-content">
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content | strip_html | truncatewords:30 }}</p>
-    <a href="{{ post.url }}" class="aurora-btn aurora-btn-primary">Continue reading</a>
-  </div>
-</section>
-{% endfor %}
-
-<!-- Blog Archive Section -->
-<section class="aurora-section light">
+<!-- BLOG HEADER -->
+<section class="blogHead">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <h2>Older Posts</h2>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Blog Grid -->
-<section class="aurora-section dark">
-  <div class="container">
-    <div class="aurora-blog-grid">
-      {% for post in site.posts offset:1 %}
-      <a href="{{ post.url }}" class="blog-card" style="text-decoration: none;">
-        <div style="position: relative; height: 250px; overflow: hidden; border-radius: 15px 15px 0 0;">
-          <img src="{{ post.image }}" alt="{{ post.title }}" class="blog-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-          <div class="blog-overlay">
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.date | date: "%B %d, %Y" }}</p>
-          </div>
-        </div>
-      </a>
+    <p class="eyebrow">The blog</p>
+    <h1>Notes on building<br>things for the web.</h1>
+    <p class="lead">Articles on web development, Jekyll, Git, DevOps, and keeping sites fast, secure, and beautiful.</p>
+    <div class="filters" role="list" aria-label="Filter by category">
+      <a class="filter is-active" href="#" data-cat="all" aria-current="true" role="listitem">All</a>
+      {% for cat in site.categories %}
+      <a class="filter" href="#{{ cat | first | slugify }}" data-cat="{{ cat | first }}" role="listitem">{{ cat | first }}</a>
       {% endfor %}
     </div>
   </div>
 </section>
 
-{% include footer.html %}
+<!-- FEATURED POST -->
+{% if featured %}
+<section class="section--tight" style="padding-top:8px;">
+  <div class="container">
+    <a class="bfeat glass card--hover card" href="{{ featured.url }}">
+      <div class="bfeat__media">
+        {% if featured.image %}
+        <img src="{{ featured.image }}" alt="{{ featured.title }}">
+        {% else %}
+        <div class="ph" data-label="Featured post"></div>
+        {% endif %}
+        <span class="chip chip--lime bfeat__tag">Featured</span>
+      </div>
+      <div class="bfeat__body">
+        <div class="bfeat__meta">
+          <span class="chip">{{ featured.categories | first }}</span>
+          <span class="chip">{{ featured.date | date: "%b %d, %Y" }}</span>
+          <span class="chip">{{ featured.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+        </div>
+        <h2>{{ featured.title }}</h2>
+        <p class="text-muted">{{ featured.excerpt | strip_html | truncatewords: 40 }}</p>
+        <span class="link-arrow">Read article
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+{% endif %}
+
+<!-- POST FEED -->
+<section class="section--tight" style="padding-top:8px;">
+  <div class="container">
+    <div class="feed-head">
+      <h2>All articles</h2>
+      <span class="feed-count" data-feed-count></span>
+    </div>
+    <div class="feed" data-feed data-batch="12">
+      {% for post in site.posts %}{% unless forloop.first %}
+      <a class="pcard glass card--hover" data-post data-category="{{ post.categories | first }}" {% if forloop.index > 13 %}hidden{% endif %} href="{{ post.url }}">
+        <div class="pcard__media">
+          {% if post.image %}
+          <img src="{{ post.image }}" alt="{{ post.title }}">
+          {% else %}
+          <div class="ph" data-label="thumb"></div>
+          {% endif %}
+          <span class="chip chip--lime pcard__tag">{{ post.categories | first }}</span>
+        </div>
+        <div class="pcard__body">
+          <span class="pcard__date">{{ post.date | date: "%b %d, %Y" }}</span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          <span class="pcard__foot">{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+        </div>
+      </a>
+      {% endunless %}{% endfor %}
+    </div>
+
+    <div class="feed-more">
+      <div class="feed-sentinel" data-feed-sentinel aria-hidden="true"></div>
+      <button class="btn btn-ghost" data-feed-more>Load more articles
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>

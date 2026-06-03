@@ -1,5 +1,58 @@
----
----
-{% include header.html %}
-{{ content }}
-{% include footer.html %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="mSvQDj528SrivJO3707MQV4uw5aUBxBXMfO9FTZz_sI">
+  <meta name="msvalidate.01" content="581C4BBEDA8127FA57A7F2B93320F97F">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/manifest.json">
+  <meta name="theme-color" content="#000d18">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?{{ site.time | date: '%s%N' }}">
+
+  {% feed_meta %}
+  {% seo %}
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3ZEK1EKQH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N3ZEK1EKQH');
+  </script>
+</head>
+<body>
+  {% if page.aurora_bg %}
+  <div class="auroraField"></div>
+  <div class="auroraBlob3"></div>
+  {% else %}
+  <div class="page-field"></div>
+  {% endif %}
+  <div class="page-grain"></div>
+  {% if page.layout == 'post' %}
+  <div class="progress" data-progress aria-hidden="true"></div>
+  {% endif %}
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  {% include navigation.html %}
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,50 +1,97 @@
 ---
-layout: post
+layout: default
 ---
 
-{% include header.html %}
-
-<!-- Hero Section for Post -->
-<section class="aurora-mesh-hero" style="min-height: 50vh;">
-  <div class="hero-content">
-    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem);">{{ page.title }}</h1>
-    <p style="font-size: 1rem; opacity: 0.8;">{{ page.date | date: "%B %d, %Y" }}</p>
-  </div>
-</section>
-
-<!-- Blog Content Section -->
-<section class="aurora-section light">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1">
-        <article style="line-height: 1.8; font-size: 1.1rem;">
-          {{ content }}
-        </article>
-
-        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e5e7eb;">
-          <h3>Filed Under:</h3>
-          <ul class="blog__categories">
-            {% if post %}
-            {% assign categories = post.categories %}
-            {% else %}
-            {% assign categories = page.categories %}
-            {% endif %}
-
-            {% for category in categories %}
-            <li>
-              <span>{{category}}</span>
-            </li>
-            {% unless forloop.last %}&nbsp;{% endunless %}
-            {% endfor %}
-          </ul>
+<article>
+  <header class="artHead">
+    <div class="container">
+      <div class="artHead__wrap">
+        <a href="{{ '/blog.html' | relative_url }}" class="link-arrow" style="margin-bottom:22px;font-size:0.92rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg);"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          All articles
+        </a>
+        <div class="kicker">
+          <span>{{ page.categories | first }}</span>
+          <span style="color:var(--ink-4);">·</span>
+          <span style="color:var(--ink-4);">{{ page.date | date: "%b %d, %Y" }}</span>
         </div>
-
-        <div class="view-archives" style="text-align: center; margin-top: 3rem;">
-          <a href="/blog.html" class="aurora-btn">View the archives</a>
+        <h1>{{ page.title }}</h1>
+        <div class="byline">
+          <span class="byline__av">DA</span>
+          <div>
+            <div class="byline__name">David M. Auble</div>
+            <div class="byline__meta">Solution Architect · {{ page.content | number_of_words | divided_by: 200 | plus: 1 }} min read</div>
+          </div>
         </div>
       </div>
     </div>
+    {% if page.image %}
+    <div class="container artHero">
+      <img src="{{ page.image }}" alt="{{ page.title }}">
+    </div>
+    {% else %}
+    <div class="container artHero">
+      <div class="ph" data-label="Article hero image"></div>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="container artBody">
+    <div class="prose">
+      {{ content }}
+
+      <hr>
+      <div class="tagrow">
+        {% for cat in page.categories %}
+        <span class="chip chip--lime">{{ cat }}</span>
+        {% endfor %}
+        {% for tag in page.tags %}
+        <span class="chip">{{ tag }}</span>
+        {% endfor %}
+      </div>
+
+      <div class="bio glass">
+        <span class="bio__av">DA</span>
+        <div>
+          <h4>David M. Auble</h4>
+          <p>Indianapolis-based solution architect. I build, secure, and rescue web applications — and write about the tools that make it easier. <a href="{{ '/#contact' | relative_url }}">Get in touch →</a></p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="toc" aria-label="On this page">
+      <h4>On this page</h4>
+      <ul>
+        <!-- auto-populated by site.js -->
+      </ul>
+    </aside>
+  </div>
+</article>
+
+<!-- RELATED POSTS -->
+<section class="section">
+  <div class="container">
+    <div class="feed-head">
+      <h2 class="h3">Keep reading</h2>
+      <a href="{{ '/blog.html' | relative_url }}" class="link-arrow">All articles
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="related">
+      {% assign related = site.related_posts | limit: 3 %}
+      {% for post in related %}
+      <a class="rcard glass card--hover" href="{{ post.url }}">
+        {% if post.image %}
+        <img src="{{ post.image }}" alt="{{ post.title }}">
+        {% else %}
+        <div class="ph" data-label="thumb"></div>
+        {% endif %}
+        <div class="rcard__b">
+          <span class="rcard__d">{{ post.date | date: "%b %d, %Y" }} · {{ post.categories | first }}</span>
+          <h3>{{ post.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
-
-{% include footer.html %}
