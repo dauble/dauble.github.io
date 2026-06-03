@@ -2,3 +2,120 @@
 layout: default
 title: "Indianapolis Web Developer | David M. Auble"
 ---
+
+{% include header.html %}
+
+<!-- Aurora Mesh Hero Section -->
+<section class="aurora-mesh-hero">
+  <div class="hero-content">
+    <h1>Hey, I'm David.</h1>
+    <h4>I'm an Indianapolis-based solution architect doing my part in helping keep the Internet beautiful</h4>
+    <a href="#services" class="aurora-btn aurora-btn-primary js-scroll-nav">See what I do</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="who-i-am" class="aurora-section light">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2>Meet David</h2>
+        <p>I'm just a local web geek who's passionate about pixel-perfect designs, cutting-edge trends, and thinking about the road ahead. I strive for excellence in every project I complete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="aurora-section dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Services</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="aurora-service aurora-card">
+          <i class="fa fa-code" aria-hidden="true"></i>
+          <h3>Web Development</h3>
+          <p>Javascript. React. Node. These are just a few of the languages I use to build highly-customized, advanced applications for the modern web.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-3">
+        <div class="aurora-service aurora-card">
+          <i class="fa fa-user-secret" aria-hidden="true"></i>
+          <h3>Disaster Recovery</h3>
+          <p>We live in a connected world where no one is safe. I can help recover information and get your application back online from hacks and provide guidance on further locking down your application.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-3">
+        <div class="aurora-service aurora-card">
+          <i class="fa fa-bitbucket" aria-hidden="true"></i>
+          <h3>Version Control</h3>
+          <p>All of my code is kept in the cloud. This means easy backups and restore points in the event of an outage. All code is logged, each change is carefully documented, providing an extensive outline of your website.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-3">
+        <div class="aurora-service aurora-card">
+          <i class="fa fa-code" aria-hidden="true"></i>
+          <h3>Custom Development</h3>
+          <p>Software dashboards, big data management, customer insights. I've worked with global companies providing these services and can share this experience for your next project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Blog Post Section -->
+<section id="what-i-think" class="aurora-section light">
+  <div class="container">
+    {% for post in site.posts limit:1 %}
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>{{ post.title }}</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="{{ post.image }}" alt="{{ post.title }}" class="img-responsive" style="border-radius: 15px;">
+      </div>
+      <div class="col-sm-8">
+        <p style="color: #6a6a6a;">{{ post.content | strip_html | truncatewords:50 }}</p>
+        <a href="{{ post.url }}" class="aurora-btn">Continue reading</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Clients Section -->
+<section id="clients" class="aurora-section dark aurora-clients">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Who I've Worked With</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 client-grid">
+        <img src="/assets/images/iuhealth.svg" alt="IU Health" class="img-responsive">
+        <img src="/assets/images/lilly.png" alt="Eli Lilly" class="img-responsive">
+        <img src="/assets/images/salesforce.png" alt="Salesforce" class="img-responsive">
+        <img src="/assets/images/anthem.svg" alt="Anthem" class="img-responsive">
+        <img src="/assets/images/loyola.svg" alt="Loyola University" class="img-responsive">
+        <img src="/assets/images/marian.svg" alt="Marian University" class="img-responsive">
+        <img src="/assets/images/neu.svg" alt="Northeastern University" class="img-responsive">
+        <img src="/assets/images/xavier.svg" alt="Xavier University" class="img-responsive">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}

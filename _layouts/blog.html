@@ -4,57 +4,42 @@ layout: blog
 
 {% include header.html %}
 
+<!-- Hero with latest post -->
 {% for post in site.posts limit:1 %}
-<section class="hero interior">
-  <div class="container-fluid">
-    <div class="row no-gutter">
-      <div class="col-xs-12">
-        <div class="hero-background vb--home">
-          <div class="hero-background__contain">
-            <h1 class="hero-background__contain__title">{{ post.title }}</h1>
-          </div>
-
-          <div class="intro-banner js-parallax" style="background-image:url('{{ post.image }}');"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="blog">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1">
-        <p>{{ post.content | strip_html | truncatewords:50 }}</p>
-        <a href="{{ post.url }}" class="btn btn-secondary">Continue reading</a>
-      </div>
-    </div>
-  </div>
+<section class="aurora-mesh-hero" style="min-height: 60vh;">
+  <div class="hero-content">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content | strip_html | truncatewords:30 }}</p>
+    <a href="{{ post.url }}" class="aurora-btn aurora-btn-primary">Continue reading</a>
   </div>
 </section>
 {% endfor %}
 
-<section class="view-archives">
+<!-- Blog Archive Section -->
+<section class="aurora-section light">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 text-center">
         <h2>Older Posts</h2>
       </div>
     </div>
   </div>
 </section>
 
-<section class="blog-grid">
-  <div class="container-fluid">
-    <div class="row no-gutter js-posts">
+<!-- Blog Grid -->
+<section class="aurora-section dark">
+  <div class="container">
+    <div class="aurora-blog-grid">
       {% for post in site.posts offset:1 %}
-      <div class="col-sm-4">
-        <a href="{{ post.url }}" class="blog-grid__item">
-          <div class="blog-grid__item--screen"></div>
-          <div class="blog-grid__item--image" style="background-image: url('{{ post.image }}');"></div>
-          <h3 class="blog-grid__item--title">{{ post.title }}</h3>
-        </a>
-      </div>
+      <a href="{{ post.url }}" class="blog-card" style="text-decoration: none;">
+        <div style="position: relative; height: 250px; overflow: hidden; border-radius: 15px 15px 0 0;">
+          <img src="{{ post.image }}" alt="{{ post.title }}" class="blog-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+          <div class="blog-overlay">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.date | date: "%B %d, %Y" }}</p>
+          </div>
+        </div>
+      </a>
       {% endfor %}
     </div>
   </div>
