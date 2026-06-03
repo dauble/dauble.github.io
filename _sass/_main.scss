@@ -123,10 +123,6 @@ header {
 section {
   overflow: hidden;
   padding: 3em 0;
-  // background-color: #fff;
-  // background-image: url("/assets/images/section-btm.png");
-  // background-position: center top;
-  // background-repeat: no-repeat;
 }
 
 .hero {
@@ -221,30 +217,6 @@ section {
       }
     }
   }
-}
-
-.services {
-  background: url('/assets/images/bg-services.jpg') center center no-repeat;
-  background-size: cover;
-  color: $color-white;
-
-  .service {
-    padding: 2em;
-    text-align: center;
-    line-height: 1.75;
-
-    display: grid;
-
-    @include breakpoint(sm) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-  }
-}
-
-.content,
-.blog {
-  background: url('/assets/images/section-btm.png') center top no-repeat;
 }
 
 .blog {
@@ -342,114 +314,6 @@ section {
         span:before {
           background: $color-dark-blue;
         }
-      }
-    }
-  }
-}
-
-.twitter {
-  background: url('/assets/images/bg-twitter.jpg') center center no-repeat;
-  background-size: cover;
-  color: $color-white;
-}
-
-.clients {
-  background: url('/assets/images/bg-tools.jpg') center center no-repeat;
-  background-size: cover;
-  color: $color-white;
-
-  .client-list {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  &__logo {
-    margin: 0 auto;
-  }
-
-  .logos {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
-
-    @include breakpoint(sm) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-
-    &__logo {
-      text-align: center;
-
-      img {
-        margin: 2em auto;
-      }
-    }
-  }
-}
-
-.view-archives {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-
-  h2 {
-    text-align: center;
-    overflow: hidden;
-    padding: 1em 0;
-    margin: 1em 0;
-    border-top: 2px solid $color-blue;
-    border-bottom: 2px solid $color-blue;
-  }
-}
-
-.blog-grid {
-  overflow: hidden;
-
-  &__item {
-    display: block;
-    position: relative;
-    overflow: hidden;
-
-    &--screen {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      background: rgba(#000, .2);
-      z-index: 1;
-
-      @include transition(all .5s);
-    }
-
-    &--image {
-      height: 400px;
-      background-size: cover;
-      background-position: center center;
-
-      @include transition(all .5s);
-    }
-
-    &--title {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      text-align: center;
-      background: rgba(#000, .5);
-      padding: 1em 0;
-      color: $color-white;
-      z-index: 10;
-    }
-
-    &:hover {
-      .blog-grid__item--screen {
-        background: rgba(#000, .5);
-      }
-
-      .blog-grid__item--image {
-        transform: scale(1.1);
       }
     }
   }
