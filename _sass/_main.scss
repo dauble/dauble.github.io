@@ -2,6 +2,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Roboto', sans-serif;
+  background-color: $bg-dark;
+  color: $text-dark;
 }
 
 h1,
@@ -343,6 +345,29 @@ footer {
     li {
       a {
         display: block;
+      }
+    }
+  }
+}
+
+footer.aurora-footer {
+  background: $bg-dark;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem 0;
+
+  p {
+    color: $text-muted;
+    margin: 0;
+  }
+
+  .social-icons {
+    li a {
+      color: $text-muted;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $aurora-cyan;
       }
     }
   }
