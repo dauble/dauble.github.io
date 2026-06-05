@@ -10,7 +10,7 @@ tags: [phpmyadmin, wamp, mamp]
 
 This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks.
 
-If you need a primer, start with the [WordPress multisite documentation](https://codex.wordpress.org/Create_A_Network){:target="\_blank"}. For this walkthrough, assume you are taking over an existing multisite with one main site and two subsites, and your local domain is `http://demo.local`.
+If you need a primer, start with the [WordPress multisite documentation](https://codex.wordpress.org/Create_A_Network){:target="_blank"}. For this walkthrough, assume you are taking over an existing multisite with one main site and two subsites, and your local domain is `http://demo.local`.
 
 ## Modifying Tables
 
