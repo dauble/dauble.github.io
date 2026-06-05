@@ -28,14 +28,14 @@ And that's it! When using this media query, it is important to note you can't si
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .callout__container {
     margin: 0 1em;
+  }
 
-    &:first-of-type {
-      margin: 0 1em 0 0;
-    }
+  .callout__container:first-of-type {
+    margin: 0 1em 0 0;
+  }
 
-    &:last-of-type {
-      margin: 0 0 0 1em;
-    }
+  .callout__container:last-of-type {
+    margin: 0 0 0 1em;
   }
 }
 ```
