@@ -44,7 +44,7 @@ git add .
 This adds all modified, or “unstaged,” files to the current commit.
 
 ```shell
-git commit –am “This is a message about the code I’m committing”
+git commit -am "This is a message about the code I’m committing"
 ```
 
 This commits all changes to the repository with a descriptive message saying what’s been changed.
