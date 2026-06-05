@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-03T18:30:35-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">Getting Started with GitHub Actions</title><link href="http://localhost:4000/2024/02/28/getting-started-github-actions.html" rel="alternate" type="text/html" title="Getting Started with GitHub Actions" /><published>2024-02-28T00:00:00-05:00</published><updated>2024-02-28T00:00:00-05:00</updated><id>http://localhost:4000/2024/02/28/getting-started-github-actions</id><content type="html" xml:base="http://localhost:4000/2024/02/28/getting-started-github-actions.html"><![CDATA[<h1 id="getting-started-with-github-actions">Getting Started with GitHub Actions</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-05T15:41:43-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">Getting Started with GitHub Actions</title><link href="http://localhost:4000/2024/02/28/getting-started-github-actions.html" rel="alternate" type="text/html" title="Getting Started with GitHub Actions" /><published>2024-02-28T00:00:00-05:00</published><updated>2024-02-28T00:00:00-05:00</updated><id>http://localhost:4000/2024/02/28/getting-started-github-actions</id><content type="html" xml:base="http://localhost:4000/2024/02/28/getting-started-github-actions.html"><![CDATA[<h1 id="getting-started-with-github-actions">Getting Started with GitHub Actions</h1>
 
 <p>GitHub Actions is a powerful tool that automates your software development workflows right from your GitHub repository. Whether you want to run tests, deploy applications, or automate any other tasks, GitHub Actions provides a flexible and customizable framework. In this guide, we’ll walk through the basics of setting up and using GitHub Actions to streamline your development process.</p>
 
@@ -111,9 +111,8 @@
 
 <p>For those of you who don’t know about <a href="https://www.git-tower.com/" target="_blank">Tower</a>, I want to start off and explain it’s a fantastic tool for learning how to use Git and working with Git. It features a streamlined GUI for using version control and works flawlessly. I have zero complaints about the software, and have personally used it. The thing I like about Tower the most, though, is their “Git FAQ” section on their site. It provides clean, clear instructions on so many Git commands. I’ve stumbled across it numerous times. With the help of this <a href="https://www.git-tower.com/learn/git/faq/change-author-name-email" target="_blank">Tower article</a>, I was able to run the following command to change the email address of my previous commit:</p>
 
-<blockquote>
-  <p>git commit –amend –author=”John Doe <a href="mailto:john@doe.org">john@doe.org</a>”</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">--amend</span> <span class="nt">--author</span><span class="o">=</span><span class="s2">"John Doe &lt;john@doe.org&gt;"</span>
+</code></pre></div></div>
 
 <p>Now, the interesting point and back to the initial problem with Git. GitHub offers private no-reply email addresses for users wishing to keep their commits private. On the folling article on <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address">GitHub’s documentation</a>, in Step 6, GitHub explains how to set up a private email forwarding address. Simply add your GitHub username and “@users.noreply.github.com” and emails will be forwarded to your private email address. Pretty neat, huh?</p>
 
@@ -139,98 +138,86 @@
 
 <p>The most useful though is an IE-only media query, so it doesn’t break other styles. Take a look:</p>
 
-<blockquote>
-  <p>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
- /* IE specific queries here */
-}</p>
-</blockquote>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="nb">all</span> <span class="n">and</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="nb">none</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="n">active</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* IE specific queries here */</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>And that’s it! When using this media query, it is important to note you can’t simply but styles in the brackets. You must define the class and then styles. Below is a sample of my implemenation.</p>
 
-<blockquote>
-  <p>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
- .callout__container {
-   margin: 0 1em;</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="nb">all</span> <span class="n">and</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="nb">none</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="n">active</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.callout__container</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">1em</span><span class="p">;</span>
 
-  <p>&amp;:first-of-type {
-     margin: 0 1em 0 0;
-   }</p>
+    <span class="err">&amp;:first-of-type</span> <span class="err">{</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">1em</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
 
-  <p>&amp;:last-of-type {
-     margin: 0 0 0 1em;
-   }
- }
-}</p>
-</blockquote>
+    <span class="o">&amp;</span><span class="nd">:last-of-type</span> <span class="p">{</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
 
 <p>I hope this helps!</p>]]></content><author><name>dauble</name></author><category term="css" /><category term="ie" /><category term="internet explorer" /><summary type="html"><![CDATA[I’ve been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don’t fully support it.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common WordPress Helper Functions</title><link href="http://localhost:4000/2020/04/29/common-wordpress-helper-functions.html" rel="alternate" type="text/html" title="Common WordPress Helper Functions" /><published>2020-04-29T00:00:00-04:00</published><updated>2020-04-29T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/29/common-wordpress-helper-functions</id><content type="html" xml:base="http://localhost:4000/2020/04/29/common-wordpress-helper-functions.html"><![CDATA[<p>I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.</p>
 
 <h2 id="wp_is_mobile">wp_is_mobile()</h2>
-<blockquote>
-  <p>wp_is_mobile()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">wp_is_mobile</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>This function detects if someone is using a mobile device or not. Extremely handy for when you want certain features (such as tracking scripts, chat applications, etc) to not appear when users are using mobile devices.</p>
 
 <h2 id="is_user_logged_in">is_user_logged_in()</h2>
-<blockquote>
-  <p>is_user_logged_in()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_user_logged_in</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>As it sounds, this checks to see if the current user is logged in or not. Handy little script for turning off tracking scripts or other non-essential parts when users are logged in. This can also be used to protect content areas that require membership roles to view.</p>
 
 <h2 id="is_page_template">is_page_template()</h2>
-<blockquote>
-  <p>is_page_template(‘template-sample.php’)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_page_template</span><span class="p">(</span><span class="s1">'template-sample.php'</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="is_front_page">is_front_page()</h2>
-<blockquote>
-  <p>is_front_page()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_front_page</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>This function simply checks to see if the current page is set as the Front Page in WordPress. This page is set under Settings -&gt; Reading.</p>
 
 <h2 id="is_home">is_home()</h2>
-<blockquote>
-  <p>is_home()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_home</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>This function simply checks to see if the current page is set as the Posts Page in WordPress. This page is set under Settings -&gt; Reading.</p>
 
 <h2 id="wp_reset_postdata">wp_reset_postdata()</h2>
-<blockquote>
-  <p>wp_reset_postdata()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">wp_reset_postdata</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>When using custom loops, this resets the Posts loop so the rest of the page will render properly.</p>
 
 <h2 id="restore_current_blog">restore_current_blog()</h2>
-<blockquote>
-  <p>restore_current_blog(1)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">restore_current_blog</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>When working with a multisite setup, this allows you to change which blog to grab content. Pass in the Site ID as an arugment to load that site’s content.</p>
 
 <h2 id="get_template_part">get_template_part()</h2>
-<blockquote>
-  <p>get_template_part(‘included-template.php’)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">get_template_part</span><span class="p">(</span><span class="s1">'included-template.php'</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>This functions like an include for WordPress. Simple pass in the PHP template filename as an argument.</p>
 
 <h2 id="bloginfo">bloginfo()</h2>
-<blockquote>
-  <p>bloginfo(‘url’)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">bloginfo</span><span class="p">(</span><span class="s1">'url'</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>One of the more useful functions, this enables you to grab various info about the WordPress site. Some arguments I use frequently are <code class="language-plaintext highlighter-rouge">url</code> and <code class="language-plaintext highlighter-rouge">template_directory</code>. These return the site’s URL and theme path.</p>
 
 <p>For more information on these functions and more, visit the <a href="https://developer.wordpress.org/reference/functions/" target="_blank">WordPress Developer reference</a>.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="php" /><summary type="html"><![CDATA[I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/common-wordpress-functions.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/common-wordpress-functions.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Getting Jekyll Running on Windows 10 x64</title><link href="http://localhost:4000/2020/04/19/jekyll-on-windows.html" rel="alternate" type="text/html" title="Getting Jekyll Running on Windows 10 x64" /><published>2020-04-19T00:00:00-04:00</published><updated>2020-04-19T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/19/jekyll-on-windows</id><content type="html" xml:base="http://localhost:4000/2020/04/19/jekyll-on-windows.html"><![CDATA[<p>I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned <a href="/2020/04/10/2020-blog-update.html">previously</a>, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:</p>
 
-<blockquote>
-  <p>Unable to load the EventMachine C extension; To use the pure-ruby reactor, require ‘em/pure_ruby’</p>
-</blockquote>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Unable to load the EventMachine C extension; To use the pure-ruby reactor, require 'em/pure_ruby'
+</code></pre></div></div>
 
 <p>Puzzled, I scoured Google and StackOverflow and came up empty. I thought <a href="https://stackoverflow.com/questions/30682575/unable-to-load-the-eventmachine-c-extension-to-use-the-pure-ruby-reactor" target="_blank">this post on StackOverflow</a> would help get me there, but I ended up back at the same spot.</p>
 
@@ -238,11 +225,10 @@
 
 <p>Here’s the final steps I used to fix this problem:</p>
 
-<blockquote>
-  <p>bundle<br />
-gem uninstall eventmachine –force<br />
-gem install eventmachine –platform ruby</p>
-</blockquote>]]></content><author><name>dauble</name></author><category term="jekyll" /><category term="command line" /><summary type="html"><![CDATA[I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Edit Robots.txt with WordPress and Yoast</title><link href="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html" rel="alternate" type="text/html" title="Edit Robots.txt with WordPress and Yoast" /><published>2020-04-14T00:00:00-04:00</published><updated>2020-04-14T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast</id><content type="html" xml:base="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"><![CDATA[<p>An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a <code class="language-plaintext highlighter-rouge">robots.txt</code> file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle
+gem uninstall eventmachine <span class="nt">--force</span>
+gem <span class="nb">install </span>eventmachine <span class="nt">--platform</span> ruby
+</code></pre></div></div>]]></content><author><name>dauble</name></author><category term="jekyll" /><category term="command line" /><summary type="html"><![CDATA[I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Edit Robots.txt with WordPress and Yoast</title><link href="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html" rel="alternate" type="text/html" title="Edit Robots.txt with WordPress and Yoast" /><published>2020-04-14T00:00:00-04:00</published><updated>2020-04-14T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast</id><content type="html" xml:base="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"><![CDATA[<p>An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a <code class="language-plaintext highlighter-rouge">robots.txt</code> file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.</p>
 
 <p>We’ve been using Yoast SEO for our primary SEO plugin on all of our sites for quite some time and albeit it buggy and <a href="https://yoast.com/media-attachment-urls/" target="_blank">catastrophic at times</a>, however for the most part, it is the best SEO plugin available for WordPress.</p>
 

@@ -518,12 +518,33 @@ a { color: var(--lime-bright); text-decoration: none; }
 .bento .wide { grid-column: span 2; }
 .svc2__ico { width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center; background: rgba(153,204,51,0.12); border: 1px solid rgba(153,204,51,0.28); color: var(--lime-bright); }
 .svc2__ico svg { width: 22px; height: 22px; }
+.svc2__main {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-areas:
+    "icon title"
+    "body body";
+  column-gap: 14px;
+  row-gap: 8px;
+  align-items: start;
+}
+.svc2__main > div:not(.svc2__ico) { display: contents; }
+.svc2__main .svc2__ico { margin-bottom: 0 !important; }
+.svc2__main .svc2__ico { grid-area: icon; }
+.svc2__main h3 { grid-area: title; margin-top: 0; margin-bottom: 0; align-self: center; }
+.svc2__main p { grid-area: body; }
 .svc2 h3 { font-size: 1.2rem; }
 .svc2.feature h3 { font-size: clamp(1.6rem, 2.4vw, 2.2rem); }
 .svc2 p { color: var(--ink-3); font-size: 0.95rem; margin: 0; }
 .svc2__glow { position: absolute; inset: auto -40% -60% auto; width: 70%; height: 80%; background: radial-gradient(circle, rgba(153,204,51,0.18), transparent 70%); }
-@media (max-width: 880px) { .bento { grid-template-columns: 1fr 1fr; } .bento .feature, .bento .wide { grid-column: span 2; grid-row: auto; } }
-@media (max-width: 540px) { .bento { grid-template-columns: 1fr; } .bento .feature, .bento .wide { grid-column: auto; } }
+@media (max-width: 880px) {
+  .bento { grid-template-columns: 1fr 1fr; }
+  .bento .feature, .bento .wide { grid-column: span 2; grid-row: auto; }
+}
+@media (max-width: 540px) {
+  .bento { grid-template-columns: 1fr; }
+  .bento .feature, .bento .wide { grid-column: auto; }
+}
 
 .secthead { max-width: 640px; margin-bottom: 44px; }
 
@@ -649,6 +670,11 @@ a { color: var(--lime-bright); text-decoration: none; }
 .codeblk .p { color: var(--lime); }
 
 .tagrow { display: flex; gap: 10px; flex-wrap: wrap; margin: 2.4em 0; }
+.tagrow a.chip { text-decoration: none; }
+.tagrow a.chip:hover { color: var(--ink); border-color: rgba(153,204,51,0.4); }
+
+.tag-archives { display: grid; gap: 16px; }
+.tag-archive { border-radius: var(--r-xl); padding: clamp(20px, 3vw, 30px); scroll-margin-top: 110px; }
 
 /* Author bio */
 .bio { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; border-radius: var(--r-xl); padding: clamp(24px, 3vw, 36px); margin-top: 8px; }

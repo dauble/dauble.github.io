@@ -16,24 +16,28 @@ Typically I support browsers back two versions, so I'm still supporting IE10/11.
 
 The most useful though is an IE-only media query, so it doesn't break other styles. Take a look:
 
->@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
->  /* IE specific queries here */
->}
+```css
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE specific queries here */
+}
+```
 
 And that's it! When using this media query, it is important to note you can't simply but styles in the brackets. You must define the class and then styles. Below is a sample of my implemenation.
 
->@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
->  .callout__container {
->    margin: 0 1em;
->
->    &:first-of-type {
->      margin: 0 1em 0 0;
->    }
->
->    &:last-of-type {
->      margin: 0 0 0 1em;
->    }
->  }
->}
+```css
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .callout__container {
+    margin: 0 1em;
+
+    &:first-of-type {
+      margin: 0 1em 0 0;
+    }
+
+    &:last-of-type {
+      margin: 0 0 0 1em;
+    }
+  }
+}
+```
 
 I hope this helps!

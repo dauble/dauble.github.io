@@ -12,11 +12,27 @@ aurora_bg: true
   <div class="container heroB__grid">
     <div>
       <p class="eyebrow">Indianapolis · Solution Architect</p>
-      <h1>Building a <span class="grad-lime">faster,&nbsp;safer</span> web — one project at a time.</h1>
-      <p class="heroB__sub">I'm David, an Indianapolis-based solution architect. I design, build, and rescue web applications for teams who care about doing it right.</p>
+      <h1>
+        Building a <span class="grad-lime">faster,&nbsp;safer</span> web — one
+        project at a time.
+      </h1>
+      <p class="heroB__sub">
+        I'm David, an Indianapolis-based solution architect. I design, build,
+        and rescue web applications for teams who care about doing it right.
+      </p>
       <div class="heroB__cta">
-        <a href="#services" class="btn btn-primary">Explore services
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a href="#services" class="btn btn-primary"
+          >Explore services
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
         </a>
         <a href="#contact" class="btn btn-ghost">Start a project</a>
       </div>
@@ -26,33 +42,79 @@ aurora_bg: true
         <div class="status">
           <span class="status__dot"></span>
           <div>
-            <div style="color:var(--ink);font-weight:600;font-family:var(--font-display);">Available for new work</div>
-            <div style="color:var(--ink-3);font-size:0.88rem;">Booking projects for Q3 2026</div>
+            <div
+              style="
+                color: var(--ink);
+                font-weight: 600;
+                font-family: var(--font-display);
+              "
+            >
+              Available for new work
+            </div>
+            <div style="color: var(--ink-3); font-size: 0.88rem">
+              Booking projects for Q3 2026
+            </div>
           </div>
         </div>
       </div>
       <div class="bcard glass">
-        <div class="bmetric"><span>12</span>+</div>
-        <div style="color:var(--ink-3);font-size:0.86rem;margin-top:6px;">years shipping for the web</div>
+        <div class="bmetric"><span>17</span>+</div>
+        <div style="color: var(--ink-3); font-size: 0.86rem; margin-top: 6px">
+          years shipping for the web
+        </div>
       </div>
       <div class="bcard glass">
         <h4>Stack</h4>
         <div class="stack">
-          <span class="chip">React</span><span class="chip">Node</span><span class="chip">AWS</span><span class="chip">Jekyll</span>
+          <span class="chip">React</span><span class="chip">Node</span
+          ><span class="chip">AWS</span><span class="chip">Jekyll</span>
         </div>
       </div>
       <div class="bcard glass bcard--wide bcard--post">
         <h4>Latest from the blog</h4>
         {% if latest_post %}
-        <div style="display:flex;gap:14px;align-items:center;">
+        <div style="display: flex; gap: 14px; align-items: center">
           {% if latest_post.image %}
-          <img src="{{ latest_post.image }}" alt="{{ latest_post.title }}" style="width:84px;height:62px;flex:none;border-radius:12px;object-fit:cover;">
+          <img
+            src="{{ latest_post.image }}"
+            alt="{{ latest_post.title }}"
+            style="
+              width: 84px;
+              height: 62px;
+              flex: none;
+              border-radius: 12px;
+              object-fit: cover;
+            "
+          />
           {% else %}
-          <div class="ph" data-label="thumb" style="width:84px;height:62px;flex:none;border-radius:12px;"></div>
+          <div
+            class="ph"
+            data-label="thumb"
+            style="width: 84px; height: 62px; flex: none; border-radius: 12px"
+          ></div>
           {% endif %}
           <div>
-            <div style="color:var(--ink);font-weight:600;font-family:var(--font-display);line-height:1.25;">{{ latest_post.title }}</div>
-            <div style="color:var(--ink-4);font-size:0.82rem;font-family:var(--font-mono);margin-top:4px;">{{ latest_post.date | date: "%b %Y" }} · {{ latest_post.categories | first }}</div>
+            <div
+              style="
+                color: var(--ink);
+                font-weight: 600;
+                font-family: var(--font-display);
+                line-height: 1.25;
+              "
+            >
+              {{ latest_post.title }}
+            </div>
+            <div
+              style="
+                color: var(--ink-4);
+                font-size: 0.82rem;
+                font-family: var(--font-mono);
+                margin-top: 4px;
+              "
+            >
+              {{ latest_post.date | date: "%b %Y" }} · {{ latest_post.categories
+              | first }}
+            </div>
           </div>
         </div>
         {% endif %}
@@ -69,15 +131,51 @@ aurora_bg: true
         <p class="eyebrow">Meet David</p>
         <div>
           <h3>A local web geek who sweats the pixels.</h3>
-          <p class="lead" style="margin-bottom:0.8em;">Passionate about pixel-perfect design, cutting-edge tooling, and thinking about the road ahead — I strive for excellence in every project I take on.</p>
-          <p class="text-muted">My background spans marketing, engineering, and big-data visualization for some of the largest companies in healthcare and tech.</p>
+          <p class="lead" style="margin-bottom: 0.8em">
+            Passionate about pixel-perfect design, cutting-edge tooling, and
+            thinking about the road ahead — I strive for excellence in every
+            project I take on.
+          </p>
+          <p class="text-muted">
+            My background spans marketing, engineering, and big-data
+            visualization for some of the largest companies in healthcare and
+            tech.
+          </p>
         </div>
-        <a href="#contact" class="link-arrow">Work with me
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a href="#contact" class="link-arrow"
+          >Work with me
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
         </a>
       </div>
-      <div class="sideB glass" style="position:relative;overflow:hidden;min-height:300px;">
-        <div class="ph" data-label="Portrait / workspace" style="position:absolute;inset:0;"></div>
+      <div
+        class="sideB glass"
+        style="position: relative; overflow: hidden; min-height: 300px"
+      >
+        <img
+          src="{{ '/assets/images/workspace.png' | relative_url }}"
+          alt="David Auble workspace"
+          width="960"
+          height="864"
+          loading="lazy"
+          decoding="async"
+          style="
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          "
+        />
       </div>
     </div>
   </div>
@@ -92,38 +190,106 @@ aurora_bg: true
     </div>
     <div class="bento">
       <article class="svc2 feature card--hover glass-strong">
-        <div>
-          <div class="svc2__ico" style="margin-bottom:18px;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg>
+        <div class="svc2__main">
+          <div class="svc2__ico" style="margin-bottom: 18px; flex: none">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" />
+            </svg>
           </div>
-          <h3>Web Development</h3>
-          <p style="font-size:1.02rem;">JavaScript, React, and Node — highly-customized, advanced applications for the modern web, built to last and easy to maintain.</p>
+          <div>
+            <h3>Web Development</h3>
+            <p style="font-size: 1.02rem">
+              JavaScript, React, and Node — highly-customized, advanced
+              applications for the modern web, built to last and easy to
+              maintain.
+            </p>
+          </div>
         </div>
-        <div class="stack"><span class="chip chip--lime">React</span><span class="chip">Node</span><span class="chip">TypeScript</span><span class="chip">APIs</span></div>
+        <div class="stack">
+          <span class="chip chip--lime">React</span
+          ><span class="chip">Node</span><span class="chip">TypeScript</span
+          ><span class="chip">APIs</span>
+        </div>
         <div class="svc2__glow"></div>
       </article>
       <article class="svc2 card--hover glass">
-        <div class="svc2__ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div class="svc2__main">
+          <div class="svc2__ico" style="flex: none">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3l8 4v5c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V7z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <h3>Disaster Recovery</h3>
+            <p>
+              Recover information and get your app back online after a hack —
+              plus guidance to lock it down for next time.
+            </p>
+          </div>
         </div>
-        <h3>Disaster Recovery</h3>
-        <p>Recover information and get your app back online after a hack — plus guidance to lock it down for next time.</p>
       </article>
       <article class="svc2 card--hover glass">
-        <div class="svc2__ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="M6 8.4v7.2M8.2 6.6c5 0 5 5.4 7.6 5.4"/></svg>
+        <div class="svc2__main">
+          <div class="svc2__ico" style="flex: none">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="6" cy="6" r="2.4" />
+              <circle cx="6" cy="18" r="2.4" />
+              <circle cx="18" cy="12" r="2.4" />
+              <path d="M6 8.4v7.2M8.2 6.6c5 0 5 5.4 7.6 5.4" />
+            </svg>
+          </div>
+          <div>
+            <h3>Version Control</h3>
+            <p>
+              Cloud-backed code with clean restore points and a documented
+              history of every change.
+            </p>
+          </div>
         </div>
-        <h3>Version Control</h3>
-        <p>Cloud-backed code with clean restore points and a documented history of every change.</p>
       </article>
       <article class="svc2 wide card--hover glass">
-        <div style="display:flex;gap:18px;align-items:flex-start;">
-          <div class="svc2__ico" style="flex:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h4"/></svg>
+        <div class="svc2__main">
+          <div class="svc2__ico" style="flex: none">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="14" rx="2" />
+              <path d="M3 9h18M7 14h4" />
+            </svg>
           </div>
           <div>
             <h3>Custom Development</h3>
-            <p>Software dashboards, big-data management, and customer insights — enterprise experience brought to your next project.</p>
+            <p>
+              Software dashboards, big-data management, and customer insights —
+              enterprise experience brought to your next project.
+            </p>
           </div>
         </div>
       </article>
@@ -134,42 +300,140 @@ aurora_bg: true
 <!-- FEATURED POST + LOGOS -->
 <section class="section" id="blog">
   <div class="container">
-    <div class="secthead" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;gap:20px;flex-wrap:wrap;">
+    <div
+      class="secthead"
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        max-width: none;
+        gap: 20px;
+        flex-wrap: wrap;
+      "
+    >
       <div>
         <p class="eyebrow">From the blog</p>
         <h2 class="h2">Notes on building things.</h2>
       </div>
-      <a href="{{ '/blog.html' | relative_url }}" class="link-arrow">All articles
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <a href="{{ '/blog.html' | relative_url }}" class="link-arrow"
+        >All articles
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
       </a>
     </div>
     <div class="rowB" id="work">
       {% if latest_post %}
       <article class="featB glass-strong card--hover">
         <div class="featB__top">
-          <span class="chip chip--lime">{{ latest_post.categories | first }}</span>
+          <span class="chip chip--lime"
+            >{{ latest_post.categories | first }}</span
+          >
           <span class="chip">{{ latest_post.date | date: "%b %d, %Y" }}</span>
-          <span class="chip">{{ latest_post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+          <span class="chip"
+            >{{ latest_post.content | number_of_words | divided_by: 200 | plus:
+            1 }} min read</span
+          >
         </div>
         <div>
           <h3>{{ latest_post.title }}</h3>
-          <p class="text-muted">{{ latest_post.excerpt | strip_html | truncatewords: 35 }}</p>
+          <p class="text-muted">
+            {{ latest_post.excerpt | strip_html | truncatewords: 35 }}
+          </p>
         </div>
-        <a href="{{ latest_post.url }}" class="link-arrow">Continue reading
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a href="{{ latest_post.url }}" class="link-arrow"
+          >Continue reading
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
         </a>
       </article>
       {% endif %}
       <div class="sideB glass">
-        <h4 style="font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-4);margin:0;font-weight:500;">Trusted by teams at</h4>
+        <h4
+          style="
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-4);
+            margin: 0;
+            font-weight: 500;
+          "
+        >
+          Trusted by teams at
+        </h4>
         <div class="logos__row">
-          <span style="font-family:var(--font-display);font-weight:700;color:var(--ink-3);">IU&nbsp;Health</span>
-          <span style="font-family:var(--font-display);font-weight:700;color:var(--ink-3);">Lilly</span>
-          <span style="font-family:var(--font-display);font-weight:700;color:var(--ink-3);">Salesforce</span>
-          <span style="font-family:var(--font-display);font-weight:700;color:var(--ink-3);">Anthem</span>
-          <span style="font-family:var(--font-display);font-weight:700;color:var(--ink-3);">Loyola</span>
-          <span style="font-family:var(--font-display);font-weight:700;color:var(--ink-3);">Marian</span>
-          <span style="font-family:var(--font-display);font-weight:700;color:var(--ink-3);">Xavier</span>
+          <span
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              color: var(--ink-3);
+            "
+            >IU&nbsp;Health</span
+          >
+          <span
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              color: var(--ink-3);
+            "
+            >Lilly</span
+          >
+          <span
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              color: var(--ink-3);
+            "
+            >Salesforce</span
+          >
+          <span
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              color: var(--ink-3);
+            "
+            >Anthem</span
+          >
+          <span
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              color: var(--ink-3);
+            "
+            >Loyola</span
+          >
+          <span
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              color: var(--ink-3);
+            "
+            >Marian</span
+          >
+          <span
+            style="
+              font-family: var(--font-display);
+              font-weight: 700;
+              color: var(--ink-3);
+            "
+            >Xavier</span
+          >
         </div>
       </div>
     </div>
@@ -181,15 +445,47 @@ aurora_bg: true
   <div class="container">
     <div class="ctaB glass-strong">
       <div class="ctaB__mesh"></div>
-      <div style="position:relative;z-index:2;max-width:640px;margin-inline:auto;">
-        <p class="eyebrow" style="justify-content:center;">Let's build something</p>
-        <h2 class="h2" style="margin-bottom:0.5em;">Have a project in mind?</h2>
-        <p class="lead" style="margin-bottom:1.6em;">Tell me what you're working on. I read every message and reply personally.</p>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-          <a href="mailto:info@davidauble.com" class="btn btn-primary">Email me
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          max-width: 640px;
+          margin-inline: auto;
+        "
+      >
+        <p class="eyebrow" style="justify-content: center">
+          Let's build something
+        </p>
+        <h2 class="h2" style="margin-bottom: 0.5em">Have a project in mind?</h2>
+        <p class="lead" style="margin-bottom: 1.6em">
+          Tell me what you're working on. I read every message and reply
+          personally.
+        </p>
+        <div
+          style="
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <a href="mailto:info@davidauble.com" class="btn btn-primary"
+            >Email me
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 7l9 6 9-6" />
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+            </svg>
           </a>
-          <a href="https://www.linkedin.com/in/dauble" class="btn btn-ghost">Connect on LinkedIn</a>
+          <a href="https://www.linkedin.com/in/dauble" class="btn btn-ghost"
+            >Connect on LinkedIn</a
+          >
         </div>
       </div>
     </div>

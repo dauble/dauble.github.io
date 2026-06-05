@@ -9,7 +9,9 @@ tags: [command line]
 ---
 I sometimes come across a unique error when using Git and always have to look up how to fix the error. It's a simple error and can be replicated by stopping a Git command before it's finished. Git in turn generates a "index.lock" file, which prevents you from adding any additional files to the commit. The error message I usually receive in full is:
 
-> Another git process seems to be running in this repository, e.g. an editor opened by 'git commit'. Please make sure all processes are terminated then try again. If it still fails, a git process may have crashed in this repository earlier: remove the file manually to continue.
+```
+Another git process seems to be running in this repository, e.g. an editor opened by 'git commit'. Please make sure all processes are terminated then try again. If it still fails, a git process may have crashed in this repository earlier: remove the file manually to continue.
+```
 
 The fix is simple: remove the "**git.lock**" file in the "/.git/" directory.
 

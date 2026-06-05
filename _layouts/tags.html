@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+{% assign sorted_tags = site.tags | sort %}
+
+<section class="blogHead">
+  <div class="container">
+    <p class="eyebrow">Browse by tag</p>
+    <h1>Find every post<br />for a topic.</h1>
+    <p class="lead">Click a tag to jump to every article with that label.</p>
+
+    {% if sorted_tags.size > 0 %}
+    <div class="filters" role="list" aria-label="Tags">
+      {% for tag in sorted_tags %} {% assign tag_name = tag | first %} {% assign
+      tag_posts = tag | last %} {% assign tag_slug = tag_name | slugify %}
+      <a class="filter" href="#{{ tag_slug }}" role="listitem"
+        >{{ tag_name }} ({{ tag_posts | size }})</a
+      >
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top: 8px">
+  <div class="container">
+    {% if sorted_tags.size > 0 %}
+    <div class="tag-archives">
+      {% for tag in sorted_tags %} {% assign tag_name = tag | first %} {% assign
+      tag_posts = tag | last %} {% assign tag_slug = tag_name | slugify %}
+      <section id="{{ tag_slug }}" class="tag-archive glass">
+        <div class="feed-head" style="margin-bottom: 18px">
+          <h2>#{{ tag_name }}</h2>
+          <span class="feed-count">{{ tag_posts | size }} posts</span>
+        </div>
+        <div class="related">
+          {% for post in tag_posts %}
+          <a class="rcard glass card--hover" href="{{ post.url }}">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}" />
+            {% else %}
+            <div class="ph" data-label="thumb"></div>
+            {% endif %}
+            <div class="rcard__b">
+              <span class="rcard__d"
+                >{{ post.date | date: "%b %d, %Y" }} · {{ post.categories |
+                first }}</span
+              >
+              <h3>{{ post.title }}</h3>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="glass" style="padding: 24px; border-radius: var(--r-lg)">
+      <p class="text-muted" style="margin: 0">No tags found yet.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
