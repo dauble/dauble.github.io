@@ -50,7 +50,7 @@ git commit -am "This is a message about the code I’m committing"
 This commits all changes to the repository with a descriptive message saying what’s been changed.
 
 ```shell
-git merge –no-ff “Fix merge conflicts”
+git merge --no-ff feature-branch-name
 ```
 
 Used in branching, this will merge your branch into another trunk.
