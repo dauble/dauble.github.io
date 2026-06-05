@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/styles.css?1780525835877560000">
+  <link rel="stylesheet" href="/assets/css/styles.css?1780691900888637000">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Indianapolis Web Developer" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -99,28 +99,46 @@
   <header class="artHead">
     <div class="container">
       <div class="artHead__wrap">
-        <a href="/blog.html" class="link-arrow" style="margin-bottom:22px;font-size:0.92rem;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg);"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a
+          href="/blog.html"
+          class="link-arrow"
+          style="margin-bottom: 22px; font-size: 0.92rem"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="transform: rotate(180deg)"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
           All articles
         </a>
         <div class="kicker">
           <span>git</span>
-          <span style="color:var(--ink-4);">·</span>
-          <span style="color:var(--ink-4);">Nov 09, 2016</span>
+          <span style="color: var(--ink-4)">·</span>
+          <span style="color: var(--ink-4)"
+            >Nov 09, 2016</span
+          >
         </div>
         <h1>My Git Workflow: Introduction to Version Control</h1>
         <div class="byline">
           <span class="byline__av">DA</span>
           <div>
             <div class="byline__name">David M. Auble</div>
-            <div class="byline__meta">Solution Architect · 4 min read</div>
+            <div class="byline__meta">
+              Solution Architect · 4 min read
+            </div>
           </div>
         </div>
       </div>
     </div>
     
     <div class="container artHero">
-      <img src="/assets/images/posts/branching-with-git.jpg" alt="My Git Workflow: Introduction to Version Control">
+      <img src="/assets/images/posts/branching-with-git.jpg" alt="My Git Workflow: Introduction to Version Control" />
     </div>
     
   </header>
@@ -135,9 +153,8 @@
 
 <p>Projects must be initialized by the following code:</p>
 
-<blockquote>
-  <p>git init</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div></div>
 
 <p>This creates a hidden folder “.git” in your working directory. This must not be removed!</p>
 
@@ -145,39 +162,33 @@
 
 <p>Whenever you want to make a change, there are a few commands that you’ll need to learn. They are:</p>
 
-<blockquote>
-  <p>git pull</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
+</code></pre></div></div>
 
 <p>This grabs the latest versions of the files in the repository.</p>
 
-<blockquote>
-  <p>git status</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
 
 <p>This gets the status of the files contained within your project and shows which files have been altered, or “unstaged.”</p>
 
-<blockquote>
-  <p>git add .</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div></div>
 
 <p>This adds all modified, or “unstaged,” files to the current commit.</p>
 
-<blockquote>
-  <p>git commit –am “This is a message about the code I’m committing”</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit –am “This is a message about the code I’m committing”
+</code></pre></div></div>
 
 <p>This commits all changes to the repository with a descriptive message saying what’s been changed.</p>
 
-<blockquote>
-  <p>git merge –no-ff “Fix merge conflicts”</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge –no-ff “Fix merge conflicts”
+</code></pre></div></div>
 
 <p>Used in branching, this will merge your branch into another trunk.</p>
 
-<blockquote>
-  <p>git push</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push
+</code></pre></div></div>
 
 <p>This pushes the last commit into the repo for others to grab.</p>
 
@@ -189,9 +200,8 @@
 
 <p>Getting started is simple. The first step is to clone the repository.</p>
 
-<blockquote>
-  <p>git clone https://your_repo_url/your_project_name.git</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://your_repo_url/your_project_name.git
+</code></pre></div></div>
 
 <p>This will copy all files in the repo to your local machine so you can make changes.</p>
 
@@ -209,15 +219,13 @@
 
 <p>You can name your branch whatever you’d like, however it should follow a naming convention and describe what you’re going to be modifying. For example:</p>
 
-<blockquote>
-  <p><strong>hotfix-branch-name</strong></p>
-</blockquote>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hotfix-branch-name
+</code></pre></div></div>
 
 <p>This will describe a quick fix – like a spelling error, color change, link style, etc.</p>
 
-<blockquote>
-  <p><strong>feature-branch-name</strong></p>
-</blockquote>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>feature-branch-name
+</code></pre></div></div>
 
 <p>This should be used to describe a new module, feature or other large addition to the code. An example would be adding a new section or adding a new site search.</p>
 
@@ -253,13 +261,22 @@ git push
 <p><strong><em>No more coding on the fly. No more working directly off the FTP server.</em></strong> If changes are made on the fly or by working directly off the FTP server and are not stored in Git, they will be overwritten the next time a change is made using Git. It is important that once implemented, all changes be run through Git.</p>
 
 
-      <hr>
+      <hr />
       <div class="tagrow">
         
-        <span class="chip chip--lime">git</span>
-        
-        
-        <span class="chip">command line</span>
+        <a
+          class="chip chip--lime"
+          href="/categories/#git"
+          aria-label="View all posts in category git"
+          >git</a
+        >
+         
+        <a
+          class="chip"
+          href="/tags/#command-line"
+          aria-label="View all posts tagged command line"
+          >command line</a
+        >
         
       </div>
 
@@ -267,7 +284,11 @@ git push
         <span class="bio__av">DA</span>
         <div>
           <h4>David M. Auble</h4>
-          <p>Indianapolis-based solution architect. I build, secure, and rescue web applications — and write about the tools that make it easier. <a href="/#contact">Get in touch →</a></p>
+          <p>
+            Indianapolis-based solution architect. I build, secure, and rescue
+            web applications — and write about the tools that make it easier.
+            <a href="/#contact">Get in touch →</a>
+          </p>
         </div>
       </div>
     </div>
@@ -286,109 +307,138 @@ git push
   <div class="container">
     <div class="feed-head">
       <h2 class="h3">Keep reading</h2>
-      <a href="/blog.html" class="link-arrow">All articles
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <a href="/blog.html" class="link-arrow"
+        >All articles
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
       </a>
     </div>
     <div class="related">
-      
-      
+       
       <a class="rcard glass card--hover" href="/2024/02/28/getting-started-github-actions.html">
         
-        <img src="/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" alt="Getting Started with GitHub Actions">
+        <img src="/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" alt="Getting Started with GitHub Actions" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Feb 28, 2024 · github</span>
+          <span class="rcard__d"
+            >Feb 28, 2024 · github</span
+          >
           <h3>Getting Started with GitHub Actions</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2023/09/01/common-misconceptions-in-wordpress.html">
         
-        <img src="/assets/images/posts/wordpress-misconceptions.jpg" alt="Common Misconceptions About WordPress">
+        <img src="/assets/images/posts/wordpress-misconceptions.jpg" alt="Common Misconceptions About WordPress" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Sep 01, 2023 · wordpress</span>
+          <span class="rcard__d"
+            >Sep 01, 2023 · wordpress</span
+          >
           <h3>Common Misconceptions About WordPress</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2022/11/26/private-git-email.html">
         
-        <img src="/assets/images/posts/git-1.jpg" alt="Private Email Address via Git Config">
+        <img src="/assets/images/posts/git-1.jpg" alt="Private Email Address via Git Config" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Nov 26, 2022 · git</span>
+          <span class="rcard__d"
+            >Nov 26, 2022 · git</span
+          >
           <h3>Private Email Address via Git Config</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/09/06/new-job-promotion.html">
         
-        <img src="/assets/images/posts/david-auble-manager.jpg" alt="David Auble, Manager">
+        <img src="/assets/images/posts/david-auble-manager.jpg" alt="David Auble, Manager" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Sep 06, 2020 · </span>
+          <span class="rcard__d"
+            >Sep 06, 2020 · </span
+          >
           <h3>David Auble, Manager</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/05/05/targeting-internet-explorer-with-css-media-queries.html">
         
-        <img src="/assets/images/posts/ie-11-background.jpg" alt="Targeting Internet Explorer with CSS Media Queries">
+        <img src="/assets/images/posts/ie-11-background.jpg" alt="Targeting Internet Explorer with CSS Media Queries" />
         
         <div class="rcard__b">
-          <span class="rcard__d">May 05, 2020 · css</span>
+          <span class="rcard__d"
+            >May 05, 2020 · css</span
+          >
           <h3>Targeting Internet Explorer with CSS Media Queries</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/29/common-wordpress-helper-functions.html">
         
-        <img src="/assets/images/posts/common-wordpress-functions.jpg" alt="Common WordPress Helper Functions">
+        <img src="/assets/images/posts/common-wordpress-functions.jpg" alt="Common WordPress Helper Functions" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 29, 2020 · wordpress</span>
+          <span class="rcard__d"
+            >Apr 29, 2020 · wordpress</span
+          >
           <h3>Common WordPress Helper Functions</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/19/jekyll-on-windows.html">
         
-        <img src="/assets/images/posts/page-speed-insights.jpg" alt="Getting Jekyll Running on Windows 10 x64">
+        <img src="/assets/images/posts/page-speed-insights.jpg" alt="Getting Jekyll Running on Windows 10 x64" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 19, 2020 · jekyll</span>
+          <span class="rcard__d"
+            >Apr 19, 2020 · jekyll</span
+          >
           <h3>Getting Jekyll Running on Windows 10 x64</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/14/edit-robots-txt-wordpress-yoast.html">
         
-        <img src="/assets/images/posts/robots.jpg" alt="Edit Robots.txt with WordPress and Yoast">
+        <img src="/assets/images/posts/robots.jpg" alt="Edit Robots.txt with WordPress and Yoast" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 14, 2020 · wordpress</span>
+          <span class="rcard__d"
+            >Apr 14, 2020 · wordpress</span
+          >
           <h3>Edit Robots.txt with WordPress and Yoast</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/10/2020-blog-update.html">
         
-        <img src="/assets/images/posts/2020-blog-update.jpg" alt="2020 Blog Update">
+        <img src="/assets/images/posts/2020-blog-update.jpg" alt="2020 Blog Update" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 10, 2020 · blog</span>
+          <span class="rcard__d"
+            >Apr 10, 2020 · blog</span
+          >
           <h3>2020 Blog Update</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2019/03/05/improving-wordpress-search-results-with-relevanssi.html">
         
-        <img src="/assets/images/posts/relevanssi-search.jpg" alt="Improving WordPress Search Results with Relevanssi">
+        <img src="/assets/images/posts/relevanssi-search.jpg" alt="Improving WordPress Search Results with Relevanssi" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Mar 05, 2019 · wordpress</span>
+          <span class="rcard__d"
+            >Mar 05, 2019 · wordpress</span
+          >
           <h3>Improving WordPress Search Results with Relevanssi</h3>
         </div>
       </a>

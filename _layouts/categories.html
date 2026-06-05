@@ -1,45 +1,66 @@
 ---
+layout: default
 ---
 
-{% include header.html %}
-
-{% for post in site.posts limit:1 %}
-<section class="aurora-mesh-hero" style="min-height: 60vh;">
-  <div class="hero-content">
-    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem);">{{ post.title }}</h1>
-    <p>{{ post.content | strip_html | truncatewords:30 }}</p>
-    <a href="{{ post.url }}" class="aurora-btn aurora-btn-primary">Continue reading</a>
-  </div>
-</section>
-{% endfor %}
-
-<section class="aurora-section dark">
+<section class="blogHead">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <h2>Categories</h2>
-      </div>
-    </div>
-  </div>
-</section>
+    <p class="eyebrow">Browse by category</p>
+    <h1>Find every post<br />by category.</h1>
+    <p class="lead">Click a category to jump to all matching articles.</p>
 
-<section class="aurora-section light">
-  <div class="container">
-    <div id="archives">
-      {% for category in site.categories %}
-      <div class="archive-group aurora-card" style="margin-bottom: 2rem;">
-        {% capture category_name %}{{ category | first }}{% endcapture %}
-        <h3 class="category-head" style="margin-bottom: 1rem;">{{ category_name }}</h3>
-        <a name="{{ category_name | slugize }}"></a>
-        {% for post in site.categories[category_name] %}
-        <article class="archive-item">
-          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
-        </article>
-        {% endfor %}
-      </div>
+    {% if site.categories.size > 0 %}
+    <div class="filters" role="list" aria-label="Categories">
+      {% assign sorted_categories = site.categories | sort %} {% for category in
+      sorted_categories %} {% assign category_name = category[0] %} {% assign
+      category_posts = category[1] %} {% assign category_slug = category_name |
+      slugify %}
+      <a class="filter" href="#{{ category_slug }}" role="listitem"
+        >{{ category_name }} ({{ category_posts | size }})</a
+      >
       {% endfor %}
     </div>
+    {% endif %}
   </div>
 </section>
 
-{% include footer.html %}
+<section class="section--tight" style="padding-top: 8px">
+  <div class="container">
+    {% if site.categories.size > 0 %}
+    <div class="tag-archives">
+      {% assign sorted_categories = site.categories | sort %} {% for category in
+      sorted_categories %} {% assign category_name = category[0] %} {% assign
+      category_posts = category[1] %} {% assign category_slug = category_name |
+      slugify %}
+      <section id="{{ category_slug }}" class="tag-archive glass">
+        <div class="feed-head" style="margin-bottom: 18px">
+          <h2>{{ category_name }}</h2>
+          <span class="feed-count">{{ category_posts | size }} posts</span>
+        </div>
+        <div class="related">
+          {% for post in category_posts %}
+          <a class="rcard glass card--hover" href="{{ post.url }}">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }}" />
+            {% else %}
+            <div class="ph" data-label="thumb"></div>
+            {% endif %}
+            <div class="rcard__b">
+              <span class="rcard__d"
+                >{{ post.date | date: "%b %d, %Y" }} · {{ post.categories |
+                first }}</span
+              >
+              <h3>{{ post.title }}</h3>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="glass" style="padding: 24px; border-radius: var(--r-lg)">
+      <p class="text-muted" style="margin: 0">No categories found yet.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

@@ -157,4 +157,26 @@
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  /* ---- External links: open in new tab ---- */
+  document.querySelectorAll("a[href]").forEach(function (a) {
+    var href = a.getAttribute("href") || "";
+    if (!href || href.charAt(0) === "#") return;
+    if (/^(mailto:|tel:|javascript:)/i.test(href)) return;
+
+    var url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (err) {
+      return;
+    }
+
+    if (url.origin !== window.location.origin) {
+      a.setAttribute("target", "_blank");
+      var rel = (a.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
+      if (rel.indexOf("noopener") === -1) rel.push("noopener");
+      if (rel.indexOf("noreferrer") === -1) rel.push("noreferrer");
+      a.setAttribute("rel", rel.join(" "));
+    }
+  });
 })();

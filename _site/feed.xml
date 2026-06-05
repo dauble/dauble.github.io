@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-03T18:30:35-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">Getting Started with GitHub Actions</title><link href="http://localhost:4000/2024/02/28/getting-started-github-actions.html" rel="alternate" type="text/html" title="Getting Started with GitHub Actions" /><published>2024-02-28T00:00:00-05:00</published><updated>2024-02-28T00:00:00-05:00</updated><id>http://localhost:4000/2024/02/28/getting-started-github-actions</id><content type="html" xml:base="http://localhost:4000/2024/02/28/getting-started-github-actions.html"><![CDATA[<h1 id="getting-started-with-github-actions">Getting Started with GitHub Actions</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-05T16:38:20-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">Getting Started with GitHub Actions</title><link href="http://localhost:4000/2024/02/28/getting-started-github-actions.html" rel="alternate" type="text/html" title="Getting Started with GitHub Actions" /><published>2024-02-28T00:00:00-05:00</published><updated>2024-02-28T00:00:00-05:00</updated><id>http://localhost:4000/2024/02/28/getting-started-github-actions</id><content type="html" xml:base="http://localhost:4000/2024/02/28/getting-started-github-actions.html"><![CDATA[<p>GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.</p>
 
-<p>GitHub Actions is a powerful tool that automates your software development workflows right from your GitHub repository. Whether you want to run tests, deploy applications, or automate any other tasks, GitHub Actions provides a flexible and customizable framework. In this guide, we’ll walk through the basics of setting up and using GitHub Actions to streamline your development process.</p>
+<p>This quick guide covers the core concepts and a simple workflow you can adapt for your own projects.</p>
 
 <h2 id="what-is-github-actions">What is GitHub Actions?</h2>
 
-<p>GitHub Actions is a continuous integration and continuous deployment (CI/CD) platform integrated into GitHub. It allows you to define custom workflows using YAML files, triggering automated processes based on events in your repository, such as pushes, pull requests, or issue comments.</p>
+<p>GitHub Actions is GitHub’s built-in CI/CD platform. Workflows are defined in YAML and triggered by repository events like pushes, pull requests, and issue activity.</p>
 
 <h2 id="setting-up-a-workflow">Setting up a Workflow</h2>
 
-<p>To get started with GitHub Actions, create a <code class="language-plaintext highlighter-rouge">.github/workflows</code> directory in the root of your repository. In this directory, you can create YAML files that define your workflows. Let’s create a simple workflow to run tests whenever there’s a push or pull request to the <code class="language-plaintext highlighter-rouge">main</code> branch.</p>
+<p>Create a <code class="language-plaintext highlighter-rouge">.github/workflows</code> directory at the root of your repository, then add a workflow file such as <code class="language-plaintext highlighter-rouge">test.yml</code>.</p>
+
+<p>This example runs tests on pushes and pull requests to the <code class="language-plaintext highlighter-rouge">main</code> branch.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/test.yml</span>
 
@@ -27,32 +29,39 @@
     <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
 
     <span class="na">steps</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
-      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
 
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js</span>
-      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v3</span>
-      <span class="na">with</span><span class="pi">:</span>
-        <span class="na">node-version</span><span class="pi">:</span> <span class="m">14</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v3</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">node-version</span><span class="pi">:</span> <span class="m">14</span>
 
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
-      <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
 
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run tests</span>
-      <span class="na">run</span><span class="pi">:</span> <span class="s">npm test</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run tests</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm test</span>
 </code></pre></div></div>
 
-<p>This workflow defines a job named <code class="language-plaintext highlighter-rouge">test</code> that runs on the latest version of Ubuntu. It checks out the repository, sets up Node.js, installs dependencies, and runs tests. You can customize these steps based on your project’s requirements.</p>
+<p>This workflow defines a <code class="language-plaintext highlighter-rouge">test</code> job on Ubuntu, checks out code, sets up Node.js, installs dependencies, and runs tests. You can replace these steps with commands specific to your stack.</p>
 
 <h2 id="workflow-triggers">Workflow Triggers</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">on</code> section in the workflow file specifies the events that trigger the workflow. In the example, the workflow runs on every push to the <code class="language-plaintext highlighter-rouge">main</code> branch and on every pull request targeting the <code class="language-plaintext highlighter-rouge">main</code> branch. You can customize this section to fit your workflow trigger needs.</p>
+<p>The <code class="language-plaintext highlighter-rouge">on</code> section controls when a workflow runs. In this example it triggers on:</p>
+
+<ul>
+  <li>pushes to <code class="language-plaintext highlighter-rouge">main</code></li>
+  <li>pull requests targeting <code class="language-plaintext highlighter-rouge">main</code></li>
+</ul>
+
+<p>You can also trigger on schedules, tags, releases, and many other events.</p>
 
 <h2 id="actions-marketplace">Actions Marketplace</h2>
 
-<p>GitHub Actions provides a marketplace with a vast collection of pre-built actions that you can use in your workflows. These actions cover a wide range of tasks, from deploying to popular cloud providers to sending notifications. To use an action, include it in your workflow file.</p>
+<p>The GitHub Marketplace includes many reusable actions for common tasks such as deployments, notifications, linting, and security checks.</p>
 
-<p>For example, to deploy to GitHub Pages after running tests, add the following steps to the workflow file:</p>
+<p>For example, you can deploy to GitHub Pages after tests complete:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
   <span class="na">uses</span><span class="pi">:</span> <span class="s">JamesIves/github-pages-deploy-action@4.1.6</span>
@@ -61,19 +70,21 @@
     <span class="na">folder</span><span class="pi">:</span> <span class="s">build</span>
 </code></pre></div></div>
 
-<p>This step uses the <code class="language-plaintext highlighter-rouge">github-pages-deploy-action</code> to deploy the contents of the <code class="language-plaintext highlighter-rouge">build</code> folder to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</p>
+<p>This action publishes the <code class="language-plaintext highlighter-rouge">build</code> directory to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</p>
 
 <h2 id="monitoring-workflow-runs">Monitoring Workflow Runs</h2>
 
-<p>After pushing changes or creating pull requests, you can view the status of your workflows on the “Actions” tab of your GitHub repository. It provides detailed information about each workflow run, including the logs for each step.</p>
+<p>After pushing changes or opening pull requests, view run history in the repository’s <strong>Actions</strong> tab. Each run includes per-step logs for debugging failed jobs.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>GitHub Actions is a powerful tool that can significantly improve your development workflow. By automating repetitive tasks, you can save time and reduce the chance of human error. As you become more familiar with GitHub Actions, you can explore more advanced features and customize your workflows to meet the specific needs of your projects. The flexibility and integration capabilities of GitHub Actions make it a valuable asset for any development team. Get started today, and streamline your development process with automation!</p>
+<p>GitHub Actions can dramatically improve consistency and speed by automating repetitive work. Start with a small test workflow, then expand into build, release, and deployment pipelines as your process matures.</p>
+
+<p>Once your first workflow is in place, you will have a reliable baseline you can iterate on with each project.</p>
 
 <p><a href="https://www.pexels.com/photo/person-holding-a-black-and-white-paper-with-message-11035544/">Photo by RealToughCandy.com</a></p>
 
-<p><em>This post was generated with the help of AI.</em></p>]]></content><author><name>dauble</name></author><category term="github" /><category term="development" /><summary type="html"><![CDATA[Getting Started with GitHub Actions]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common Misconceptions About WordPress</title><link href="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html" rel="alternate" type="text/html" title="Common Misconceptions About WordPress" /><published>2023-09-01T00:00:00-04:00</published><updated>2023-09-01T00:00:00-04:00</updated><id>http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress</id><content type="html" xml:base="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html"><![CDATA[<p>WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.</p>
+<p><em>This post was generated with the help of AI.</em></p>]]></content><author><name>dauble</name></author><category term="github" /><category term="development" /><category term="github" /><summary type="html"><![CDATA[GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common Misconceptions About WordPress</title><link href="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html" rel="alternate" type="text/html" title="Common Misconceptions About WordPress" /><published>2023-09-01T00:00:00-04:00</published><updated>2023-09-01T00:00:00-04:00</updated><id>http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress</id><content type="html" xml:base="http://localhost:4000/2023/09/01/common-misconceptions-in-wordpress.html"><![CDATA[<p>WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.</p>
 
 <h2 id="myth-1-wordpress-is-just-for-blogs">Myth 1: WordPress is Just for Blogs</h2>
 
@@ -111,9 +122,8 @@
 
 <p>For those of you who don’t know about <a href="https://www.git-tower.com/" target="_blank">Tower</a>, I want to start off and explain it’s a fantastic tool for learning how to use Git and working with Git. It features a streamlined GUI for using version control and works flawlessly. I have zero complaints about the software, and have personally used it. The thing I like about Tower the most, though, is their “Git FAQ” section on their site. It provides clean, clear instructions on so many Git commands. I’ve stumbled across it numerous times. With the help of this <a href="https://www.git-tower.com/learn/git/faq/change-author-name-email" target="_blank">Tower article</a>, I was able to run the following command to change the email address of my previous commit:</p>
 
-<blockquote>
-  <p>git commit –amend –author=”John Doe <a href="mailto:john@doe.org">john@doe.org</a>”</p>
-</blockquote>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">--amend</span> <span class="nt">--author</span><span class="o">=</span><span class="s2">"John Doe &lt;john@doe.org&gt;"</span>
+</code></pre></div></div>
 
 <p>Now, the interesting point and back to the initial problem with Git. GitHub offers private no-reply email addresses for users wishing to keep their commits private. On the folling article on <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address">GitHub’s documentation</a>, in Step 6, GitHub explains how to set up a private email forwarding address. Simply add your GitHub username and “@users.noreply.github.com” and emails will be forwarded to your private email address. Pretty neat, huh?</p>
 
@@ -139,98 +149,86 @@
 
 <p>The most useful though is an IE-only media query, so it doesn’t break other styles. Take a look:</p>
 
-<blockquote>
-  <p>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
- /* IE specific queries here */
-}</p>
-</blockquote>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="nb">all</span> <span class="n">and</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="nb">none</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="n">active</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c">/* IE specific queries here */</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>And that’s it! When using this media query, it is important to note you can’t simply but styles in the brackets. You must define the class and then styles. Below is a sample of my implemenation.</p>
 
-<blockquote>
-  <p>@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
- .callout__container {
-   margin: 0 1em;</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="nb">all</span> <span class="n">and</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="nb">none</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">ms-high-contrast</span><span class="p">:</span> <span class="n">active</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.callout__container</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">1em</span><span class="p">;</span>
 
-  <p>&amp;:first-of-type {
-     margin: 0 1em 0 0;
-   }</p>
+    <span class="err">&amp;:first-of-type</span> <span class="err">{</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">1em</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
 
-  <p>&amp;:last-of-type {
-     margin: 0 0 0 1em;
-   }
- }
-}</p>
-</blockquote>
+    <span class="o">&amp;</span><span class="nd">:last-of-type</span> <span class="p">{</span>
+      <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1em</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
 
-<p>I hope this helps!</p>]]></content><author><name>dauble</name></author><category term="css" /><category term="ie" /><category term="internet explorer" /><summary type="html"><![CDATA[I’ve been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don’t fully support it.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common WordPress Helper Functions</title><link href="http://localhost:4000/2020/04/29/common-wordpress-helper-functions.html" rel="alternate" type="text/html" title="Common WordPress Helper Functions" /><published>2020-04-29T00:00:00-04:00</published><updated>2020-04-29T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/29/common-wordpress-helper-functions</id><content type="html" xml:base="http://localhost:4000/2020/04/29/common-wordpress-helper-functions.html"><![CDATA[<p>I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.</p>
+<p>I hope this helps!</p>]]></content><author><name>dauble</name></author><category term="css" /><category term="ie" /><summary type="html"><![CDATA[I’ve been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don’t fully support it.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common WordPress Helper Functions</title><link href="http://localhost:4000/2020/04/29/common-wordpress-helper-functions.html" rel="alternate" type="text/html" title="Common WordPress Helper Functions" /><published>2020-04-29T00:00:00-04:00</published><updated>2020-04-29T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/29/common-wordpress-helper-functions</id><content type="html" xml:base="http://localhost:4000/2020/04/29/common-wordpress-helper-functions.html"><![CDATA[<p>I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.</p>
 
 <h2 id="wp_is_mobile">wp_is_mobile()</h2>
-<blockquote>
-  <p>wp_is_mobile()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">wp_is_mobile</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>This function detects if someone is using a mobile device or not. Extremely handy for when you want certain features (such as tracking scripts, chat applications, etc) to not appear when users are using mobile devices.</p>
 
 <h2 id="is_user_logged_in">is_user_logged_in()</h2>
-<blockquote>
-  <p>is_user_logged_in()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_user_logged_in</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>As it sounds, this checks to see if the current user is logged in or not. Handy little script for turning off tracking scripts or other non-essential parts when users are logged in. This can also be used to protect content areas that require membership roles to view.</p>
 
 <h2 id="is_page_template">is_page_template()</h2>
-<blockquote>
-  <p>is_page_template(‘template-sample.php’)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_page_template</span><span class="p">(</span><span class="s1">'template-sample.php'</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="is_front_page">is_front_page()</h2>
-<blockquote>
-  <p>is_front_page()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_front_page</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>This function simply checks to see if the current page is set as the Front Page in WordPress. This page is set under Settings -&gt; Reading.</p>
 
 <h2 id="is_home">is_home()</h2>
-<blockquote>
-  <p>is_home()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">is_home</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>This function simply checks to see if the current page is set as the Posts Page in WordPress. This page is set under Settings -&gt; Reading.</p>
 
 <h2 id="wp_reset_postdata">wp_reset_postdata()</h2>
-<blockquote>
-  <p>wp_reset_postdata()</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">wp_reset_postdata</span><span class="p">()</span>
+</code></pre></div></div>
 
 <p>When using custom loops, this resets the Posts loop so the rest of the page will render properly.</p>
 
 <h2 id="restore_current_blog">restore_current_blog()</h2>
-<blockquote>
-  <p>restore_current_blog(1)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">restore_current_blog</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>When working with a multisite setup, this allows you to change which blog to grab content. Pass in the Site ID as an arugment to load that site’s content.</p>
 
 <h2 id="get_template_part">get_template_part()</h2>
-<blockquote>
-  <p>get_template_part(‘included-template.php’)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">get_template_part</span><span class="p">(</span><span class="s1">'included-template.php'</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>This functions like an include for WordPress. Simple pass in the PHP template filename as an argument.</p>
 
 <h2 id="bloginfo">bloginfo()</h2>
-<blockquote>
-  <p>bloginfo(‘url’)</p>
-</blockquote>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">bloginfo</span><span class="p">(</span><span class="s1">'url'</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>One of the more useful functions, this enables you to grab various info about the WordPress site. Some arguments I use frequently are <code class="language-plaintext highlighter-rouge">url</code> and <code class="language-plaintext highlighter-rouge">template_directory</code>. These return the site’s URL and theme path.</p>
 
 <p>For more information on these functions and more, visit the <a href="https://developer.wordpress.org/reference/functions/" target="_blank">WordPress Developer reference</a>.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="php" /><summary type="html"><![CDATA[I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/common-wordpress-functions.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/common-wordpress-functions.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Getting Jekyll Running on Windows 10 x64</title><link href="http://localhost:4000/2020/04/19/jekyll-on-windows.html" rel="alternate" type="text/html" title="Getting Jekyll Running on Windows 10 x64" /><published>2020-04-19T00:00:00-04:00</published><updated>2020-04-19T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/19/jekyll-on-windows</id><content type="html" xml:base="http://localhost:4000/2020/04/19/jekyll-on-windows.html"><![CDATA[<p>I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned <a href="/2020/04/10/2020-blog-update.html">previously</a>, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:</p>
 
-<blockquote>
-  <p>Unable to load the EventMachine C extension; To use the pure-ruby reactor, require ‘em/pure_ruby’</p>
-</blockquote>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Unable to load the EventMachine C extension; To use the pure-ruby reactor, require 'em/pure_ruby'
+</code></pre></div></div>
 
 <p>Puzzled, I scoured Google and StackOverflow and came up empty. I thought <a href="https://stackoverflow.com/questions/30682575/unable-to-load-the-eventmachine-c-extension-to-use-the-pure-ruby-reactor" target="_blank">this post on StackOverflow</a> would help get me there, but I ended up back at the same spot.</p>
 
@@ -238,11 +236,10 @@
 
 <p>Here’s the final steps I used to fix this problem:</p>
 
-<blockquote>
-  <p>bundle<br />
-gem uninstall eventmachine –force<br />
-gem install eventmachine –platform ruby</p>
-</blockquote>]]></content><author><name>dauble</name></author><category term="jekyll" /><category term="command line" /><summary type="html"><![CDATA[I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Edit Robots.txt with WordPress and Yoast</title><link href="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html" rel="alternate" type="text/html" title="Edit Robots.txt with WordPress and Yoast" /><published>2020-04-14T00:00:00-04:00</published><updated>2020-04-14T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast</id><content type="html" xml:base="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"><![CDATA[<p>An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a <code class="language-plaintext highlighter-rouge">robots.txt</code> file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle
+gem uninstall eventmachine <span class="nt">--force</span>
+gem <span class="nb">install </span>eventmachine <span class="nt">--platform</span> ruby
+</code></pre></div></div>]]></content><author><name>dauble</name></author><category term="jekyll" /><category term="command line" /><summary type="html"><![CDATA[I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Edit Robots.txt with WordPress and Yoast</title><link href="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html" rel="alternate" type="text/html" title="Edit Robots.txt with WordPress and Yoast" /><published>2020-04-14T00:00:00-04:00</published><updated>2020-04-14T00:00:00-04:00</updated><id>http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast</id><content type="html" xml:base="http://localhost:4000/2020/04/14/edit-robots-txt-wordpress-yoast.html"><![CDATA[<p>An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a <code class="language-plaintext highlighter-rouge">robots.txt</code> file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.</p>
 
 <p>We’ve been using Yoast SEO for our primary SEO plugin on all of our sites for quite some time and albeit it buggy and <a href="https://yoast.com/media-attachment-urls/" target="_blank">catastrophic at times</a>, however for the most part, it is the best SEO plugin available for WordPress.</p>
 

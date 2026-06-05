@@ -5,7 +5,7 @@ date: 2020-05-05
 image: /assets/images/posts/ie-11-background.jpg
 author: dauble
 categories: [css]
-tags: [ie,internet explorer]
+tags: [ie]
 ---
 
 I've been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don't fully support it.
@@ -16,24 +16,28 @@ Typically I support browsers back two versions, so I'm still supporting IE10/11.
 
 The most useful though is an IE-only media query, so it doesn't break other styles. Take a look:
 
->@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
->  /* IE specific queries here */
->}
+```css
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE specific queries here */
+}
+```
 
 And that's it! When using this media query, it is important to note you can't simply but styles in the brackets. You must define the class and then styles. Below is a sample of my implemenation.
 
->@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
->  .callout__container {
->    margin: 0 1em;
->
->    &:first-of-type {
->      margin: 0 1em 0 0;
->    }
->
->    &:last-of-type {
->      margin: 0 0 0 1em;
->    }
->  }
->}
+```css
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .callout__container {
+    margin: 0 1em;
+  }
+
+  .callout__container:first-of-type {
+    margin: 0 1em 0 0;
+  }
+
+  .callout__container:last-of-type {
+    margin: 0 0 0 1em;
+  }
+}
+```
 
 I hope this helps!

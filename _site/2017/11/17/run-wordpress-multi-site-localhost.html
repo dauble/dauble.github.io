@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/styles.css?1780525835877560000">
+  <link rel="stylesheet" href="/assets/css/styles.css?1780691900888637000">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Indianapolis Web Developer" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -28,8 +28,8 @@
 <meta property="og:title" content="Run WordPress Multi-Site On localhost" />
 <meta name="author" content="dauble" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites." />
-<meta property="og:description" content="This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites." />
+<meta name="description" content="This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks." />
+<meta property="og:description" content="This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks." />
 <link rel="canonical" href="http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html" />
 <meta property="og:url" content="http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html" />
 <meta property="og:site_name" content="Indianapolis Web Developer" />
@@ -40,7 +40,7 @@
 <meta property="twitter:image" content="http://localhost:4000/assets/images/posts/common-code.jpg" />
 <meta property="twitter:title" content="Run WordPress Multi-Site On localhost" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2017-11-17T00:00:00-05:00","datePublished":"2017-11-17T00:00:00-05:00","description":"This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites.","headline":"Run WordPress Multi-Site On localhost","image":"http://localhost:4000/assets/images/posts/common-code.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"},"url":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2017-11-17T00:00:00-05:00","datePublished":"2017-11-17T00:00:00-05:00","description":"This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks.","headline":"Run WordPress Multi-Site On localhost","image":"http://localhost:4000/assets/images/posts/common-code.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"},"url":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -99,78 +99,128 @@
   <header class="artHead">
     <div class="container">
       <div class="artHead__wrap">
-        <a href="/blog.html" class="link-arrow" style="margin-bottom:22px;font-size:0.92rem;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="transform:rotate(180deg);"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <a
+          href="/blog.html"
+          class="link-arrow"
+          style="margin-bottom: 22px; font-size: 0.92rem"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="transform: rotate(180deg)"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
           All articles
         </a>
         <div class="kicker">
           <span>wordpress</span>
-          <span style="color:var(--ink-4);">·</span>
-          <span style="color:var(--ink-4);">Nov 17, 2017</span>
+          <span style="color: var(--ink-4)">·</span>
+          <span style="color: var(--ink-4)"
+            >Nov 17, 2017</span
+          >
         </div>
         <h1>Run WordPress Multi-Site On localhost</h1>
         <div class="byline">
           <span class="byline__av">DA</span>
           <div>
             <div class="byline__name">David M. Auble</div>
-            <div class="byline__meta">Solution Architect · 2 min read</div>
+            <div class="byline__meta">
+              Solution Architect · 2 min read
+            </div>
           </div>
         </div>
       </div>
     </div>
     
     <div class="container artHero">
-      <img src="/assets/images/posts/common-code.jpg" alt="Run WordPress Multi-Site On localhost">
+      <img src="/assets/images/posts/common-code.jpg" alt="Run WordPress Multi-Site On localhost" />
     </div>
     
   </header>
 
   <div class="container artBody">
     <div class="prose">
-      <p>This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites.</p>
+      <p>This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks.</p>
 
-<p>For information on getting started with a WordPress multi-site, detailed instructions can be found in the <a href="https://codex.wordpress.org/Create_A_Network" target="_blank">WordPress documentation</a>. For this demo, I’m going to assume you’re taking over a multi-site and are needing to make changes locally and there is a main site and two sub-sites. Also, let’s assume your local website will be “<strong>http://demo.local</strong>”.</p>
+<p>If you need a primer, start with the <a href="https://codex.wordpress.org/Create_A_Network" target="\_blank">WordPress multisite documentation</a>. For this walkthrough, assume you are taking over an existing multisite with one main site and two subsites, and your local domain is <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
 <h2 id="modifying-tables">Modifying Tables</h2>
 
-<p>Once you’ve downloaded the database and imported it to the database you’re planning on using, it’ll be important to look for the following tables: <strong>wp_[site-id]_options</strong>, <strong>wp_blogs</strong>, <strong>wp_options</strong>, <strong>wp_site</strong> and <strong>wp_sitemeta</strong>.</p>
+<p>After importing your database locally, update values in these tables:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">wp_[site-id]_options</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_blogs</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_options</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_site</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_sitemeta</code></li>
+</ul>
 
 <h3 id="wp_site-id_options">wp_[site-id]_options</h3>
 
-<p>You will have several of these. These correspond with the Site ID in the Network tab. You will need to change the <strong><em>siteurl</em></strong> and <strong><em>home</em></strong> columns to “<strong>http://demo.local</strong>”.</p>
+<p>You will likely have several of these tables, one per site ID in the Network admin. Update the <code class="language-plaintext highlighter-rouge">siteurl</code> and <code class="language-plaintext highlighter-rouge">home</code> values to <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
 <h3 id="wp_blogs">wp_blogs</h3>
 
-<p>This is a little easier. Change each row in the <em><strong>domain</strong></em> column to “<strong>demo.local</strong>”.</p>
+<p>Change each row in the <code class="language-plaintext highlighter-rouge">domain</code> column to <code class="language-plaintext highlighter-rouge">demo.local</code>.</p>
 
 <h3 id="wp_options">wp_options</h3>
 
-<p>Like the <strong>wp_blogs</strong> table, this will also need the <em><strong>siteurl</strong>_and </em><strong>home</strong>_ columns updated to “<strong>http://demo.local</strong>”.</p>
+<p>Like <code class="language-plaintext highlighter-rouge">wp_blogs</code>, update the <code class="language-plaintext highlighter-rouge">siteurl</code> and <code class="language-plaintext highlighter-rouge">home</code> values to <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
 <h3 id="wp_site">wp_site</h3>
 
-<p>Like the <strong>wp_blogs</strong> table, each row in the <em><strong>domain</strong></em> column will need to be updated to “<strong>demo.local</strong>”.</p>
+<p>Like <code class="language-plaintext highlighter-rouge">wp_blogs</code>, update each row in the <code class="language-plaintext highlighter-rouge">domain</code> column to <code class="language-plaintext highlighter-rouge">demo.local</code>.</p>
 
 <h3 id="wp_sitemeta">wp_sitemeta</h3>
 
-<p>Finally, I’ve only had issues with this once, however there is one last cell that needs to be updated. Look for the <em><strong>siteurl</strong></em> column and update the value to “<em><strong>http://demo.local</strong></em>”.</p>
+<p>Finally, there is one more value that can cause issues. In <code class="language-plaintext highlighter-rouge">wp_sitemeta</code>, find the <code class="language-plaintext highlighter-rouge">siteurl</code> entry and set it to <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
-<p>And that’s it! It’s best to clear the cache on your local machine, but you’ll now be able to log into the WordPress admin panel like you would normally!</p>
+<p>That is it. Clear your local browser cache, then log in to the WordPress admin as usual.</p>
 
 
-      <hr>
+      <hr />
       <div class="tagrow">
         
-        <span class="chip chip--lime">wordpress</span>
+        <a
+          class="chip chip--lime"
+          href="/categories/#wordpress"
+          aria-label="View all posts in category wordpress"
+          >wordpress</a
+        >
         
-        <span class="chip chip--lime">mysql</span>
+        <a
+          class="chip chip--lime"
+          href="/categories/#mysql"
+          aria-label="View all posts in category mysql"
+          >mysql</a
+        >
+         
+        <a
+          class="chip"
+          href="/tags/#phpmyadmin"
+          aria-label="View all posts tagged phpmyadmin"
+          >phpmyadmin</a
+        >
         
+        <a
+          class="chip"
+          href="/tags/#wamp"
+          aria-label="View all posts tagged wamp"
+          >wamp</a
+        >
         
-        <span class="chip">phpmyadmin</span>
-        
-        <span class="chip">wamp</span>
-        
-        <span class="chip">mamp</span>
+        <a
+          class="chip"
+          href="/tags/#mamp"
+          aria-label="View all posts tagged mamp"
+          >mamp</a
+        >
         
       </div>
 
@@ -178,7 +228,11 @@
         <span class="bio__av">DA</span>
         <div>
           <h4>David M. Auble</h4>
-          <p>Indianapolis-based solution architect. I build, secure, and rescue web applications — and write about the tools that make it easier. <a href="/#contact">Get in touch →</a></p>
+          <p>
+            Indianapolis-based solution architect. I build, secure, and rescue
+            web applications — and write about the tools that make it easier.
+            <a href="/#contact">Get in touch →</a>
+          </p>
         </div>
       </div>
     </div>
@@ -197,109 +251,138 @@
   <div class="container">
     <div class="feed-head">
       <h2 class="h3">Keep reading</h2>
-      <a href="/blog.html" class="link-arrow">All articles
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <a href="/blog.html" class="link-arrow"
+        >All articles
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
       </a>
     </div>
     <div class="related">
-      
-      
+       
       <a class="rcard glass card--hover" href="/2024/02/28/getting-started-github-actions.html">
         
-        <img src="/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" alt="Getting Started with GitHub Actions">
+        <img src="/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" alt="Getting Started with GitHub Actions" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Feb 28, 2024 · github</span>
+          <span class="rcard__d"
+            >Feb 28, 2024 · github</span
+          >
           <h3>Getting Started with GitHub Actions</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2023/09/01/common-misconceptions-in-wordpress.html">
         
-        <img src="/assets/images/posts/wordpress-misconceptions.jpg" alt="Common Misconceptions About WordPress">
+        <img src="/assets/images/posts/wordpress-misconceptions.jpg" alt="Common Misconceptions About WordPress" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Sep 01, 2023 · wordpress</span>
+          <span class="rcard__d"
+            >Sep 01, 2023 · wordpress</span
+          >
           <h3>Common Misconceptions About WordPress</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2022/11/26/private-git-email.html">
         
-        <img src="/assets/images/posts/git-1.jpg" alt="Private Email Address via Git Config">
+        <img src="/assets/images/posts/git-1.jpg" alt="Private Email Address via Git Config" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Nov 26, 2022 · git</span>
+          <span class="rcard__d"
+            >Nov 26, 2022 · git</span
+          >
           <h3>Private Email Address via Git Config</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/09/06/new-job-promotion.html">
         
-        <img src="/assets/images/posts/david-auble-manager.jpg" alt="David Auble, Manager">
+        <img src="/assets/images/posts/david-auble-manager.jpg" alt="David Auble, Manager" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Sep 06, 2020 · </span>
+          <span class="rcard__d"
+            >Sep 06, 2020 · </span
+          >
           <h3>David Auble, Manager</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/05/05/targeting-internet-explorer-with-css-media-queries.html">
         
-        <img src="/assets/images/posts/ie-11-background.jpg" alt="Targeting Internet Explorer with CSS Media Queries">
+        <img src="/assets/images/posts/ie-11-background.jpg" alt="Targeting Internet Explorer with CSS Media Queries" />
         
         <div class="rcard__b">
-          <span class="rcard__d">May 05, 2020 · css</span>
+          <span class="rcard__d"
+            >May 05, 2020 · css</span
+          >
           <h3>Targeting Internet Explorer with CSS Media Queries</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/29/common-wordpress-helper-functions.html">
         
-        <img src="/assets/images/posts/common-wordpress-functions.jpg" alt="Common WordPress Helper Functions">
+        <img src="/assets/images/posts/common-wordpress-functions.jpg" alt="Common WordPress Helper Functions" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 29, 2020 · wordpress</span>
+          <span class="rcard__d"
+            >Apr 29, 2020 · wordpress</span
+          >
           <h3>Common WordPress Helper Functions</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/19/jekyll-on-windows.html">
         
-        <img src="/assets/images/posts/page-speed-insights.jpg" alt="Getting Jekyll Running on Windows 10 x64">
+        <img src="/assets/images/posts/page-speed-insights.jpg" alt="Getting Jekyll Running on Windows 10 x64" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 19, 2020 · jekyll</span>
+          <span class="rcard__d"
+            >Apr 19, 2020 · jekyll</span
+          >
           <h3>Getting Jekyll Running on Windows 10 x64</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/14/edit-robots-txt-wordpress-yoast.html">
         
-        <img src="/assets/images/posts/robots.jpg" alt="Edit Robots.txt with WordPress and Yoast">
+        <img src="/assets/images/posts/robots.jpg" alt="Edit Robots.txt with WordPress and Yoast" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 14, 2020 · wordpress</span>
+          <span class="rcard__d"
+            >Apr 14, 2020 · wordpress</span
+          >
           <h3>Edit Robots.txt with WordPress and Yoast</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2020/04/10/2020-blog-update.html">
         
-        <img src="/assets/images/posts/2020-blog-update.jpg" alt="2020 Blog Update">
+        <img src="/assets/images/posts/2020-blog-update.jpg" alt="2020 Blog Update" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Apr 10, 2020 · blog</span>
+          <span class="rcard__d"
+            >Apr 10, 2020 · blog</span
+          >
           <h3>2020 Blog Update</h3>
         </div>
       </a>
       
       <a class="rcard glass card--hover" href="/2019/03/05/improving-wordpress-search-results-with-relevanssi.html">
         
-        <img src="/assets/images/posts/relevanssi-search.jpg" alt="Improving WordPress Search Results with Relevanssi">
+        <img src="/assets/images/posts/relevanssi-search.jpg" alt="Improving WordPress Search Results with Relevanssi" />
         
         <div class="rcard__b">
-          <span class="rcard__d">Mar 05, 2019 · wordpress</span>
+          <span class="rcard__d"
+            >Mar 05, 2019 · wordpress</span
+          >
           <h3>Improving WordPress Search Results with Relevanssi</h3>
         </div>
       </a>
