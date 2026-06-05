@@ -10,11 +10,10 @@ layout: default
 
     {% if site.categories.size > 0 %}
     <div class="filters" role="list" aria-label="Categories">
-      {% assign sorted_categories = site.categories | sort %}
-      {% for category in sorted_categories %}
-      {% assign category_name = category[0] %}
-      {% assign category_posts = category[1] %}
-      {% assign category_slug = category_name | slugify %}
+      {% assign sorted_categories = site.categories | sort %} {% for category in
+      sorted_categories %} {% assign category_name = category[0] %} {% assign
+      category_posts = category[1] %} {% assign category_slug = category_name |
+      slugify %}
       <a class="filter" href="#{{ category_slug }}" role="listitem"
         >{{ category_name }} ({{ category_posts | size }})</a
       >
@@ -28,11 +27,10 @@ layout: default
   <div class="container">
     {% if site.categories.size > 0 %}
     <div class="tag-archives">
-      {% assign sorted_categories = site.categories | sort %}
-      {% for category in sorted_categories %}
-      {% assign category_name = category[0] %}
-      {% assign category_posts = category[1] %}
-      {% assign category_slug = category_name | slugify %}
+      {% assign sorted_categories = site.categories | sort %} {% for category in
+      sorted_categories %} {% assign category_name = category[0] %} {% assign
+      category_posts = category[1] %} {% assign category_slug = category_name |
+      slugify %}
       <section id="{{ category_slug }}" class="tag-archive glass">
         <div class="feed-head" style="margin-bottom: 18px">
           <h2>{{ category_name }}</h2>
@@ -48,7 +46,8 @@ layout: default
             {% endif %}
             <div class="rcard__b">
               <span class="rcard__d"
-                >{{ post.date | date: "%b %d, %Y" }} · {{ post.categories | first }}</span
+                >{{ post.date | date: "%b %d, %Y" }} · {{ post.categories |
+                first }}</span
               >
               <h3>{{ post.title }}</h3>
             </div>

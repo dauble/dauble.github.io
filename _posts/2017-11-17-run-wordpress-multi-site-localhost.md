@@ -7,32 +7,39 @@ author: dauble
 categories: [wordpress, mysql]
 tags: [phpmyadmin, wamp, mamp]
 ---
-This is something I've wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I've built are straight-forward "single sites" with a few bits of magic here and there. However, with my job, I manage several mutli-site websites.
 
-For information on getting started with a WordPress multi-site, detailed instructions can be found in the [WordPress documentation](https://codex.wordpress.org/Create_A_Network){:target="_blank"}. For this demo, I'm going to assume you're taking over a multi-site and are needing to make changes locally and there is a main site and two sub-sites. Also, let's assume your local website will be "**http://demo.local**".
+This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks.
+
+If you need a primer, start with the [WordPress multisite documentation](https://codex.wordpress.org/Create_A_Network){:target="\_blank"}. For this walkthrough, assume you are taking over an existing multisite with one main site and two subsites, and your local domain is `http://demo.local`.
 
 ## Modifying Tables
 
-Once you've downloaded the database and imported it to the database you're planning on using, it'll be important to look for the following tables: **wp_[site-id]_options**, **wp_blogs**, **wp_options**, **wp_site** and **wp_sitemeta**.
+After importing your database locally, update values in these tables:
 
-### wp_[site-id]_options
+- `wp_[site-id]_options`
+- `wp_blogs`
+- `wp_options`
+- `wp_site`
+- `wp_sitemeta`
 
-You will have several of these. These correspond with the Site ID in the Network tab. You will need to change the **_siteurl_** and **_home_** columns to "**http://demo.local**".
+### wp\_[site-id]\_options
+
+You will likely have several of these tables, one per site ID in the Network admin. Update the `siteurl` and `home` values to `http://demo.local`.
 
 ### wp_blogs
 
-This is a little easier. Change each row in the _**domain**_ column to "**demo.local**".
+Change each row in the `domain` column to `demo.local`.
 
 ### wp_options
 
-Like the **wp_blogs** table, this will also need the _**siteurl**_and _**home**_ columns updated to "**http://demo.local**".
+Like `wp_blogs`, update the `siteurl` and `home` values to `http://demo.local`.
 
 ### wp_site
 
-Like the **wp_blogs** table, each row in the _**domain**_ column will need to be updated to "**demo.local**".
+Like `wp_blogs`, update each row in the `domain` column to `demo.local`.
 
 ### wp_sitemeta
 
-Finally, I've only had issues with this once, however there is one last cell that needs to be updated. Look for the _**siteurl**_ column and update the value to "_**http://demo.local**_".
+Finally, there is one more value that can cause issues. In `wp_sitemeta`, find the `siteurl` entry and set it to `http://demo.local`.
 
-And that's it! It's best to clear the cache on your local machine, but you'll now be able to log into the WordPress admin panel like you would normally!
+That is it. Clear your local browser cache, then log in to the WordPress admin as usual.

@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/styles.css?1780688503822260000">
+  <link rel="stylesheet" href="/assets/css/styles.css?1780691900888637000">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Indianapolis Web Developer" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -28,8 +28,8 @@
 <meta property="og:title" content="Run WordPress Multi-Site On localhost" />
 <meta name="author" content="dauble" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites." />
-<meta property="og:description" content="This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites." />
+<meta name="description" content="This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks." />
+<meta property="og:description" content="This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks." />
 <link rel="canonical" href="http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html" />
 <meta property="og:url" content="http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html" />
 <meta property="og:site_name" content="Indianapolis Web Developer" />
@@ -40,7 +40,7 @@
 <meta property="twitter:image" content="http://localhost:4000/assets/images/posts/common-code.jpg" />
 <meta property="twitter:title" content="Run WordPress Multi-Site On localhost" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2017-11-17T00:00:00-05:00","datePublished":"2017-11-17T00:00:00-05:00","description":"This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites.","headline":"Run WordPress Multi-Site On localhost","image":"http://localhost:4000/assets/images/posts/common-code.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"},"url":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2017-11-17T00:00:00-05:00","datePublished":"2017-11-17T00:00:00-05:00","description":"This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks.","headline":"Run WordPress Multi-Site On localhost","image":"http://localhost:4000/assets/images/posts/common-code.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"},"url":"http://localhost:4000/2017/11/17/run-wordpress-multi-site-localhost.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -145,35 +145,43 @@
 
   <div class="container artBody">
     <div class="prose">
-      <p>This is something I’ve wanted to write about for quite some time. Part of my building process involves three environments: local, staging and production. Most of the sites I’ve built are straight-forward “single sites” with a few bits of magic here and there. However, with my job, I manage several mutli-site websites.</p>
+      <p>This is something I have wanted to write about for quite some time. Part of my process involves three environments: local, staging, and production. Most of the sites I build are straightforward single-site setups with a few custom touches. At work, however, I manage several WordPress multisite networks.</p>
 
-<p>For information on getting started with a WordPress multi-site, detailed instructions can be found in the <a href="https://codex.wordpress.org/Create_A_Network" target="_blank">WordPress documentation</a>. For this demo, I’m going to assume you’re taking over a multi-site and are needing to make changes locally and there is a main site and two sub-sites. Also, let’s assume your local website will be “<strong>http://demo.local</strong>”.</p>
+<p>If you need a primer, start with the <a href="https://codex.wordpress.org/Create_A_Network" target="\_blank">WordPress multisite documentation</a>. For this walkthrough, assume you are taking over an existing multisite with one main site and two subsites, and your local domain is <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
 <h2 id="modifying-tables">Modifying Tables</h2>
 
-<p>Once you’ve downloaded the database and imported it to the database you’re planning on using, it’ll be important to look for the following tables: <strong>wp_[site-id]_options</strong>, <strong>wp_blogs</strong>, <strong>wp_options</strong>, <strong>wp_site</strong> and <strong>wp_sitemeta</strong>.</p>
+<p>After importing your database locally, update values in these tables:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">wp_[site-id]_options</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_blogs</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_options</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_site</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wp_sitemeta</code></li>
+</ul>
 
 <h3 id="wp_site-id_options">wp_[site-id]_options</h3>
 
-<p>You will have several of these. These correspond with the Site ID in the Network tab. You will need to change the <strong><em>siteurl</em></strong> and <strong><em>home</em></strong> columns to “<strong>http://demo.local</strong>”.</p>
+<p>You will likely have several of these tables, one per site ID in the Network admin. Update the <code class="language-plaintext highlighter-rouge">siteurl</code> and <code class="language-plaintext highlighter-rouge">home</code> values to <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
 <h3 id="wp_blogs">wp_blogs</h3>
 
-<p>This is a little easier. Change each row in the <em><strong>domain</strong></em> column to “<strong>demo.local</strong>”.</p>
+<p>Change each row in the <code class="language-plaintext highlighter-rouge">domain</code> column to <code class="language-plaintext highlighter-rouge">demo.local</code>.</p>
 
 <h3 id="wp_options">wp_options</h3>
 
-<p>Like the <strong>wp_blogs</strong> table, this will also need the <em><strong>siteurl</strong>_and </em><strong>home</strong>_ columns updated to “<strong>http://demo.local</strong>”.</p>
+<p>Like <code class="language-plaintext highlighter-rouge">wp_blogs</code>, update the <code class="language-plaintext highlighter-rouge">siteurl</code> and <code class="language-plaintext highlighter-rouge">home</code> values to <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
 <h3 id="wp_site">wp_site</h3>
 
-<p>Like the <strong>wp_blogs</strong> table, each row in the <em><strong>domain</strong></em> column will need to be updated to “<strong>demo.local</strong>”.</p>
+<p>Like <code class="language-plaintext highlighter-rouge">wp_blogs</code>, update each row in the <code class="language-plaintext highlighter-rouge">domain</code> column to <code class="language-plaintext highlighter-rouge">demo.local</code>.</p>
 
 <h3 id="wp_sitemeta">wp_sitemeta</h3>
 
-<p>Finally, I’ve only had issues with this once, however there is one last cell that needs to be updated. Look for the <em><strong>siteurl</strong></em> column and update the value to “<em><strong>http://demo.local</strong></em>”.</p>
+<p>Finally, there is one more value that can cause issues. In <code class="language-plaintext highlighter-rouge">wp_sitemeta</code>, find the <code class="language-plaintext highlighter-rouge">siteurl</code> entry and set it to <code class="language-plaintext highlighter-rouge">http://demo.local</code>.</p>
 
-<p>And that’s it! It’s best to clear the cache on your local machine, but you’ll now be able to log into the WordPress admin panel like you would normally!</p>
+<p>That is it. Clear your local browser cache, then log in to the WordPress admin as usual.</p>
 
 
       <hr />

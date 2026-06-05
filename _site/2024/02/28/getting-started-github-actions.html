@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/styles.css?1780688503822260000">
+  <link rel="stylesheet" href="/assets/css/styles.css?1780691900888637000">
 
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Indianapolis Web Developer" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -28,8 +28,8 @@
 <meta property="og:title" content="Getting Started with GitHub Actions" />
 <meta name="author" content="dauble" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Getting Started with GitHub Actions" />
-<meta property="og:description" content="Getting Started with GitHub Actions" />
+<meta name="description" content="GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub." />
+<meta property="og:description" content="GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub." />
 <link rel="canonical" href="http://localhost:4000/2024/02/28/getting-started-github-actions.html" />
 <meta property="og:url" content="http://localhost:4000/2024/02/28/getting-started-github-actions.html" />
 <meta property="og:site_name" content="Indianapolis Web Developer" />
@@ -40,7 +40,7 @@
 <meta property="twitter:image" content="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" />
 <meta property="twitter:title" content="Getting Started with GitHub Actions" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2024-02-28T00:00:00-05:00","datePublished":"2024-02-28T00:00:00-05:00","description":"Getting Started with GitHub Actions","headline":"Getting Started with GitHub Actions","image":"http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2024/02/28/getting-started-github-actions.html"},"url":"http://localhost:4000/2024/02/28/getting-started-github-actions.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2024-02-28T00:00:00-05:00","datePublished":"2024-02-28T00:00:00-05:00","description":"GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.","headline":"Getting Started with GitHub Actions","image":"http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2024/02/28/getting-started-github-actions.html"},"url":"http://localhost:4000/2024/02/28/getting-started-github-actions.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -130,7 +130,7 @@
           <div>
             <div class="byline__name">David M. Auble</div>
             <div class="byline__meta">
-              Solution Architect · 4 min read
+              Solution Architect · 3 min read
             </div>
           </div>
         </div>
@@ -145,17 +145,19 @@
 
   <div class="container artBody">
     <div class="prose">
-      <h1 id="getting-started-with-github-actions">Getting Started with GitHub Actions</h1>
+      <p>GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.</p>
 
-<p>GitHub Actions is a powerful tool that automates your software development workflows right from your GitHub repository. Whether you want to run tests, deploy applications, or automate any other tasks, GitHub Actions provides a flexible and customizable framework. In this guide, we’ll walk through the basics of setting up and using GitHub Actions to streamline your development process.</p>
+<p>This quick guide covers the core concepts and a simple workflow you can adapt for your own projects.</p>
 
 <h2 id="what-is-github-actions">What is GitHub Actions?</h2>
 
-<p>GitHub Actions is a continuous integration and continuous deployment (CI/CD) platform integrated into GitHub. It allows you to define custom workflows using YAML files, triggering automated processes based on events in your repository, such as pushes, pull requests, or issue comments.</p>
+<p>GitHub Actions is GitHub’s built-in CI/CD platform. Workflows are defined in YAML and triggered by repository events like pushes, pull requests, and issue activity.</p>
 
 <h2 id="setting-up-a-workflow">Setting up a Workflow</h2>
 
-<p>To get started with GitHub Actions, create a <code class="language-plaintext highlighter-rouge">.github/workflows</code> directory in the root of your repository. In this directory, you can create YAML files that define your workflows. Let’s create a simple workflow to run tests whenever there’s a push or pull request to the <code class="language-plaintext highlighter-rouge">main</code> branch.</p>
+<p>Create a <code class="language-plaintext highlighter-rouge">.github/workflows</code> directory at the root of your repository, then add a workflow file such as <code class="language-plaintext highlighter-rouge">test.yml</code>.</p>
+
+<p>This example runs tests on pushes and pull requests to the <code class="language-plaintext highlighter-rouge">main</code> branch.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/test.yml</span>
 
@@ -174,32 +176,39 @@
     <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
 
     <span class="na">steps</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
-      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout repository</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
 
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js</span>
-      <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v3</span>
-      <span class="na">with</span><span class="pi">:</span>
-        <span class="na">node-version</span><span class="pi">:</span> <span class="m">14</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Node.js</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v3</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">node-version</span><span class="pi">:</span> <span class="m">14</span>
 
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
-      <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
 
-    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run tests</span>
-      <span class="na">run</span><span class="pi">:</span> <span class="s">npm test</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run tests</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm test</span>
 </code></pre></div></div>
 
-<p>This workflow defines a job named <code class="language-plaintext highlighter-rouge">test</code> that runs on the latest version of Ubuntu. It checks out the repository, sets up Node.js, installs dependencies, and runs tests. You can customize these steps based on your project’s requirements.</p>
+<p>This workflow defines a <code class="language-plaintext highlighter-rouge">test</code> job on Ubuntu, checks out code, sets up Node.js, installs dependencies, and runs tests. You can replace these steps with commands specific to your stack.</p>
 
 <h2 id="workflow-triggers">Workflow Triggers</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">on</code> section in the workflow file specifies the events that trigger the workflow. In the example, the workflow runs on every push to the <code class="language-plaintext highlighter-rouge">main</code> branch and on every pull request targeting the <code class="language-plaintext highlighter-rouge">main</code> branch. You can customize this section to fit your workflow trigger needs.</p>
+<p>The <code class="language-plaintext highlighter-rouge">on</code> section controls when a workflow runs. In this example it triggers on:</p>
+
+<ul>
+  <li>pushes to <code class="language-plaintext highlighter-rouge">main</code></li>
+  <li>pull requests targeting <code class="language-plaintext highlighter-rouge">main</code></li>
+</ul>
+
+<p>You can also trigger on schedules, tags, releases, and many other events.</p>
 
 <h2 id="actions-marketplace">Actions Marketplace</h2>
 
-<p>GitHub Actions provides a marketplace with a vast collection of pre-built actions that you can use in your workflows. These actions cover a wide range of tasks, from deploying to popular cloud providers to sending notifications. To use an action, include it in your workflow file.</p>
+<p>The GitHub Marketplace includes many reusable actions for common tasks such as deployments, notifications, linting, and security checks.</p>
 
-<p>For example, to deploy to GitHub Pages after running tests, add the following steps to the workflow file:</p>
+<p>For example, you can deploy to GitHub Pages after tests complete:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
   <span class="na">uses</span><span class="pi">:</span> <span class="s">JamesIves/github-pages-deploy-action@4.1.6</span>
@@ -208,15 +217,17 @@
     <span class="na">folder</span><span class="pi">:</span> <span class="s">build</span>
 </code></pre></div></div>
 
-<p>This step uses the <code class="language-plaintext highlighter-rouge">github-pages-deploy-action</code> to deploy the contents of the <code class="language-plaintext highlighter-rouge">build</code> folder to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</p>
+<p>This action publishes the <code class="language-plaintext highlighter-rouge">build</code> directory to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</p>
 
 <h2 id="monitoring-workflow-runs">Monitoring Workflow Runs</h2>
 
-<p>After pushing changes or creating pull requests, you can view the status of your workflows on the “Actions” tab of your GitHub repository. It provides detailed information about each workflow run, including the logs for each step.</p>
+<p>After pushing changes or opening pull requests, view run history in the repository’s <strong>Actions</strong> tab. Each run includes per-step logs for debugging failed jobs.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>GitHub Actions is a powerful tool that can significantly improve your development workflow. By automating repetitive tasks, you can save time and reduce the chance of human error. As you become more familiar with GitHub Actions, you can explore more advanced features and customize your workflows to meet the specific needs of your projects. The flexibility and integration capabilities of GitHub Actions make it a valuable asset for any development team. Get started today, and streamline your development process with automation!</p>
+<p>GitHub Actions can dramatically improve consistency and speed by automating repetitive work. Start with a small test workflow, then expand into build, release, and deployment pipelines as your process matures.</p>
+
+<p>Once your first workflow is in place, you will have a reliable baseline you can iterate on with each project.</p>
 
 <p><a href="https://www.pexels.com/photo/person-holding-a-black-and-white-paper-with-message-11035544/">Photo by RealToughCandy.com</a></p>
 
@@ -240,6 +251,13 @@
           >development</a
         >
          
+        <a
+          class="chip"
+          href="/tags/#github"
+          aria-label="View all posts tagged github"
+          >github</a
+        >
+        
       </div>
 
       <div class="bio glass">
