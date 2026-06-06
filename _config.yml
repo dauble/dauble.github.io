@@ -13,7 +13,11 @@ plugins:
 collections:
   posts:
     output: true
-defaults: []
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-image.png
 permalink: /blog/:year/:month/:day/:title:output_ext
 sass:
   sass_dir: _sass

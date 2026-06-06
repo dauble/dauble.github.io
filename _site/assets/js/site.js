@@ -173,7 +173,10 @@
 
     if (url.origin !== window.location.origin) {
       a.setAttribute("target", "_blank");
-      a.setAttribute("rel", "noopener noreferrer");
+      var rel = (a.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
+      if (rel.indexOf("noopener") === -1) rel.push("noopener");
+      if (rel.indexOf("noreferrer") === -1) rel.push("noreferrer");
+      a.setAttribute("rel", rel.join(" "));
     }
   });
 })();

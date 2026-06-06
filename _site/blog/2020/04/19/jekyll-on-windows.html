@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="google-site-verification"
+      content="mSvQDj528SrivJO3707MQV4uw5aUBxBXMfO9FTZz_sI"
+    />
+    <meta name="msvalidate.01" content="581C4BBEDA8127FA57A7F2B93320F97F" />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon-32.png"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="/apple-touch-icon-precomposed.png"
+    />
+    <meta name="theme-color" content="#000d18" />
+
+    <title>
+      Getting Jekyll Running on Windows 10 x64
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/styles.css?1780709813871458000"
+    />
+
+    <link type="application/atom+xml" rel="alternate" href="https://davidauble.com/feed.xml" title="Indianapolis Web Developer" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting Jekyll Running on Windows 10 x64 | Indianapolis Web Developer</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Getting Jekyll Running on Windows 10 x64" />
+<meta name="author" content="dauble" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:" />
+<meta property="og:description" content="I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:" />
+<link rel="canonical" href="https://davidauble.com/blog/2020/04/19/jekyll-on-windows.html" />
+<meta property="og:url" content="https://davidauble.com/blog/2020/04/19/jekyll-on-windows.html" />
+<meta property="og:site_name" content="Indianapolis Web Developer" />
+<meta property="og:image" content="https://davidauble.com/assets/images/posts/page-speed-insights.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-19T00:00:00-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://davidauble.com/assets/images/posts/page-speed-insights.jpg" />
+<meta property="twitter:title" content="Getting Jekyll Running on Windows 10 x64" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dauble"},"dateModified":"2020-04-19T00:00:00-04:00","datePublished":"2020-04-19T00:00:00-04:00","description":"I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:","headline":"Getting Jekyll Running on Windows 10 x64","image":"https://davidauble.com/assets/images/posts/page-speed-insights.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://davidauble.com/blog/2020/04/19/jekyll-on-windows.html"},"url":"https://davidauble.com/blog/2020/04/19/jekyll-on-windows.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-N3ZEK1EKQH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-N3ZEK1EKQH");
+    </script>
+  </head>
+  <body>
+    
+    <div class="page-field"></div>
+    
+    <div class="page-grain"></div>
+    
+    <div class="progress" data-progress aria-hidden="true"></div>
+    
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="nav" data-nav>
+  <div class="container">
+    <div class="nav__inner glass">
+      <a href="/" class="brand"><span class="brand__mark">DA</span> David&nbsp;M.&nbsp;Auble</a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/blog.html" aria-current="page">Blog</a></li>
+          <li><a href="/#work">Work</a></li>
+        </ul>
+      </nav>
+      <a href="/#contact" class="btn btn-primary nav__cta desktop">Let's talk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="navdrawer" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div id="navdrawer" class="nav__drawer glass" data-nav-drawer hidden style="margin-top:10px;border-radius:var(--r-lg);padding:16px;">
+      <ul style="list-style:none;margin:0;padding:0;display:grid;gap:6px;">
+        <li><a href="/#about" style="display:block;padding:12px 14px;color:var(--ink-2);border-radius:12px;">About</a></li>
+        <li><a href="/#services" style="display:block;padding:12px 14px;color:var(--ink-2);border-radius:12px;">Services</a></li>
+        <li><a href="/blog.html" style="display:block;padding:12px 14px;color:var(--ink-2);border-radius:12px;">Blog</a></li>
+        <li><a href="/#work" style="display:block;padding:12px 14px;color:var(--ink-2);border-radius:12px;">Work</a></li>
+        <li><a href="/#contact" class="btn btn-primary" style="margin-top:6px;justify-content:center;">Let's talk</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+    <main id="main"><article>
+  <header class="artHead">
+    <div class="container">
+      <div class="artHead__wrap">
+        <a
+          href="/blog.html"
+          class="link-arrow"
+          style="margin-bottom: 22px; font-size: 0.92rem"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="transform: rotate(180deg)"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+          All articles
+        </a>
+        <div class="kicker">
+          <span>jekyll</span>
+          <span style="color: var(--ink-4)">·</span>
+          <span style="color: var(--ink-4)"
+            >Apr 19, 2020</span
+          >
+        </div>
+        <h1>Getting Jekyll Running on Windows 10 x64</h1>
+        <div class="byline">
+          <span class="byline__av">DA</span>
+          <div>
+            <div class="byline__name">David M. Auble</div>
+            <div class="byline__meta">
+              Solution Architect · 1 min read
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container artHero">
+      <img src="/assets/images/posts/page-speed-insights.jpg" alt="Getting Jekyll Running on Windows 10 x64" />
+    </div>
+    
+  </header>
+
+  <div class="container artBody">
+    <div class="prose">
+      <p>I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned <a href="/2020/04/10/2020-blog-update.html">previously</a>, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Unable to load the EventMachine C extension; To use the pure-ruby reactor, require 'em/pure_ruby'
+</code></pre></div></div>
+
+<p>Puzzled, I scoured Google and StackOverflow and came up empty. I thought <a href="https://stackoverflow.com/questions/30682575/unable-to-load-the-eventmachine-c-extension-to-use-the-pure-ruby-reactor" target="_blank">this post on StackOverflow</a> would help get me there, but I ended up back at the same spot.</p>
+
+<p>After a while, I finally started looking into different flags I could use to run with these commands. I finally figured out a solution - force the uninstall of <code class="language-plaintext highlighter-rouge">eventmachine</code> and reinstall it using the Ruby platform. Voila! All set!</p>
+
+<p>Here’s the final steps I used to fix this problem:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle
+gem uninstall eventmachine <span class="nt">--force</span>
+gem <span class="nb">install </span>eventmachine <span class="nt">--platform</span> ruby
+</code></pre></div></div>
+
+
+
+      <hr />
+      <div class="tagrow">
+        
+        <a
+          class="chip chip--lime"
+          href="/categories/#jekyll"
+          aria-label="View all posts in category jekyll"
+          >jekyll</a
+        >
+         
+        <a
+          class="chip"
+          href="/tags/#command-line"
+          aria-label="View all posts tagged command line"
+          >command line</a
+        >
+        
+      </div>
+
+      <div class="bio glass">
+        <span class="bio__av">DA</span>
+        <div>
+          <h4>David M. Auble</h4>
+          <p>
+            Indianapolis-based solution architect. I build, secure, and rescue
+            web applications — and write about the tools that make it easier.
+            <a href="/#contact">Get in touch →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="toc" aria-label="On this page">
+      <h4>On this page</h4>
+      <ul>
+        <!-- auto-populated by site.js -->
+      </ul>
+    </aside>
+  </div>
+</article>
+
+<!-- RELATED POSTS -->
+<section class="section">
+  <div class="container">
+    <div class="feed-head">
+      <h2 class="h3">Keep reading</h2>
+      <a href="/blog.html" class="link-arrow"
+        >All articles
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </a>
+    </div>
+    <div class="related">
+       
+      <a class="rcard glass card--hover" href="/blog/2024/02/28/getting-started-github-actions.html">
+        
+        <img src="/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" alt="Getting Started with GitHub Actions" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Feb 28, 2024 · github</span
+          >
+          <h3>Getting Started with GitHub Actions</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2023/09/01/common-misconceptions-in-wordpress.html">
+        
+        <img src="/assets/images/posts/wordpress-misconceptions.jpg" alt="Common Misconceptions About WordPress" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Sep 01, 2023 · wordpress</span
+          >
+          <h3>Common Misconceptions About WordPress</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2022/11/26/private-git-email.html">
+        
+        <img src="/assets/images/posts/git-1.jpg" alt="Private Email Address via Git Config" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Nov 26, 2022 · git</span
+          >
+          <h3>Private Email Address via Git Config</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2020/09/06/new-job-promotion.html">
+        
+        <img src="/assets/images/posts/david-auble-manager.jpg" alt="David Auble, Manager" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Sep 06, 2020 · </span
+          >
+          <h3>David Auble, Manager</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2020/05/05/targeting-internet-explorer-with-css-media-queries.html">
+        
+        <img src="/assets/images/posts/ie-11-background.jpg" alt="Targeting Internet Explorer with CSS Media Queries" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >May 05, 2020 · css</span
+          >
+          <h3>Targeting Internet Explorer with CSS Media Queries</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2020/04/29/common-wordpress-helper-functions.html">
+        
+        <img src="/assets/images/posts/common-wordpress-functions.jpg" alt="Common WordPress Helper Functions" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Apr 29, 2020 · wordpress</span
+          >
+          <h3>Common WordPress Helper Functions</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2020/04/14/edit-robots-txt-wordpress-yoast.html">
+        
+        <img src="/assets/images/posts/robots.jpg" alt="Edit Robots.txt with WordPress and Yoast" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Apr 14, 2020 · wordpress</span
+          >
+          <h3>Edit Robots.txt with WordPress and Yoast</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2020/04/10/2020-blog-update.html">
+        
+        <img src="/assets/images/posts/2020-blog-update.jpg" alt="2020 Blog Update" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Apr 10, 2020 · blog</span
+          >
+          <h3>2020 Blog Update</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2019/03/05/improving-wordpress-search-results-with-relevanssi.html">
+        
+        <img src="/assets/images/posts/relevanssi-search.jpg" alt="Improving WordPress Search Results with Relevanssi" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Mar 05, 2019 · wordpress</span
+          >
+          <h3>Improving WordPress Search Results with Relevanssi</h3>
+        </div>
+      </a>
+      
+      <a class="rcard glass card--hover" href="/blog/2019/01/24/how-to-change-the-wordpress-admin-login-logo.html">
+        
+        <img src="/assets/images/posts/wp-walker.jpg" alt="How to Change the WordPress Admin Login Logo" />
+        
+        <div class="rcard__b">
+          <span class="rcard__d"
+            >Jan 24, 2019 · wordpress</span
+          >
+          <h3>How to Change the WordPress Admin Login Logo</h3>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</section>
+</main>
+
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="/" class="brand" style="margin-bottom:16px;display:inline-flex;"><span class="brand__mark">DA</span> David&nbsp;M.&nbsp;Auble</a>
+        <p class="text-muted" style="max-width:300px;font-size:0.95rem;">Indianapolis-based solution architect. Helping keep the Internet fast, secure, and beautiful.</p>
+        <div class="socials" style="margin-top:18px;">
+          <a href="https://www.linkedin.com/in/dauble" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.08 1.4-2.08 2.9V21H9z"/></svg>
+          </a>
+          <a href="https://github.com/dauble" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+          </a>
+          <a href="mailto:info@davidauble.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__cols" style="grid-column: span 2;">
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/#work">Work</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:info@davidauble.com">info@davidauble.com</a></li>
+            <li><a href="https://www.linkedin.com/in/dauble">LinkedIn</a></li>
+            <li><a href="https://github.com/dauble">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> David M. Auble · Made with ♥ in Indianapolis</span>
+      <span style="font-family:var(--font-mono);">davidauble.com</span>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/assets/js/site.js"></script>
+  </body>
+</html>
