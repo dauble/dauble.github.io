@@ -8,13 +8,13 @@ draft files from _drafts/ into _posts/ with the YYYY-MM-DD- filename prefix.
 
 Usage:
     python3 scripts/publish-drafts.py              # uses today's date
-    python3 scripts/publish-drafts.py 2026-06-09   # dry-run / manual override
+    python3 scripts/publish-drafts.py 2026-06-09   # manual date override
 """
 
 import sys
 import os
 import shutil
-from datetime import date
+from datetime import date, datetime
 
 try:
     import yaml
@@ -33,6 +33,10 @@ def main(target_date: str) -> int:
 
     with open(CALENDAR_PATH, "r", encoding="utf-8") as f:
         calendar = yaml.safe_load(f)
+
+    if not isinstance(calendar, dict):
+        print(f"ERROR: Calendar file is empty or malformed at {CALENDAR_PATH}", file=sys.stderr)
+        return 1
 
     posts = calendar.get("posts", [])
     if not posts:
@@ -82,6 +86,14 @@ def main(target_date: str) -> int:
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         run_date = sys.argv[1]
+        try:
+            datetime.strptime(run_date, "%Y-%m-%d")
+        except ValueError:
+            print(
+                f"ERROR: Invalid date format '{run_date}'. Expected YYYY-MM-DD.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
     else:
         run_date = date.today().isoformat()
 

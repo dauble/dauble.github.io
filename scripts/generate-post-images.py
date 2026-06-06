@@ -173,7 +173,7 @@ POSTS: dict[str, tuple[str, str]] = {
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
-FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
+FRONT_MATTER_RE = re.compile(r"^---\r?\n(.*?)\r?\n---\r?\n", re.DOTALL)
 
 
 def patch_front_matter(draft_path: Path, image_web_path: str) -> None:
@@ -211,7 +211,7 @@ def generate_image(prompt: str, api_key: str) -> bytes:
             "Authorization": f"Bearer {api_key}",
             "Accept": "image/*",
         },
-        files={"none": ""},   # multipart/form-data required by the API
+        files={"none": ("", b"")},   # multipart/form-data required by the API
         data={
             "prompt": prompt,
             "aspect_ratio": ASPECT_RATIO,

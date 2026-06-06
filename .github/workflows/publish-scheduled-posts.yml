@@ -46,6 +46,7 @@ jobs:
       - name: Move scheduled drafts to _posts
         id: publish
         run: |
+          set -o pipefail
           python3 scripts/publish-drafts.py "${{ steps.resolve_date.outputs.date }}" \
             | tee /tmp/publish-output.txt
 
