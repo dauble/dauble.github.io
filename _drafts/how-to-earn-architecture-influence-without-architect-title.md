@@ -2,6 +2,7 @@
 layout: post
 title: "How to Earn Architecture Influence Without the Architect Title"
 date: 2026-10-06
+image: /assets/images/posts/architecture-influence-network.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"

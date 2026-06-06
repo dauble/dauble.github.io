@@ -2,6 +2,7 @@
 layout: post
 title: "Mentorship Patterns That Accelerate Architecture Growth"
 date: 2026-09-08
+image: /assets/images/posts/architecture-mentorship.jpg
 author: dauble
 categories:
   - "Career"

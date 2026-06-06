@@ -2,6 +2,7 @@
 layout: post
 title: "Q3 2026 Movers and Shakers: What AWS, Cloudflare, GitHub, and Adobe Just Shipped"
 date: 2026-08-18
+image: /assets/images/posts/q3-industry-briefing.jpg
 author: dauble
 categories:
   - "Industry News"

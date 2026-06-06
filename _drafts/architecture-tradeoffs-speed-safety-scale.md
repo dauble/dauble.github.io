@@ -2,6 +2,7 @@
 layout: post
 title: "Architecture Tradeoffs: Speed, Safety, and Scale"
 date: 2026-07-28
+image: /assets/images/posts/architecture-tradeoffs-triangle.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"

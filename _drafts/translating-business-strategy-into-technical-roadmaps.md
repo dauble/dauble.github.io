@@ -2,6 +2,7 @@
 layout: post
 title: "Translating Business Strategy Into Technical Roadmaps"
 date: 2026-09-15
+image: /assets/images/posts/strategy-to-roadmap.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"

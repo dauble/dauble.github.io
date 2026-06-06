@@ -1,8 +1,13 @@
 name: Generate Post Hero Images
 
-# Run manually from the Actions tab — either generate all missing images,
-# or pass a single post slug to regenerate one specific image.
+# Triggers:
+#   1. Automatically when any file is added/changed inside _drafts/
+#   2. Manually from the Actions tab with an optional single-slug override
 on:
+  push:
+    branches: [master]
+    paths:
+      - "_drafts/**.md"
   workflow_dispatch:
     inputs:
       post_slug:

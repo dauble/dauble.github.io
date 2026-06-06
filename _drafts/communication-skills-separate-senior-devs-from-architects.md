@@ -2,6 +2,7 @@
 layout: post
 title: "The Communication Skills That Separate Senior Developers from Architects"
 date: 2026-07-21
+image: /assets/images/posts/communication-skills-architecture.jpg
 author: dauble
 categories:
   - "Career"

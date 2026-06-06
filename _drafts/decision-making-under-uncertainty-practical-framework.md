@@ -2,6 +2,7 @@
 layout: post
 title: "Decision-Making Under Uncertainty: A Practical Framework for Architects"
 date: 2026-08-11
+image: /assets/images/posts/decision-making-uncertainty.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"

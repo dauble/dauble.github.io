@@ -2,6 +2,7 @@
 layout: post
 title: "Developer to Architect: A 24-Month Skill Roadmap"
 date: 2026-06-16
+image: /assets/images/posts/developer-to-architect-roadmap.jpg
 author: dauble
 categories:
   - "Career"

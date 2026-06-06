@@ -2,6 +2,7 @@
 layout: post
 title: "The Three Horizons Model: Shipping Today While Designing for Three Years Out"
 date: 2026-07-14
+image: /assets/images/posts/three-horizons-model.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"
