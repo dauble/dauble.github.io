@@ -2,6 +2,7 @@
 layout: post
 title: "Common Career Traps for High-Potential Developers"
 date: 2026-09-22
+image: /assets/images/posts/career-traps-developers.jpg
 author: dauble
 categories:
   - "Career"

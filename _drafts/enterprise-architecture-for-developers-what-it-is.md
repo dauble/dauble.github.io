@@ -2,6 +2,7 @@
 layout: post
 title: "Enterprise Architecture for Developers: What It Is and What It Is Not"
 date: 2026-06-09
+image: /assets/images/posts/ea-what-it-is.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"

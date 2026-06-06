@@ -2,6 +2,7 @@
 layout: post
 title: "Building Your Personal Architecture Playbook"
 date: 2026-10-13
+image: /assets/images/posts/personal-architecture-playbook.jpg
 author: dauble
 categories:
   - "Career"

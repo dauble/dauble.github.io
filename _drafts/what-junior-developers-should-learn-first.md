@@ -2,6 +2,7 @@
 layout: post
 title: "What Junior Developers Should Learn First: Design, Ops, or Security?"
 date: 2026-06-30
+image: /assets/images/posts/junior-developer-learning-paths.jpg
 author: dauble
 categories:
   - "Career"

@@ -2,6 +2,7 @@
 layout: post
 title: "Adobe Firefly and Generative AI in the Enterprise: Architecture Implications"
 date: 2026-09-29
+image: /assets/images/posts/adobe-firefly-enterprise-ai.jpg
 author: dauble
 categories:
   - "Industry News"

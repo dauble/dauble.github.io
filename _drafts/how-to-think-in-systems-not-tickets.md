@@ -2,6 +2,7 @@
 layout: post
 title: "How to Think in Systems, Not Tickets"
 date: 2026-06-23
+image: /assets/images/posts/systems-thinking.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"

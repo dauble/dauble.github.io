@@ -2,6 +2,7 @@
 layout: post
 title: "How to Present Technical Strategy to Non-Technical Stakeholders"
 date: 2026-08-25
+image: /assets/images/posts/presenting-tech-strategy.jpg
 author: dauble
 categories:
   - "Career"

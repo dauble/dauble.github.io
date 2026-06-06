@@ -2,6 +2,7 @@
 layout: post
 title: "Writing Architecture Decision Records That Teams Actually Use"
 date: 2026-09-01
+image: /assets/images/posts/architecture-decision-records.jpg
 author: dauble
 categories:
   - "Enterprise Architecture"

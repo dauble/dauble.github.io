@@ -2,6 +2,7 @@
 layout: post
 title: "Portfolio Projects That Signal Architecture Thinking to Hiring Managers"
 date: 2026-08-04
+image: /assets/images/posts/architecture-portfolio.jpg
 author: dauble
 categories:
   - "Career"

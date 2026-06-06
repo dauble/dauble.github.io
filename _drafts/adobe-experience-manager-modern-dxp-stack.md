@@ -2,6 +2,7 @@
 layout: post
 title: "Adobe Experience Manager and the Modern DXP Stack: What Enterprise Architects Need to Know"
 date: 2026-07-07
+image: /assets/images/posts/adobe-dxp-stack.jpg
 author: dauble
 categories:
   - "Industry News"
