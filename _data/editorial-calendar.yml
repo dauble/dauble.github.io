@@ -1,0 +1,185 @@
+# Editorial Calendar: Q3–Q4 2026
+# Track 1 = Enterprise Architecture Mindset
+# Track 4 = Career Navigation
+# Track 5 = Movers and Shakers
+#
+# To publish a draft, move the file from _drafts/ to _posts/
+# and rename it with the target publish date prefix:
+#   YYYY-MM-DD-<slug>.md
+
+posts:
+  - date: "2026-06-09"
+    track: "Track 1"
+    title: "Enterprise Architecture for Developers: What It Is and What It Is Not"
+    draft: "_drafts/enterprise-architecture-for-developers-what-it-is.md"
+    categories: ["Enterprise Architecture", "Career"]
+    notes: "Series opener — set the tone and define the audience"
+
+  - date: "2026-06-16"
+    track: "Track 4"
+    title: "Developer to Architect: A 24-Month Skill Roadmap"
+    draft: "_drafts/developer-to-architect-24-month-skill-roadmap.md"
+    categories: ["Career", "Enterprise Architecture"]
+    notes: "High SEO value — readers searching for career progression paths"
+
+  - date: "2026-06-23"
+    track: "Track 1"
+    title: "How to Think in Systems, Not Tickets"
+    draft: "_drafts/how-to-think-in-systems-not-tickets.md"
+    categories: ["Enterprise Architecture"]
+    notes: "Pairs well with the 24-month roadmap — link back"
+
+  - date: "2026-06-30"
+    track: "Track 4"
+    title: "What Junior Developers Should Learn First: Design, Ops, or Security?"
+    draft: "_drafts/what-junior-developers-should-learn-first.md"
+    categories: ["Career", "Enterprise Architecture"]
+    notes: "Highly shareable — good candidate for social promotion"
+
+  - date: "2026-07-07"
+    track: "Track 5"
+    title: "Adobe Experience Manager and the Modern DXP Stack: What Enterprise Architects Need to Know"
+    draft: "_drafts/adobe-experience-manager-modern-dxp-stack.md"
+    categories: ["Industry News", "Enterprise Architecture"]
+    notes: "First Adobe deep-dive — ties into the Firefly post Sept 29"
+
+  - date: "2026-07-14"
+    track: "Track 1"
+    title: "The Three Horizons Model: Shipping Today While Designing for Three Years Out"
+    draft: "_drafts/three-horizons-model-shipping-today-designing-for-three-years.md"
+    categories: ["Enterprise Architecture"]
+    notes: "Framework post — good for internal sharing in EA circles"
+
+  - date: "2026-07-21"
+    track: "Track 4"
+    title: "The Communication Skills That Separate Senior Developers from Architects"
+    draft: "_drafts/communication-skills-separate-senior-devs-from-architects.md"
+    categories: ["Career"]
+    notes: "Framing vs. solving section is the most shareable excerpt"
+
+  - date: "2026-07-28"
+    track: "Track 1"
+    title: "Architecture Tradeoffs: Speed, Safety, and Scale"
+    draft: "_drafts/architecture-tradeoffs-speed-safety-scale.md"
+    categories: ["Enterprise Architecture"]
+    notes: "Include the tradeoff triangle diagram as an image if possible"
+
+  - date: "2026-08-04"
+    track: "Track 4"
+    title: "Portfolio Projects That Signal Architecture Thinking to Hiring Managers"
+    draft: "_drafts/portfolio-projects-that-signal-architecture-thinking.md"
+    categories: ["Career"]
+    notes: "Evergreen — will rank well for junior developers googling portfolio advice"
+
+  - date: "2026-08-11"
+    track: "Track 1"
+    title: "Decision-Making Under Uncertainty: A Practical Framework for Architects"
+    draft: "_drafts/decision-making-under-uncertainty-practical-framework.md"
+    categories: ["Enterprise Architecture"]
+    notes: "Two-way door / one-way door section is highly citable"
+
+  - date: "2026-08-18"
+    track: "Track 5"
+    title: "Q3 2026 Movers and Shakers: What AWS, Cloudflare, GitHub, and Adobe Just Shipped"
+    draft: "_drafts/q3-2026-movers-and-shakers-aws-cloudflare-github-adobe.md"
+    categories: ["Industry News", "Enterprise Architecture"]
+    notes: "Quarterly recurring format — update content before publish; verify all features are GA"
+
+  - date: "2026-08-25"
+    track: "Track 4"
+    title: "How to Present Technical Strategy to Non-Technical Stakeholders"
+    draft: "_drafts/how-to-present-technical-strategy-to-non-technical-stakeholders.md"
+    categories: ["Career"]
+    notes: "Pyramid Principle section — consider a visual diagram"
+
+  - date: "2026-09-01"
+    track: "Track 1"
+    title: "Writing Architecture Decision Records That Teams Actually Use"
+    draft: "_drafts/writing-architecture-decision-records-teams-actually-use.md"
+    categories: ["Enterprise Architecture"]
+    notes: "ADR template is directly usable — promote it as a free resource"
+
+  - date: "2026-09-08"
+    track: "Track 4"
+    title: "Mentorship Patterns That Accelerate Architecture Growth"
+    draft: "_drafts/mentorship-patterns-that-accelerate-architecture-growth.md"
+    categories: ["Career"]
+    notes: "Reading list section will drive return visits and affiliate potential"
+
+  - date: "2026-09-15"
+    track: "Track 1"
+    title: "Translating Business Strategy Into Technical Roadmaps"
+    draft: "_drafts/translating-business-strategy-into-technical-roadmaps.md"
+    categories: ["Enterprise Architecture"]
+    notes: "Capability map section is enterprise-differentiated content"
+
+  - date: "2026-09-22"
+    track: "Track 4"
+    title: "Common Career Traps for High-Potential Developers"
+    draft: "_drafts/common-career-traps-for-high-potential-developers.md"
+    categories: ["Career"]
+    notes: "Trap 2 (Solving vs. Enabling) and Trap 5 (Waiting for Permission) are most shareable"
+
+  - date: "2026-09-29"
+    track: "Track 5"
+    title: "Adobe Firefly and Generative AI in the Enterprise: Architecture Implications"
+    draft: "_drafts/adobe-firefly-generative-ai-enterprise-architecture.md"
+    categories: ["Industry News", "Enterprise Architecture"]
+    notes: "Companion to the AEM post (July 7) — cross-link both directions"
+
+  - date: "2026-10-06"
+    track: "Track 1"
+    title: "How to Earn Architecture Influence Without the Architect Title"
+    draft: "_drafts/how-to-earn-architecture-influence-without-architect-title.md"
+    categories: ["Enterprise Architecture", "Career"]
+    notes: "Series crescendo for Track 1 — links back to the opener from June 9"
+
+  - date: "2026-10-13"
+    track: "Track 4"
+    title: "Building Your Personal Architecture Playbook"
+    draft: "_drafts/building-your-personal-architecture-playbook.md"
+    categories: ["Career", "Enterprise Architecture"]
+    notes: "Series closer for Track 4 — the heuristics section is a direct download/save resource"
+
+publishing_cadence:
+  weekly: "One post every Tuesday"
+  quarterly_briefing: "Q3 briefing Aug 18; Q4 briefing to be added Nov 2026"
+  series_structure:
+    - name: "Track 1: Enterprise Architecture Mindset"
+      count: 8
+      dates:
+        [
+          "2026-06-09",
+          "2026-06-23",
+          "2026-07-14",
+          "2026-07-28",
+          "2026-08-11",
+          "2026-09-01",
+          "2026-09-15",
+          "2026-10-06"
+        ]
+    - name: "Track 4: Career Navigation"
+      count: 8
+      dates:
+        [
+          "2026-06-16",
+          "2026-06-30",
+          "2026-07-21",
+          "2026-08-04",
+          "2026-08-25",
+          "2026-09-08",
+          "2026-09-22",
+          "2026-10-13"
+        ]
+    - name: "Track 5: Movers and Shakers"
+      count: 3
+      dates: ["2026-07-07", "2026-08-18", "2026-09-29"]
+
+publish_checklist:
+  - "Move file from _drafts/ to _posts/ with YYYY-MM-DD- prefix"
+  - "Verify all code snippets render correctly with bundle exec jekyll serve"
+  - "Confirm front matter categories match existing site taxonomy"
+  - "Add a cover image to assets/images/posts/ if desired"
+  - "Cross-link to related posts in the series"
+  - "Verify jekyll build passes with no errors"
+  - "Push to master to trigger GitHub Pages deployment"
