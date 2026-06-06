@@ -1,0 +1,56 @@
+name: Generate Post Hero Images
+
+# Run manually from the Actions tab — either generate all missing images,
+# or pass a single post slug to regenerate one specific image.
+on:
+  workflow_dispatch:
+    inputs:
+      post_slug:
+        description: >
+          Draft slug to generate (e.g. enterprise-architecture-for-developers-what-it-is).
+          Leave blank to generate all missing images.
+        required: false
+        default: ""
+
+permissions:
+  contents: write # needed to commit generated images back to the repo
+
+jobs:
+  generate-images:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate images
+        env:
+          STABILITY_API_KEY: ${{ secrets.STABILITY_API_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.post_slug }}" ]; then
+            python3 scripts/generate-post-images.py "${{ github.event.inputs.post_slug }}"
+          else
+            python3 scripts/generate-post-images.py
+          fi
+
+      - name: Commit generated images and updated drafts
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add assets/images/posts/ _drafts/
+
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit — all images already up to date."
+          else
+            git commit -m "chore: add AI-generated hero images for draft posts"
+            git push
+          fi
