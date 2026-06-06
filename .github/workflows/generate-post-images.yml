@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write # needed to commit generated images back to the repo
+  pull-requests: write # needed to create pull requests
 
 jobs:
   generate-images:
@@ -46,16 +47,16 @@ jobs:
             python3 scripts/generate-post-images.py
           fi
 
-      - name: Commit generated images and updated drafts
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add assets/images/posts/ _drafts/
-
-          if git diff --cached --quiet; then
-            echo "Nothing new to commit — all images already up to date."
-          else
-            git commit -m "chore: add AI-generated hero images for draft posts"
-            git push
-          fi
+      - name: Create Pull Request for generated images
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: generated-post-images-${{ github.run_id }}
+          base: master
+          title: "chore: add AI-generated hero images for draft posts"
+          commit-message: "chore: add AI-generated hero images for draft posts"
+          body: |
+            This pull request adds images automatically generated for draft posts.
+          add-paths: |
+            assets/images/posts/
+            _drafts/
