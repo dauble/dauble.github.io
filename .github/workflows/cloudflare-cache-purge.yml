@@ -9,6 +9,7 @@ jobs:
   purge-cache:
     runs-on: ubuntu-latest
     name: Purge Cloudflare Cache
+    permissions: {}
 
     steps:
       - name: Purge cache
