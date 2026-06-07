@@ -60,7 +60,7 @@ This document summarizes all PageSpeed optimization improvements made to davidau
   - Includes `<noscript>` fallback for non-JS browsers
 
 - **Reduced font weight requests:**
-  - Removed unused font weights (500, 400 for Space Grotesk; 500, 700 for Manrope; 400 for JetBrains Mono)
+  - Removed unused font weights (500 for Space Grotesk; 500, 700 for Manrope; 400 for JetBrains Mono)
   - Kept only actively used weights: Space Grotesk (400, 600, 700), Manrope (400, 600), JetBrains Mono (500)
 
 - **Added font-display: swap:**

@@ -54,10 +54,10 @@ Enable minification for:
 
 **Options:**
 - Lossless (best quality, less compression)
-- **Lossy (recommended)** - great quality with better compression
+- **Lossy (recommended)** - better compression with minimal quality reduction
 - WebP (automatic WebP conversion)
 
-**Impact:** Automatically optimizes images served through Cloudflare. Since we've already created WebP versions locally, Lossy mode will provide additional optimization without quality loss.
+**Impact:** Automatically optimizes images served through Cloudflare. Since we've already created WebP versions locally, Lossy mode can provide additional optimization with minimal visual impact.
 
 ---
 
@@ -105,7 +105,8 @@ Create custom cache rules for different asset types:
 
 #### Rule 2: HTML Pages
 - **When incoming requests match:**
-  - File extension is one of: `html`, `htm`
+  - URI Path does not contain `.`
+  - OR file extension is one of: `html`, `htm`
 - **Then:**
   - Cache status: Eligible for cache
   - Edge TTL: 2 hours
@@ -132,12 +133,11 @@ Add these headers:
 ```
 X-Content-Type-Options: nosniff
 X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: geolocation=(), microphone=(), camera=()
 ```
 
-**Impact:** Improves security score on PageSpeed Insights and protects against common vulnerabilities.
+**Impact:** Improves security score on PageSpeed Insights and adds modern browser hardening headers.
 
 ---
 
