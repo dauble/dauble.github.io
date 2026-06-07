@@ -3,6 +3,7 @@ name: Purge Cloudflare Cache
 on:
   push:
     branches:
+      - master
       - main
 
 jobs:
