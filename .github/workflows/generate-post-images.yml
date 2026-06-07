@@ -47,10 +47,19 @@ jobs:
             python3 scripts/generate-post-images.py
           fi
 
+      - name: Validate PAT_TOKEN secret
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          if [ -z "$PAT_TOKEN" ]; then
+            echo "PAT_TOKEN secret is required. Use a fine-grained token scoped to this repository with permissions to push branches and create pull requests." >&2
+            exit 1
+          fi
+
       - name: Create Pull Request for generated images
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           branch: generated-post-images-${{ github.run_id }}
           base: master
           title: "chore: add AI-generated hero images for draft posts"
