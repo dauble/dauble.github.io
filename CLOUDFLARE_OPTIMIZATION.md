@@ -105,7 +105,7 @@ Create custom cache rules for different asset types:
 
 #### Rule 2: HTML Pages
 - **When incoming requests match:**
-  - URI Path does not contain `.`
+  - URI Path matches regex: `^/(?:$|(?:[^./]+/)*[^./]+/?)$` (extensionless "pretty" URLs)
   - OR file extension is one of: `html`, `htm`
 - **Then:**
   - Cache status: Eligible for cache
