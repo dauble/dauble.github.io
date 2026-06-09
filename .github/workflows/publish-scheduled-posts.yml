@@ -13,7 +13,8 @@ on:
         default: ""
 
 permissions:
-  contents: write   # required to commit and push the moved post files
+  contents: write      # required to commit changed files to a PR branch
+  pull-requests: write # required to open the PR
 
 jobs:
   publish:
@@ -57,14 +58,20 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit and push published posts
+      - name: Create Pull Request for published posts
         if: steps.publish.outputs.changed == 'true'
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add _posts/ _drafts/
-          git commit -m "chore: publish scheduled posts for ${{ steps.resolve_date.outputs.date }}"
-          git push
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ github.token }}
+          branch: published-posts-${{ github.run_id }}
+          base: master
+          title: "chore: publish scheduled posts for ${{ steps.resolve_date.outputs.date }}"
+          commit-message: "chore: publish scheduled posts for ${{ steps.resolve_date.outputs.date }}"
+          body: |
+            This automated pull request publishes scheduled drafts for `${{ steps.resolve_date.outputs.date }}`.
+          add-paths: |
+            _posts/
+            _drafts/
 
       - name: Summary
         run: |
