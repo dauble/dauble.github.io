@@ -59,6 +59,7 @@ jobs:
           fi
 
       - name: Create Pull Request for published posts
+        id: create_pr
         if: steps.publish.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
@@ -72,6 +73,12 @@ jobs:
           add-paths: |
             _posts/
             _drafts/
+
+      - name: Merge pull request
+        if: steps.publish.outputs.changed == 'true' && steps.create_pr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge --merge "${{ steps.create_pr.outputs.pull-request-number }}"
 
       - name: Summary
         run: |
