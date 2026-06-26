@@ -1,4 +1,322 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://davidauble.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://davidauble.com/" rel="alternate" type="text/html" /><updated>2026-06-05T21:36:53-04:00</updated><id>https://davidauble.com/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">Getting Started with GitHub Actions</title><link href="https://davidauble.com/blog/2024/02/28/getting-started-github-actions.html" rel="alternate" type="text/html" title="Getting Started with GitHub Actions" /><published>2024-02-28T00:00:00-05:00</published><updated>2024-02-28T00:00:00-05:00</updated><id>https://davidauble.com/blog/2024/02/28/getting-started-github-actions</id><content type="html" xml:base="https://davidauble.com/blog/2024/02/28/getting-started-github-actions.html"><![CDATA[<p>GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-26T12:04:59-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Indianapolis Web Developer</title><subtitle>Indianapolis-based marketing professional with experience in working with enterprise companies, solving complex problems and visualizing big data.</subtitle><entry><title type="html">How to Think in Systems, Not Tickets</title><link href="http://localhost:4000/blog/2026/06/23/how-to-think-in-systems-not-tickets.html" rel="alternate" type="text/html" title="How to Think in Systems, Not Tickets" /><published>2026-06-23T00:00:00-04:00</published><updated>2026-06-23T00:00:00-04:00</updated><id>http://localhost:4000/blog/2026/06/23/how-to-think-in-systems-not-tickets</id><content type="html" xml:base="http://localhost:4000/blog/2026/06/23/how-to-think-in-systems-not-tickets.html"><![CDATA[<p>Most developers are trained to think in tickets. A ticket arrives, you understand the requirement, you write the code, you close the ticket. This is valuable. It is also insufficient for anyone who wants to understand why the system behaves the way it does.</p>
+
+<p>Systems thinking is the habit of asking a different class of question.</p>
+
+<h2 id="the-difference-between-ticket-thinking-and-systems-thinking">The Difference Between Ticket Thinking and Systems Thinking</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticket Thinking</th>
+      <th>Systems Thinking</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Why is this feature broken?</td>
+      <td>Why does this category of failure keep appearing?</td>
+    </tr>
+    <tr>
+      <td>How do I fix this bug?</td>
+      <td>What made this bug possible in the first place?</td>
+    </tr>
+    <tr>
+      <td>What does this service do?</td>
+      <td>What does this service’s behavior do to every other service?</td>
+    </tr>
+    <tr>
+      <td>Is this the right implementation?</td>
+      <td>Is this the right abstraction for the next three years?</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Neither mode is wrong. Both are necessary. The problem arises when developers only ever operate in ticket mode — because ticket mode is optimized for now, and architecture is optimized for later.</p>
+
+<h2 id="feedback-loops-the-core-concept">Feedback Loops: The Core Concept</h2>
+
+<p>The most important idea in systems thinking is the <strong>feedback loop</strong>. Every system has mechanisms that amplify or dampen behavior over time. Understanding these is the difference between building something that stays healthy and building something that slowly becomes unmanageable.</p>
+
+<p><strong>Reinforcing loop (amplifying):</strong>
+More users → more load → slower responses → worse user experience → fewer users.
+Or in a positive direction: better DX → more contributors → more features → better DX.</p>
+
+<p><strong>Balancing loop (damping):</strong>
+High error rate → alerts fire → team investigates → root cause fixed → error rate drops.</p>
+
+<p>When something in a system gets worse and worse despite fixes, you are usually fighting a reinforcing loop. When something never quite gets fully solved, you are probably in a balancing loop that has settled at an unacceptable equilibrium.</p>
+
+<h2 id="a-practical-exercise-map-the-loops-in-your-system">A Practical Exercise: Map the Loops in Your System</h2>
+
+<p>Take a service you know well. Write down:</p>
+
+<ol>
+  <li>What are the inputs to this service?</li>
+  <li>What are the outputs?</li>
+  <li>Which outputs feed back into inputs — directly or through other systems?</li>
+  <li>What happens to behavior under load? Under failure? Under degraded dependency?</li>
+</ol>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Example: User authentication service
+
+Inputs:  login requests, token validation requests, session refresh calls
+Outputs: JWT tokens, session states, audit log events
+
+Feedback paths:
+- Slow token validation → frontend retries → more requests → slower validation (reinforcing)
+- Expired tokens → forced re-login → more login requests at peak hours (balancing)
+- Failed logins → account lockout → support tickets → account unlocks → failed logins (balancing loop with cost)
+</code></pre></div></div>
+
+<h2 id="the-stocks-and-flows-mental-model">The Stocks and Flows Mental Model</h2>
+
+<p>A “stock” is anything that accumulates — technical debt, database records, API contracts, trust between teams. A “flow” is what adds or removes from a stock.</p>
+
+<p>Developers often work on flows (write code, deploy features) without tracking the stocks (accumulated complexity, growing coupling, mounting unresolved decisions). Architects track both.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Stock: Monolith complexity
+
+Flows in:  new features, quick fixes, copy-pasted modules
+Flows out: refactors, service extractions, documentation, testing
+
+The monolith grows when flows in exceed flows out — which they almost always do
+unless the team deliberately invests in reducing the stock.
+</code></pre></div></div>
+
+<h2 id="shifting-the-habit">Shifting the Habit</h2>
+
+<p>You cannot think in systems by reading about it. You shift the habit by practicing the right questions in your daily work:</p>
+
+<ul>
+  <li><strong>Before starting a ticket:</strong> What existing behavior in the system does this change?</li>
+  <li><strong>In a code review:</strong> What does this change do to the system’s failure modes?</li>
+  <li><strong>In a postmortem:</strong> What was the feedback loop that allowed this to reach production?</li>
+  <li><strong>In planning:</strong> What stock are we growing this quarter, and is that intentional?</li>
+</ul>
+
+<p>Systems thinking is not a framework you bolt on. It is a habit of noticing that everything is connected, that time matters, and that the most important consequences are usually the ones that arrive late.</p>]]></content><author><name>dauble</name></author><category term="Enterprise Architecture" /><summary type="html"><![CDATA[Most developers are trained to think in tickets. A ticket arrives, you understand the requirement, you write the code, you close the ticket. This is valuable. It is also insufficient for anyone who wants to understand why the system behaves the way it does.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/systems-thinking.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/systems-thinking.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Developer to Architect: A 24-Month Skill Roadmap</title><link href="http://localhost:4000/blog/2026/06/16/developer-to-architect-24-month-skill-roadmap.html" rel="alternate" type="text/html" title="Developer to Architect: A 24-Month Skill Roadmap" /><published>2026-06-16T00:00:00-04:00</published><updated>2026-06-16T00:00:00-04:00</updated><id>http://localhost:4000/blog/2026/06/16/developer-to-architect-24-month-skill-roadmap</id><content type="html" xml:base="http://localhost:4000/blog/2026/06/16/developer-to-architect-24-month-skill-roadmap.html"><![CDATA[<p>There is no single moment when a developer becomes an architect. It is a gradual accumulation of breadth, judgment, and influence. But that accumulation can be directed. This post maps out a realistic 24-month progression that any motivated developer can follow.</p>
+
+<h2 id="why-24-months">Why 24 Months?</h2>
+
+<p>Architecture skills develop in cycles: learn something, apply it, get feedback from production, repeat. Twelve months is too short to see real consequences of design decisions. Thirty-six months can feel abstract and distant. Twenty-four months is the practical window where meaningful changes compound.</p>
+
+<p>This is not a sprint. It is a deliberate, structured shift in how you approach your work.</p>
+
+<h2 id="months-16-expand-your-system-view">Months 1–6: Expand Your System View</h2>
+
+<p>Most developers start with a narrow view — a service, a component, a feature. The first step is deliberately widening that view.</p>
+
+<p><strong>Focus areas:</strong></p>
+
+<ul>
+  <li>Map the full data flow for your product end-to-end, including third-party integrations</li>
+  <li>Learn to read and write sequence diagrams, C4 diagrams, and ERDs</li>
+  <li>Study one adjacent system your product depends on, deeply</li>
+  <li>Start attending architecture reviews — not to present, just to listen</li>
+</ul>
+
+<p><strong>Practical action:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start an architecture journal — one entry per week</span>
+<span class="c"># What decision was made? What was the alternative? What was the tradeoff?</span>
+<span class="nb">mkdir</span> ~/arch-journal
+<span class="nb">touch</span> ~/arch-journal/<span class="si">$(</span><span class="nb">date</span> +%Y-%m-%d<span class="si">)</span><span class="nt">-week-notes</span>.md
+</code></pre></div></div>
+
+<p><strong>Skill target:</strong> You can diagram your full product’s architecture from memory, including its external dependencies.</p>
+
+<h2 id="months-712-make-intentional-tradeoffs">Months 7–12: Make Intentional Tradeoffs</h2>
+
+<p>Junior developers optimize for solutions that work. Architects optimize for solutions that work <em>under specific constraints</em> — and they can articulate those constraints clearly.</p>
+
+<p><strong>Focus areas:</strong></p>
+
+<ul>
+  <li>For every significant technical decision you make, write a one-pager explaining the alternatives you rejected</li>
+  <li>Read at least three ADRs from well-known open-source projects</li>
+  <li>Learn the CAP theorem and its implications for the systems you work on</li>
+  <li>Study resiliency patterns: circuit breakers, retries with exponential backoff, bulkheads</li>
+</ul>
+
+<p><strong>Code to understand deeply:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Retry with exponential backoff — understand what this is doing, not just how to use it</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">fetchWithRetry</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">maxAttempts</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">attempt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">attempt</span> <span class="o">&lt;=</span> <span class="nx">maxAttempts</span><span class="p">;</span> <span class="nx">attempt</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+      <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="s2">`HTTP </span><span class="p">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if </span><span class="p">(</span><span class="nx">attempt</span> <span class="o">===</span> <span class="nx">maxAttempts</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+      <span class="kd">const</span> <span class="nx">delay</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">**</span> <span class="nx">attempt</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+      <span class="k">await</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">r</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">setTimeout</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">delay</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Skill target:</strong> You can articulate why you <em>did not</em> choose the other two reasonable approaches to any significant decision you made.</p>
+
+<h2 id="months-1318-build-cross-team-influence">Months 13–18: Build Cross-Team Influence</h2>
+
+<p>Architecture is fundamentally a coordination problem. Technical decisions that affect more than one team require trust, communication, and political awareness — not just correctness.</p>
+
+<p><strong>Focus areas:</strong></p>
+
+<ul>
+  <li>Propose and lead one cross-team technical initiative (migration, shared library, API contract)</li>
+  <li>Practice writing RFC-style documents — the goal is to invite disagreement productively</li>
+  <li>Present one technical proposal to a non-technical audience and adjust the framing</li>
+  <li>Build a personal network that spans at least three different product teams</li>
+</ul>
+
+<p><strong>An RFC template to start with:</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># RFC: [Short Title]</span>
+
+<span class="gs">**Status:**</span> Draft | <span class="gs">**Author:**</span> [You] | <span class="gs">**Date:**</span> [Date]
+<span class="gs">**Stakeholders:**</span> [Teams/Roles Affected]
+
+<span class="gu">## Problem</span>
+
+What problem are we solving? Why now?
+
+<span class="gu">## Proposed Solution</span>
+
+What are you recommending?
+
+<span class="gu">## Alternatives Considered</span>
+
+What did you evaluate and reject, and why?
+
+<span class="gu">## Impact</span>
+
+What changes for which teams? What are the migration or adoption costs?
+
+<span class="gu">## Open Questions</span>
+
+What do you not know yet? What do you need input on?
+</code></pre></div></div>
+
+<p><strong>Skill target:</strong> You have successfully driven a technical decision that required buy-in from at least two teams outside your own.</p>
+
+<h2 id="months-1924-think-in-long-horizons">Months 19–24: Think in Long Horizons</h2>
+
+<p>By this point you have breadth, tradeoff judgment, and influence skills. The final step is learning to hold multiple time horizons simultaneously: what ships this sprint, what the platform looks like in 12 months, and what the organization’s technology direction is in three years.</p>
+
+<p><strong>Focus areas:</strong></p>
+
+<ul>
+  <li>Study the Three Horizons model and apply it to your current platform</li>
+  <li>Write a 12-month technology roadmap for your product area — even if it is just for your own clarity</li>
+  <li>Begin shadowing or contributing to enterprise architecture forums in your organization</li>
+  <li>Identify one systemic risk in your organization’s technology portfolio and socialize a mitigation</li>
+</ul>
+
+<p><strong>Skill target:</strong> You can describe the same technology situation at three different time scales (today, 12 months, 3 years) for three different audiences.</p>
+
+<h2 id="the-non-technical-skills-that-matter-equally">The Non-Technical Skills That Matter Equally</h2>
+
+<p>Technical depth gets you noticed. These skills get you trusted:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Skill</th>
+      <th>Why It Matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Written communication</td>
+      <td>Architecture is persuasion. Clarity of writing signals clarity of thinking.</td>
+    </tr>
+    <tr>
+      <td>Active listening</td>
+      <td>Stakeholders tell you the real constraints when they feel heard.</td>
+    </tr>
+    <tr>
+      <td>Knowing what you do not know</td>
+      <td>Overconfidence in architecture causes expensive production failures.</td>
+    </tr>
+    <tr>
+      <td>Conflict navigation</td>
+      <td>Cross-team alignment always involves some version of disagreement.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="one-last-thing">One Last Thing</h2>
+
+<p>The path from developer to architect is not a ladder — it is more of a terrain. You will move sideways, hit walls, and occasionally backtrack. The developers who make the transition successfully are not the ones who knew the most; they are the ones who stayed curious and built genuine trust across their organizations.</p>]]></content><author><name>dauble</name></author><category term="Career" /><category term="Enterprise Architecture" /><summary type="html"><![CDATA[There is no single moment when a developer becomes an architect. It is a gradual accumulation of breadth, judgment, and influence. But that accumulation can be directed. This post maps out a realistic 24-month progression that any motivated developer can follow.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/developer-to-architect-roadmap.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/developer-to-architect-roadmap.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enterprise Architecture for Developers: What It Is and What It Is Not</title><link href="http://localhost:4000/blog/2026/06/09/enterprise-architecture-for-developers-what-it-is.html" rel="alternate" type="text/html" title="Enterprise Architecture for Developers: What It Is and What It Is Not" /><published>2026-06-09T00:00:00-04:00</published><updated>2026-06-09T00:00:00-04:00</updated><id>http://localhost:4000/blog/2026/06/09/enterprise-architecture-for-developers-what-it-is</id><content type="html" xml:base="http://localhost:4000/blog/2026/06/09/enterprise-architecture-for-developers-what-it-is.html"><![CDATA[<p>Enterprise architecture gets a bad reputation in developer circles. It conjures images of slides no one reads, acronyms no one agrees on, and decisions handed down from people who stopped writing code a decade ago.</p>
+
+<p>That reputation is not entirely wrong. But it is not the whole picture either.</p>
+
+<p>This is the first post in a series aimed at developers who are starting to wonder what architecture actually means — and whether it is a direction worth moving in.</p>
+
+<h2 id="what-enterprise-architecture-is-not">What Enterprise Architecture Is Not</h2>
+
+<p>Let’s start with clearing the air:</p>
+
+<ul>
+  <li>It is not a job title that unlocks automatic seniority.</li>
+  <li>It is not about drawing boxes on slides and calling it governance.</li>
+  <li>It is not divorced from code — the best architects write and review code regularly.</li>
+  <li>It is not about slowing down delivery. Done right, it enables delivery at scale.</li>
+</ul>
+
+<h2 id="what-it-actually-is">What It Actually Is</h2>
+
+<p>Enterprise Architecture (EA) is the practice of aligning technology decisions with business outcomes across an organization — not just for one team, one product, or one quarter.</p>
+
+<p>At its core, EA answers three ongoing questions:</p>
+
+<p><strong>1. What do we have?</strong>
+A clear, maintained picture of systems, data flows, integrations, and dependencies. This is harder than it sounds. Most organizations have partial answers at best.</p>
+
+<p><strong>2. What do we need?</strong>
+Business capabilities that are missing, under-supported, or over-engineered. Translating business goals into technology gaps is the core skill.</p>
+
+<p><strong>3. How do we get from here to there?</strong>
+A roadmap with sequencing, tradeoffs, and decisions that teams can act on.</p>
+
+<h2 id="what-the-work-actually-looks-like">What the Work Actually Looks Like</h2>
+
+<p>Contrary to the stereotype, a working enterprise architect spends significant time:</p>
+
+<ul>
+  <li>In code reviews, looking for patterns that will compound into systemic problems</li>
+  <li>In discovery sessions with product owners and business stakeholders</li>
+  <li>Writing Architecture Decision Records (ADRs) that give future teams documented rationale</li>
+  <li>Building reference architectures that squads can adopt without reinventing the wheel</li>
+  <li>Unblocking cross-team integration problems that no single squad owns end-to-end</li>
+</ul>
+
+<h2 id="the-progression-from-developer-to-architect">The Progression From Developer to Architect</h2>
+
+<p>Most developers who move toward architecture start as <strong>solution architects</strong> — scoped to one product or domain. The move to enterprise architecture is less about technical depth and more about breadth, communication, and long-horizon thinking.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Developer → Senior Developer → Tech Lead → Solution Architect → Enterprise Architect
+ (code)         (code+)          (team)        (product)          (organization)
+</code></pre></div></div>
+
+<p>Each step requires a broader antenna — more systems to understand, more stakeholders to align, more time horizons to hold simultaneously.</p>
+
+<h2 id="why-this-series-exists">Why This Series Exists</h2>
+
+<p>There is a lot of content for developers who want to improve at coding. There is much less for developers who want to improve at shaping systems at scale. This series tries to close that gap.</p>
+
+<p>Upcoming topics:</p>
+
+<ul>
+  <li>How to think in systems rather than tickets</li>
+  <li>How long-range planning models like Three Horizons work in practice</li>
+  <li>Architecture Decision Records that teams actually reference</li>
+  <li>Career traps that slow down high-potential developers</li>
+</ul>
+
+<p>If you are a developer curious about the bigger picture — this series is for you.</p>]]></content><author><name>dauble</name></author><category term="Enterprise Architecture" /><category term="Career" /><summary type="html"><![CDATA[Enterprise architecture gets a bad reputation in developer circles. It conjures images of slides no one reads, acronyms no one agrees on, and decisions handed down from people who stopped writing code a decade ago.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/ea-what-it-is.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/ea-what-it-is.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Getting Started with GitHub Actions</title><link href="http://localhost:4000/blog/2024/02/28/getting-started-github-actions.html" rel="alternate" type="text/html" title="Getting Started with GitHub Actions" /><published>2024-02-28T00:00:00-05:00</published><updated>2024-02-28T00:00:00-05:00</updated><id>http://localhost:4000/blog/2024/02/28/getting-started-github-actions</id><content type="html" xml:base="http://localhost:4000/blog/2024/02/28/getting-started-github-actions.html"><![CDATA[<p>GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.</p>
 
 <p>This quick guide covers the core concepts and a simple workflow you can adapt for your own projects.</p>
 
@@ -84,7 +402,7 @@
 
 <p><a href="https://www.pexels.com/photo/person-holding-a-black-and-white-paper-with-message-11035544/">Photo by RealToughCandy.com</a></p>
 
-<p><em>This post was generated with the help of AI.</em></p>]]></content><author><name>dauble</name></author><category term="github" /><category term="development" /><category term="github" /><summary type="html"><![CDATA[GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common Misconceptions About WordPress</title><link href="https://davidauble.com/blog/2023/09/01/common-misconceptions-in-wordpress.html" rel="alternate" type="text/html" title="Common Misconceptions About WordPress" /><published>2023-09-01T00:00:00-04:00</published><updated>2023-09-01T00:00:00-04:00</updated><id>https://davidauble.com/blog/2023/09/01/common-misconceptions-in-wordpress</id><content type="html" xml:base="https://davidauble.com/blog/2023/09/01/common-misconceptions-in-wordpress.html"><![CDATA[<p>WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.</p>
+<p><em>This post was generated with the help of AI.</em></p>]]></content><author><name>dauble</name></author><category term="github" /><category term="development" /><category term="github" /><summary type="html"><![CDATA[GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/pexels-realtoughcandycom-11035544.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common Misconceptions About WordPress</title><link href="http://localhost:4000/blog/2023/09/01/common-misconceptions-in-wordpress.html" rel="alternate" type="text/html" title="Common Misconceptions About WordPress" /><published>2023-09-01T00:00:00-04:00</published><updated>2023-09-01T00:00:00-04:00</updated><id>http://localhost:4000/blog/2023/09/01/common-misconceptions-in-wordpress</id><content type="html" xml:base="http://localhost:4000/blog/2023/09/01/common-misconceptions-in-wordpress.html"><![CDATA[<p>WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.</p>
 
 <h2 id="myth-1-wordpress-is-just-for-blogs">Myth 1: WordPress is Just for Blogs</h2>
 
@@ -114,7 +432,7 @@
 
 <p><a href="https://www.pexels.com/photo/white-printer-paper-on-a-vintage-typewriter-4152505/">Photo by Markus Winkler</a></p>
 
-<p><em>This post was generated with the help of AI.</em></p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="development" /><summary type="html"><![CDATA[WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/wordpress-misconceptions.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/wordpress-misconceptions.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Private Email Address via Git Config</title><link href="https://davidauble.com/blog/2022/11/26/private-git-email.html" rel="alternate" type="text/html" title="Private Email Address via Git Config" /><published>2022-11-26T00:00:00-05:00</published><updated>2022-11-26T00:00:00-05:00</updated><id>https://davidauble.com/blog/2022/11/26/private-git-email</id><content type="html" xml:base="https://davidauble.com/blog/2022/11/26/private-git-email.html"><![CDATA[<p>I’m constantly learning new things and most recently learned a little tidbit about a feature about Git, allowing for private email addresses during commits. Let’s take a look.</p>
+<p><em>This post was generated with the help of AI.</em></p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="development" /><summary type="html"><![CDATA[WordPress is undoubtedly one of the most popular content management systems (CMS) on the internet today. With its user-friendly interface and vast plugin ecosystem, it has empowered millions of users to create websites without extensive coding knowledge. However, there are several common misconceptions about WordPress that need to be addressed. In this article, we’ll debunk some of these myths.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/wordpress-misconceptions.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/wordpress-misconceptions.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Private Email Address via Git Config</title><link href="http://localhost:4000/blog/2022/11/26/private-git-email.html" rel="alternate" type="text/html" title="Private Email Address via Git Config" /><published>2022-11-26T00:00:00-05:00</published><updated>2022-11-26T00:00:00-05:00</updated><id>http://localhost:4000/blog/2022/11/26/private-git-email</id><content type="html" xml:base="http://localhost:4000/blog/2022/11/26/private-git-email.html"><![CDATA[<p>I’m constantly learning new things and most recently learned a little tidbit about a feature about Git, allowing for private email addresses during commits. Let’s take a look.</p>
 
 <p>The scenario is that I went to make a commit to a repo on a new computer. I hadn’t set up my personal settings or configured my Git user.name or user.email settings yet, and Git warned me about it. My GitHub profile is set to private, and details about my repos are also private. When I was notified to update these settings, without thinking I entered my name and email address and saved the information to the global config. Life went on.</p>
 
@@ -129,7 +447,7 @@
 
 <p>Once I changed my global Git config email address to the one above, I was able to push my commit and finish my work.</p>
 
-<p>Header image credit: <a href="https://www.hostinger.com/tutorials/basic-git-commands" target="_blank">Hostinger</a></p>]]></content><author><name>dauble</name></author><category term="git" /><summary type="html"><![CDATA[I’m constantly learning new things and most recently learned a little tidbit about a feature about Git, allowing for private email addresses during commits. Let’s take a look.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/git-1.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/git-1.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">David Auble, Manager</title><link href="https://davidauble.com/blog/2020/09/06/new-job-promotion.html" rel="alternate" type="text/html" title="David Auble, Manager" /><published>2020-09-06T00:00:00-04:00</published><updated>2020-09-06T00:00:00-04:00</updated><id>https://davidauble.com/blog/2020/09/06/new-job-promotion</id><content type="html" xml:base="https://davidauble.com/blog/2020/09/06/new-job-promotion.html"><![CDATA[<p>It’s been no secret that I’ve been working towards finishing my MBA in Finance. I am on track to graduate this coming December and am excited to have not only completed the two-year program, but also for what lies ahead. I’ve been striving to enter into management for several years and knew an MBA would help add value to my professional experience.</p>
+<p>Header image credit: <a href="https://www.hostinger.com/tutorials/basic-git-commands" target="_blank">Hostinger</a></p>]]></content><author><name>dauble</name></author><category term="git" /><summary type="html"><![CDATA[I’m constantly learning new things and most recently learned a little tidbit about a feature about Git, allowing for private email addresses during commits. Let’s take a look.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/git-1.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/git-1.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">David Auble, Manager</title><link href="http://localhost:4000/blog/2020/09/06/new-job-promotion.html" rel="alternate" type="text/html" title="David Auble, Manager" /><published>2020-09-06T00:00:00-04:00</published><updated>2020-09-06T00:00:00-04:00</updated><id>http://localhost:4000/blog/2020/09/06/new-job-promotion</id><content type="html" xml:base="http://localhost:4000/blog/2020/09/06/new-job-promotion.html"><![CDATA[<p>It’s been no secret that I’ve been working towards finishing my MBA in Finance. I am on track to graduate this coming December and am excited to have not only completed the two-year program, but also for what lies ahead. I’ve been striving to enter into management for several years and knew an MBA would help add value to my professional experience.</p>
 
 <p>A few months back, I left the marketing world in pursuit of something more challenging. Marketing has been in my DNA since my first exposure in 2011, and will always hold a place dear to me, as I love brand generation, fast-paced work environments, and the variety of projects found in typical marketing agencies. The fresh atmosphere of new talent reignites my passion for helping connect people with their dreams.</p>
 
@@ -141,7 +459,7 @@
 
 <p>I have never had a bad boss. I stand by this statement. I have been given many opportunities to show leadership and have acquired a vast amount of knowledge during my professional tenure. Each boss has taught me invaluable lessons on mentoring, leadership, managment, and delegation. For that, I am grateful to each of my former bosses and managers. Thank you. You have helped shape me and prepare me for what lies ahead.</p>
 
-<p>So, with that, I am excited this new adventure and to dive head-first into this new role. Thank you to all who have helped make this dream a reality.</p>]]></content><author><name>dauble</name></author><summary type="html"><![CDATA[It’s been no secret that I’ve been working towards finishing my MBA in Finance. I am on track to graduate this coming December and am excited to have not only completed the two-year program, but also for what lies ahead. I’ve been striving to enter into management for several years and knew an MBA would help add value to my professional experience.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/david-auble-manager.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/david-auble-manager.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Targeting Internet Explorer with CSS Media Queries</title><link href="https://davidauble.com/blog/2020/05/05/targeting-internet-explorer-with-css-media-queries.html" rel="alternate" type="text/html" title="Targeting Internet Explorer with CSS Media Queries" /><published>2020-05-05T00:00:00-04:00</published><updated>2020-05-05T00:00:00-04:00</updated><id>https://davidauble.com/blog/2020/05/05/targeting-internet-explorer-with-css-media-queries</id><content type="html" xml:base="https://davidauble.com/blog/2020/05/05/targeting-internet-explorer-with-css-media-queries.html"><![CDATA[<p>I’ve been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don’t fully support it.</p>
+<p>So, with that, I am excited this new adventure and to dive head-first into this new role. Thank you to all who have helped make this dream a reality.</p>]]></content><author><name>dauble</name></author><summary type="html"><![CDATA[It’s been no secret that I’ve been working towards finishing my MBA in Finance. I am on track to graduate this coming December and am excited to have not only completed the two-year program, but also for what lies ahead. I’ve been striving to enter into management for several years and knew an MBA would help add value to my professional experience.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/david-auble-manager.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/david-auble-manager.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Targeting Internet Explorer with CSS Media Queries</title><link href="http://localhost:4000/blog/2020/05/05/targeting-internet-explorer-with-css-media-queries.html" rel="alternate" type="text/html" title="Targeting Internet Explorer with CSS Media Queries" /><published>2020-05-05T00:00:00-04:00</published><updated>2020-05-05T00:00:00-04:00</updated><id>http://localhost:4000/blog/2020/05/05/targeting-internet-explorer-with-css-media-queries</id><content type="html" xml:base="http://localhost:4000/blog/2020/05/05/targeting-internet-explorer-with-css-media-queries.html"><![CDATA[<p>I’ve been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don’t fully support it.</p>
 
 <p>On a recent build I had a section with four small boxes and a title. Normally I’d use Bootstrap’s <code class="language-plaintext highlighter-rouge">.col-md-3</code> class, but since I am moving away from Bootstrap alltogether, I was faced with another challenge.</p>
 
@@ -171,7 +489,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>I hope this helps!</p>]]></content><author><name>dauble</name></author><category term="css" /><category term="ie" /><summary type="html"><![CDATA[I’ve been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don’t fully support it.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/ie-11-background.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/ie-11-background.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common WordPress Helper Functions</title><link href="https://davidauble.com/blog/2020/04/29/common-wordpress-helper-functions.html" rel="alternate" type="text/html" title="Common WordPress Helper Functions" /><published>2020-04-29T00:00:00-04:00</published><updated>2020-04-29T00:00:00-04:00</updated><id>https://davidauble.com/blog/2020/04/29/common-wordpress-helper-functions</id><content type="html" xml:base="https://davidauble.com/blog/2020/04/29/common-wordpress-helper-functions.html"><![CDATA[<p>I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.</p>
+<p>I hope this helps!</p>]]></content><author><name>dauble</name></author><category term="css" /><category term="ie" /><summary type="html"><![CDATA[I’ve been using CSS Grid and Flexbox for a little while now for different parts of websites. They work in all modern browsers and it saves me time from having to put together cheap hacks. One of the caveats to using Grid though is that older browsers such as IE10 and 11 don’t fully support it.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/ie-11-background.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Common WordPress Helper Functions</title><link href="http://localhost:4000/blog/2020/04/29/common-wordpress-helper-functions.html" rel="alternate" type="text/html" title="Common WordPress Helper Functions" /><published>2020-04-29T00:00:00-04:00</published><updated>2020-04-29T00:00:00-04:00</updated><id>http://localhost:4000/blog/2020/04/29/common-wordpress-helper-functions</id><content type="html" xml:base="http://localhost:4000/blog/2020/04/29/common-wordpress-helper-functions.html"><![CDATA[<p>I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.</p>
 
 <h2 id="wp_is_mobile">wp_is_mobile()</h2>
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">wp_is_mobile</span><span class="p">()</span>
@@ -225,7 +543,7 @@
 
 <p>One of the more useful functions, this enables you to grab various info about the WordPress site. Some arguments I use frequently are <code class="language-plaintext highlighter-rouge">url</code> and <code class="language-plaintext highlighter-rouge">template_directory</code>. These return the site’s URL and theme path.</p>
 
-<p>For more information on these functions and more, visit the <a href="https://developer.wordpress.org/reference/functions/" target="_blank">WordPress Developer reference</a>.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="php" /><summary type="html"><![CDATA[I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/common-wordpress-functions.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/common-wordpress-functions.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Getting Jekyll Running on Windows 10 x64</title><link href="https://davidauble.com/blog/2020/04/19/jekyll-on-windows.html" rel="alternate" type="text/html" title="Getting Jekyll Running on Windows 10 x64" /><published>2020-04-19T00:00:00-04:00</published><updated>2020-04-19T00:00:00-04:00</updated><id>https://davidauble.com/blog/2020/04/19/jekyll-on-windows</id><content type="html" xml:base="https://davidauble.com/blog/2020/04/19/jekyll-on-windows.html"><![CDATA[<p>I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned <a href="/2020/04/10/2020-blog-update.html">previously</a>, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:</p>
+<p>For more information on these functions and more, visit the <a href="https://developer.wordpress.org/reference/functions/" target="_blank">WordPress Developer reference</a>.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="php" /><summary type="html"><![CDATA[I’ve used WordPress almost daily for the past six years and thought it’d be time to share some of my more commonly used functions WordPress has built in to the framework. Below is a list of the functions I use frequently on most of the sites I build.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/common-wordpress-functions.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/common-wordpress-functions.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Getting Jekyll Running on Windows 10 x64</title><link href="http://localhost:4000/blog/2020/04/19/jekyll-on-windows.html" rel="alternate" type="text/html" title="Getting Jekyll Running on Windows 10 x64" /><published>2020-04-19T00:00:00-04:00</published><updated>2020-04-19T00:00:00-04:00</updated><id>http://localhost:4000/blog/2020/04/19/jekyll-on-windows</id><content type="html" xml:base="http://localhost:4000/blog/2020/04/19/jekyll-on-windows.html"><![CDATA[<p>I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned <a href="/2020/04/10/2020-blog-update.html">previously</a>, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Unable to load the EventMachine C extension; To use the pure-ruby reactor, require 'em/pure_ruby'
 </code></pre></div></div>
@@ -239,86 +557,4 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle
 gem uninstall eventmachine <span class="nt">--force</span>
 gem <span class="nb">install </span>eventmachine <span class="nt">--platform</span> ruby
-</code></pre></div></div>]]></content><author><name>dauble</name></author><category term="jekyll" /><category term="command line" /><summary type="html"><![CDATA[I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/page-speed-insights.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/page-speed-insights.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Edit Robots.txt with WordPress and Yoast</title><link href="https://davidauble.com/blog/2020/04/14/edit-robots-txt-wordpress-yoast.html" rel="alternate" type="text/html" title="Edit Robots.txt with WordPress and Yoast" /><published>2020-04-14T00:00:00-04:00</published><updated>2020-04-14T00:00:00-04:00</updated><id>https://davidauble.com/blog/2020/04/14/edit-robots-txt-wordpress-yoast</id><content type="html" xml:base="https://davidauble.com/blog/2020/04/14/edit-robots-txt-wordpress-yoast.html"><![CDATA[<p>An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a <code class="language-plaintext highlighter-rouge">robots.txt</code> file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.</p>
-
-<p>We’ve been using Yoast SEO for our primary SEO plugin on all of our sites for quite some time and albeit it buggy and <a href="https://yoast.com/media-attachment-urls/" target="_blank">catastrophic at times</a>, however for the most part, it is the best SEO plugin available for WordPress.</p>
-
-<p>Anyway, I was given the task to update the <code class="language-plaintext highlighter-rouge">robots.txt</code> file on each site to include a link to the sitemap.xml file, generated by Yoast. I immediately thought to check the site’s primary directory, but didn’t see a text file in that location. I then checked the built-in file editor in WordPress, but came up blank, as it only allowed me to edit template files. Hmm..</p>
-
-<p>Oh, for some background, each of our websites is set up using the <a href="https://wordpress.org/support/article/glossary/#multisite" target="_blank">Multisite</a> feature in WordPress. Each site in the network has its own set of options with Yoast and has an area to update the <code class="language-plaintext highlighter-rouge">robots.txt</code>. However, that option has been removed and I wasn’t able to find which version of Yoast removed that option.</p>
-
-<p>Finally, after digging much further, I was able to find that in the Network Admin area, another Yoast Options page exists. From here, you have the option to click <em>Edit Files</em>, which allows you to generate and modify the <code class="language-plaintext highlighter-rouge">robots.txt</code> file from within WordPress. Finally! Below are the steps I took to solve this problem.</p>
-
-<ol>
-  <li>Click on Network Admin -&gt; Dashboard<br />
-<img src="/assets/images/posts/network-admin.jpg" alt="Clicking on Network Admin, followed by Dashboard link" /></li>
-  <li>Hover over the Yoast SEO options and click Edit Files<br />
-<img src="/assets/images/posts/seo-edit-files.jpg" alt="Click on Yoast SEO, Edit Files" /></li>
-  <li>Edit robots.txt<br />
-<img src="/assets/images/posts/edit-robots.jpg" alt="Edit robots.txt text input" /></li>
-</ol>
-
-<p><strong>Note</strong> If a robots.txt file does not exist, in the current verion of WordPress, 5.4, clicking the “Generate robots.txt” button will redirect you to a page that has HTML markup not being rendered. Simply click the browser’s back button and refresh the page. You will then see the edit text area as seen above.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="apache" /><category term="iis" /><category term="seo" /><summary type="html"><![CDATA[An interesting project came my way this week at work and took some digging to resolve. Each website utilizes a file called a robots.txt file that helps point search engine bots what areas of your site to crawl and which to ignore. This helps the bots crawl your site and help it appear on search engines and can impact your search rankings.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/robots.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/robots.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">2020 Blog Update</title><link href="https://davidauble.com/blog/2020/04/10/2020-blog-update.html" rel="alternate" type="text/html" title="2020 Blog Update" /><published>2020-04-10T00:00:00-04:00</published><updated>2020-04-10T00:00:00-04:00</updated><id>https://davidauble.com/blog/2020/04/10/2020-blog-update</id><content type="html" xml:base="https://davidauble.com/blog/2020/04/10/2020-blog-update.html"><![CDATA[<p>It’s been nearly a year since I’ve had any updates to this site other than a couple of logos here and there. I’ve been overloaded between my full-time job, being a full-time MBA student, and helping raise my first child with my wife. The good news is life has been going well, I’ve just been extremely busy. We haven’t been able to travel due to my classes and projects, but have managed to get away for a couple weekends here and there to visit family and friends.</p>
-
-<p>I have, however, been paying particularly close attention to the performance side of websites with my current job. I’ve been researching what goes into web page performance and have found a combination of several things. For many years now I’ve wanted to get away from using a CMS and WordPress for my personal site, as it offers too much and I simply don’t use most of its features.</p>
-
-<p>Instead, I’ve switched to a static site generator, <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Jekyll is a static site generator and uses a combination of Markdown, Liquid, HTML, CSS to build out websites. It is designed for bloggers who want a simple site. It can be run on any web host, with many users hosting their sites on GitHub Pages. I chose not to do that, as I have other projects and need a web host.</p>
-
-<p>So far, I love Jekyll. It’s quick to learn, and requires minimal effort to create a new post. Best of all, it allows you to build a site and run it locally without having to have a virtual server running - it creates one for you!</p>
-
-<p>One thing worth mentioning - this year, it is my goal to completely move away from Bootstrap and roll my own scaffolding. I’ve been working with <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Grid</a> and <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a> more and more lately, pushing myself to keep up with the times. I definitely am liking the benefits, and have a ways to go before I’m as comfortable with them as other languages. I’ll get there. Stay tuned, as I’m sure I’ll write about caveats I find along the way.</p>
-
-<p>Anyway, that’s pretty much it for now. While spending quite a bit of time inside due to <a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019" target="_blank">COVID-19</a>, I’ve been able to slow down and get to some projects that have been on the backburner for a while. It feels great to accomplish projects, regardless of size. Stay safe out there, everyone! Wear a mask, and keep up with the social distancing! It does work, and together, let’s <a href="https://twitter.com/hashtag/FlattenTheCurve" target="_blank">#flattenthecurve</a>.</p>]]></content><author><name>dauble</name></author><category term="blog" /><summary type="html"><![CDATA[It’s been nearly a year since I’ve had any updates to this site other than a couple of logos here and there. I’ve been overloaded between my full-time job, being a full-time MBA student, and helping raise my first child with my wife. The good news is life has been going well, I’ve just been extremely busy. We haven’t been able to travel due to my classes and projects, but have managed to get away for a couple weekends here and there to visit family and friends.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/2020-blog-update.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/2020-blog-update.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Improving WordPress Search Results with Relevanssi</title><link href="https://davidauble.com/blog/2019/03/05/improving-wordpress-search-results-with-relevanssi.html" rel="alternate" type="text/html" title="Improving WordPress Search Results with Relevanssi" /><published>2019-03-05T00:00:00-05:00</published><updated>2019-03-05T00:00:00-05:00</updated><id>https://davidauble.com/blog/2019/03/05/improving-wordpress-search-results-with-relevanssi</id><content type="html" xml:base="https://davidauble.com/blog/2019/03/05/improving-wordpress-search-results-with-relevanssi.html"><![CDATA[<p>I’ve been managing 17 WordPress sites for the past few years and one thing I’ve noticed is the default search built into WordPress isn’t flexible and doesn’t always return the most accurate results. I use Advanced Custom Fields heavily for each of the sites and have noticed the default search doesn’t search into these fields; it only searches titles and what’s in the page’s main content box. Since most of the pages on our sites don’t use those, I needed to find a better option.</p>
-
-<p>I looked into managed search solutions such as Algolia and Elasticsearch, but for my needs, those went above and beyond, not to mention were costly. I looked at other WordPress plugins, but since I use the Multisite feature on each site, almost none of the plugins were able to search across the WordPress network. Then I came across <a href="https://www.relevanssi.com/" target="_blank">Relevanssi</a>. Relevanssi offers two versions, free and paid, and promises to look into ACF fields and give more flexibility on searches. It allows me to add custom weights to titles, body fields, custom post types, add synonyms for related words, offers “Did you mean ___?” functionality and best of all, searches across a WordPress network.</p>
-
-<p>After playing around with several settings, I was able to get the search results displaying nearly how I wanted. My two criteria were to have Pages appear above Posts, and to only display Posts newer than the previous two years. To do this though, I had to add some additional customization to my functions.php file. Luckily, the Relevanssi documentation is extremely helpful and detailed, plus the plugin author replies to each comment on support document pages.</p>
-
-<p>Here’s what I ended up with in my functions.php file to display Pages above Posts, then return results newer than two years:</p>
-
-<pre>
-add_filter('relevanssi_hits_filter', 'products_first');
-  function products_first($hits) {
-    $types = array();
-
-    $types['page'] = array();
-    $types['post'] = array();
-
-    // Split the post types in array $types
-    if (!empty($hits)) {
-      foreach ($hits[0] as $hit) {
-
-        $date_cutoff = date('Y-m-d h:i:s', strtotime('-2 years'));
-        if($hit-&gt;post_date &gt; $date_cutoff &amp;&amp; $hit-&gt;post_type == 'post') {
-          array_push($types[$hit-&gt;post_type], $hit);
-        }
-
-        if($hit-&gt;post_type == 'page') {
-          array_push($types[$hit-&gt;post_type], $hit);
-        }
-      }
-    }
-
-    // Merge back to $hits in the desired order
-    $hits[0] = array_merge($types['page'], $types['post']);
-    return $hits;
-  }
-</pre>
-
-<p>I also noticed that sometimes, plural versions of words weren’t displaying properly either. Sometimes searching for “car” would return different results than “cars.” To get around this, I added a bit more code, found directly from the <a href="https://www.relevanssi.com/knowledge-base/simple-french-plurals/">documentation</a>:</p>
-
-<pre>add_filter( 'relevanssi_stemmer', 'relevanssi_french_plural_stemmer' );
-    function relevanssi_french_plural_stemmer( $term ) {
-      $len  = strlen( $term );
-      $end1 = substr( $term, -1, 1 );
-
-      if ( 's' === $end1 &amp;&amp; $len &gt; 3 ) {
-        $term = substr( $term, 0, -1 );
-      } elseif ( 'x' === $end1 &amp;&amp; $len &gt; 3 ) {
-        $term = substr( $term, 0, -1 );
-      }
-
-      return $term;
-    }</pre>
-
-<p>I couldn’t be happier with this plugin and hope it solves any problems you might have.</p>]]></content><author><name>dauble</name></author><category term="wordpress" /><category term="relevanssi" /><category term="php" /><summary type="html"><![CDATA[I’ve been managing 17 WordPress sites for the past few years and one thing I’ve noticed is the default search built into WordPress isn’t flexible and doesn’t always return the most accurate results. I use Advanced Custom Fields heavily for each of the sites and have noticed the default search doesn’t search into these fields; it only searches titles and what’s in the page’s main content box. Since most of the pages on our sites don’t use those, I needed to find a better option.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://davidauble.com/assets/images/posts/relevanssi-search.jpg" /><media:content medium="image" url="https://davidauble.com/assets/images/posts/relevanssi-search.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</code></pre></div></div>]]></content><author><name>dauble</name></author><category term="jekyll" /><category term="command line" /><summary type="html"><![CDATA[I use a Mac and a PC equally and want to be able to work on projects regardless of development environment. As mentioned previously, I’ve converted my site over to Jekyll. It works well on both systems, but when I went to install it on my PC, I ran into the following issue:]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/page-speed-insights.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

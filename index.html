@@ -70,7 +70,7 @@ aurora_bg: true
           ><span class="chip">AWS</span><span class="chip">Jekyll</span>
         </div>
       </div>
-      <div class="bcard glass bcard--wide bcard--post">
+      <a {% if latest_post %}href="{{ latest_post.url }}"{% endif %} class="bcard glass bcard--wide bcard--post" style="text-decoration: none; color: inherit;">
         <h4>Latest from the blog</h4>
         {% if latest_post %}
         <div style="display: flex; gap: 14px; align-items: center">
@@ -121,7 +121,7 @@ aurora_bg: true
           </div>
         </div>
         {% endif %}
-      </div>
+      </a>
     </div>
   </div>
 </section>
