@@ -31,35 +31,47 @@
       David M. Auble — Indianapolis Solution Architect
     </title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Preconnect to Google Fonts for faster loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Load Google Fonts with optimized display strategy -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;600&family=JetBrains+Mono:wght@500&display=swap"
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
+/>
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;600&family=JetBrains+Mono:wght@500&display=swap"
+    rel="stylesheet"
+  />
+</noscript>
+
 
     <link
       rel="stylesheet"
-      href="/assets/css/styles.css?1780709813871458000"
+      href="/assets/css/styles.css?1782489899953263000"
     />
 
-    <link type="application/atom+xml" rel="alternate" href="https://davidauble.com/feed.xml" title="Indianapolis Web Developer" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Indianapolis Web Developer" /> <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>David M. Auble — Indianapolis Solution Architect | Indianapolis Web Developer</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="David M. Auble — Indianapolis Solution Architect" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Indianapolis-based solution architect — web development, disaster recovery, and custom builds." />
 <meta property="og:description" content="Indianapolis-based solution architect — web development, disaster recovery, and custom builds." />
-<link rel="canonical" href="https://davidauble.com/" />
-<meta property="og:url" content="https://davidauble.com/" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Indianapolis Web Developer" />
-<meta property="og:image" content="https://davidauble.com/assets/images/og-image.png" />
+<meta property="og:image" content="http://localhost:4000/assets/images/og-image.png" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://davidauble.com/assets/images/og-image.png" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/og-image.png" />
 <meta property="twitter:title" content="David M. Auble — Indianapolis Solution Architect" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Indianapolis-based solution architect — web development, disaster recovery, and custom builds.","headline":"David M. Auble — Indianapolis Solution Architect","image":"https://davidauble.com/assets/images/og-image.png","name":"Indianapolis Web Developer","url":"https://davidauble.com/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"Indianapolis-based solution architect — web development, disaster recovery, and custom builds.","headline":"David M. Auble — Indianapolis Solution Architect","image":"http://localhost:4000/assets/images/og-image.png","name":"Indianapolis Web Developer","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -182,14 +194,17 @@
           ><span class="chip">AWS</span><span class="chip">Jekyll</span>
         </div>
       </div>
-      <div class="bcard glass bcard--wide bcard--post">
+      <a href="/blog/2026/06/23/how-to-think-in-systems-not-tickets.html" class="bcard glass bcard--wide bcard--post" style="text-decoration: none; color: inherit;">
         <h4>Latest from the blog</h4>
         
         <div style="display: flex; gap: 14px; align-items: center">
           
           <img
-            src="/assets/images/posts/pexels-realtoughcandycom-11035544.jpg"
-            alt="Getting Started with GitHub Actions"
+            src="/assets/images/posts/systems-thinking.jpg"
+            alt="How to Think in Systems, Not Tickets"
+            width="84"
+            height="62"
+            decoding="async"
             style="
               width: 84px;
               height: 62px;
@@ -208,7 +223,7 @@
                 line-height: 1.25;
               "
             >
-              Getting Started with GitHub Actions
+              How to Think in Systems, Not Tickets
             </div>
             <div
               style="
@@ -218,12 +233,12 @@
                 margin-top: 4px;
               "
             >
-              Feb 2024 · github
+              Jun 2026 · Enterprise Architecture
             </div>
           </div>
         </div>
         
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -265,22 +280,28 @@
         class="sideB glass"
         style="position: relative; overflow: hidden; min-height: 300px"
       >
-        <img
-          src="/assets/images/workspace.png"
-          alt="David Auble workspace"
-          width="960"
-          height="864"
-          loading="lazy"
-          decoding="async"
-          style="
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-          "
-        />
+        <picture>
+          <source
+            srcset="/assets/images/workspace.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/images/workspace.png"
+            alt="David Auble workspace"
+            width="960"
+            height="864"
+            loading="lazy"
+            decoding="async"
+            style="
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            "
+          />
+        </picture>
       </div>
     </div>
   </div>
@@ -439,21 +460,20 @@
       <article class="featB glass-strong card--hover">
         <div class="featB__top">
           <span class="chip chip--lime"
-            >github</span
+            >Enterprise Architecture</span
           >
-          <span class="chip">Feb 28, 2024</span>
+          <span class="chip">Jun 23, 2026</span>
           <span class="chip"
-            >3 min read</span
+            >4 min read</span
           >
         </div>
         <div>
-          <h3>Getting Started with GitHub Actions</h3>
+          <h3>How to Think in Systems, Not Tickets</h3>
           <p class="text-muted">
-            GitHub Actions automates software workflows directly in your repository. You can run tests, build artifacts, deploy apps, and handle repetitive tasks whenever events happen in GitHub.
-
+            Most developers are trained to think in tickets. A ticket arrives, you understand the requirement, you write the code, you close the ticket. This is valuable. It is also insufficient for anyone who wants to...
           </p>
         </div>
-        <a href="/blog/2024/02/28/getting-started-github-actions.html" class="link-arrow"
+        <a href="/blog/2026/06/23/how-to-think-in-systems-not-tickets.html" class="link-arrow"
           >Continue reading
           <svg
             viewBox="0 0 24 24"

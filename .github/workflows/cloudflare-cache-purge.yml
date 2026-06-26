@@ -13,6 +13,9 @@ jobs:
     permissions: {}
 
     steps:
+      - name: Wait for GitHub Pages to rebuild
+        run: sleep 60
+
       - name: Purge cache
         uses: jakejarvis/cloudflare-purge-action@master
         env:
