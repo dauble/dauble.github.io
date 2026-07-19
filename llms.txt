@@ -1,0 +1,30 @@
+# David M. Auble — Indianapolis Solution Architect
+
+> David Auble is an Indianapolis-based solution architect and web developer with 17+ years of experience in web development, disaster recovery, version control, and custom software builds. He has worked with organizations including IU Health, Eli Lilly, Salesforce, Anthem, Loyola, Marian, and Xavier.
+
+This site is a personal portfolio and technical blog. The blog covers web development (JavaScript, React, Node), WordPress, Git and version control, enterprise architecture, and career growth for developers moving toward architecture roles. Content spans from 2010 to present, so check post dates for currency — older WordPress/PHP/browser posts may describe outdated practices.
+
+## Pages
+
+- [Home](https://davidauble.com/): Services offered (web development, disaster recovery, version control, custom development), background, and contact info.
+- [Blog](https://davidauble.com/blog.html): Full chronological archive of articles.
+- [Categories](https://davidauble.com/categories.html): Browse posts by category.
+- [Tags](https://davidauble.com/tags.html): Browse posts by tag.
+
+## Recent posts
+
+- [The Three Horizons Model: Shipping Today While Designing for Three Years Out](https://davidauble.com/blog/2026/07/14/three-horizons-model-shipping-today-designing-for-three-years.html)
+- [Adobe Experience Manager and the Modern DXP Stack: What Enterprise Architects Need to Know](https://davidauble.com/blog/2026/07/07/adobe-experience-manager-modern-dxp-stack.html)
+- [What Junior Developers Should Learn First: Design, Ops, or Security?](https://davidauble.com/blog/2026/06/30/what-junior-developers-should-learn-first.html)
+- [How to Think in Systems, Not Tickets](https://davidauble.com/blog/2026/06/23/how-to-think-in-systems-not-tickets.html)
+- [Developer to Architect: A 24-Month Skill Roadmap](https://davidauble.com/blog/2026/06/16/developer-to-architect-24-month-skill-roadmap.html)
+- [Enterprise Architecture for Developers: What It Is and What It Is Not](https://davidauble.com/blog/2026/06/09/enterprise-architecture-for-developers-what-it-is.html)
+
+## Full archive
+
+- [Sitemap](https://davidauble.com/sitemap.xml): Complete, always-current list of every page and post on the site.
+
+## Contact
+
+- Email: info@davidauble.com
+- [LinkedIn](https://www.linkedin.com/in/dauble)
