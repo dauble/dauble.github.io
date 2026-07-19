@@ -5,7 +5,7 @@
 I take the security of my personal website seriously. If you discover a security vulnerability, please follow these steps:
 
 1. **Do Not** disclose the vulnerability publicly until it has been addressed.
-2. Email details of the vulnerability to [REDACTED - Please contact through GitHub]
+2. Email details of the vulnerability to info@davidauble.com
 3. Include the following information in your report:
    - A clear description of the vulnerability
    - Steps to reproduce the issue

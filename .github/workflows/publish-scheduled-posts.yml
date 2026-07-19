@@ -22,13 +22,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           # Fetch the full history so git operations are clean
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
 
@@ -37,18 +37,22 @@ jobs:
 
       - name: Resolve publish date
         id: resolve_date
+        env:
+          PUBLISH_DATE_INPUT: ${{ github.event.inputs.publish_date }}
         run: |
-          if [ -n "${{ github.event.inputs.publish_date }}" ]; then
-            echo "date=${{ github.event.inputs.publish_date }}" >> "$GITHUB_OUTPUT"
+          if [ -n "$PUBLISH_DATE_INPUT" ]; then
+            echo "date=$PUBLISH_DATE_INPUT" >> "$GITHUB_OUTPUT"
           else
             echo "date=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Move scheduled drafts to _posts
         id: publish
+        env:
+          PUBLISH_DATE: ${{ steps.resolve_date.outputs.date }}
         run: |
           set -o pipefail
-          python3 scripts/publish-drafts.py "${{ steps.resolve_date.outputs.date }}" \
+          python3 scripts/publish-drafts.py "$PUBLISH_DATE" \
             | tee /tmp/publish-output.txt
 
           # Signal downstream steps whether anything was actually moved
@@ -61,7 +65,7 @@ jobs:
       - name: Create Pull Request for published posts
         id: create_pr
         if: steps.publish.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5 # v5
         with:
           token: ${{ github.token }}
           branch: published-posts-${{ github.run_id }}

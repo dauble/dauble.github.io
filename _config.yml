@@ -43,3 +43,4 @@ sass:
 #   - vendor/gems/
 #   - vendor/ruby/
 exclude: [node_modules, gulpfile.js]
+include: [.well-known]

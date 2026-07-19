@@ -27,10 +27,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
 
@@ -40,9 +40,10 @@ jobs:
       - name: Generate images
         env:
           STABILITY_API_KEY: ${{ secrets.STABILITY_API_KEY }}
+          POST_SLUG: ${{ github.event.inputs.post_slug }}
         run: |
-          if [ -n "${{ github.event.inputs.post_slug }}" ]; then
-            python3 scripts/generate-post-images.py "${{ github.event.inputs.post_slug }}"
+          if [ -n "$POST_SLUG" ]; then
+            python3 scripts/generate-post-images.py "$POST_SLUG"
           else
             python3 scripts/generate-post-images.py
           fi
@@ -57,7 +58,7 @@ jobs:
           fi
 
       - name: Create Pull Request for generated images
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5 # v5
         with:
           token: ${{ secrets.PAT_TOKEN }}
           branch: generated-post-images-${{ github.run_id }}
