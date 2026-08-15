@@ -41,6 +41,14 @@
       }
     ];
 
+    // Store origin values on each spot for bounce reference
+    for (var si = 0; si < spots.length; si++) {
+      spots[si].ocx = spots[si].cx;
+      spots[si].ocy = spots[si].cy;
+      spots[si].orx = spots[si].rx;
+      spots[si].ory = spots[si].ry;
+    }
+
     // Travel bounds for center position (fraction of viewport)
     var DRIFT = 0.12;
     // Pulse amplitude (fraction of base radius)
@@ -54,6 +62,7 @@
     window.addEventListener("resize", resize, { passive: true });
 
     var then = 0;
+    var raf = null;
     function draw(now) {
       var dt = now - then;
       then = now;
@@ -73,18 +82,14 @@
           // Drift center — oscillate around original cx/cy
           s.cx += s.dx;
           s.cy += s.dy;
-          // Bounce drift within range (keep roughly in quadrant)
-          var ox = [0.12, 0.92, 0.80][i];
-          var oy = [0.08, 0.00, 1.00][i];
-          if (Math.abs(s.cx - ox) > DRIFT) s.dx *= -1;
-          if (Math.abs(s.cy - oy) > DRIFT) s.dy *= -1;
+          // Bounce drift within range
+          if (Math.abs(s.cx - s.ocx) > DRIFT) s.dx *= -1;
+          if (Math.abs(s.cy - s.ocy) > DRIFT) s.dy *= -1;
           // Pulse radius
           s.rx += s.drx;
           s.ry += s.dry;
-          var brx = [0.60, 0.50, 0.70][i];
-          var bry = [0.55, 0.50, 0.60][i];
-          if (Math.abs(s.rx - brx) > PULSE * brx) s.drx *= -1;
-          if (Math.abs(s.ry - bry) > PULSE * bry) s.dry *= -1;
+          if (Math.abs(s.rx - s.orx) > PULSE * s.orx) s.drx *= -1;
+          if (Math.abs(s.ry - s.ory) > PULSE * s.ory) s.dry *= -1;
         }
 
         var px = s.cx * W;
@@ -92,6 +97,8 @@
         var rw = s.rx * W;
         var rh = s.ry * H;
         var r = Math.max(rw, rh);
+
+        if (r <= 0) continue;
 
         // Draw as ellipse via scale transform
         ctx.save();
@@ -107,13 +114,21 @@
         ctx.restore();
       }
 
-      requestAnimationFrame(draw);
+      raf = requestAnimationFrame(draw);
     }
 
-    requestAnimationFrame(function (now) {
-      then = now;
-      requestAnimationFrame(draw);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+        raf = null;
+      } else if (!raf) {
+        then = performance.now();
+        raf = requestAnimationFrame(draw);
+      }
     });
+
+    then = performance.now();
+    raf = requestAnimationFrame(draw);
   }
 
   /* ---- Nav: frost on scroll ---- */
