@@ -6,6 +6,116 @@
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---- Animated gradient background canvas ---- */
+  var canvas = document.getElementById("page-canvas");
+  if (canvas) {
+    var ctx = canvas.getContext("2d");
+
+    var spots = [
+      {
+        // blue — upper-left
+        cx: 0.12, cy: 0.08,
+        rx: 0.60, ry: 0.55,
+        color: "29,107,176", alpha: 0.22,
+        dx: 0.00007, dy: 0.00005,
+        drx: 0.00004, dry: 0.00003,
+        phase: 0
+      },
+      {
+        // lime — upper-right
+        cx: 0.92, cy: 0.00,
+        rx: 0.50, ry: 0.50,
+        color: "153,204,51", alpha: 0.10,
+        dx: -0.00006, dy: 0.00008,
+        drx: 0.00003, dry: 0.00004,
+        phase: 1.5
+      },
+      {
+        // deep-navy — lower-right
+        cx: 0.80, cy: 1.00,
+        rx: 0.70, ry: 0.60,
+        color: "0,51,102", alpha: 0.55,
+        dx: -0.00005, dy: -0.00006,
+        drx: 0.00005, dry: 0.00003,
+        phase: 3.0
+      }
+    ];
+
+    // Travel bounds for center position (fraction of viewport)
+    var DRIFT = 0.12;
+    // Pulse amplitude (fraction of base radius)
+    var PULSE = 0.18;
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener("resize", resize, { passive: true });
+
+    var then = 0;
+    function draw(now) {
+      var dt = now - then;
+      then = now;
+
+      var W = canvas.width;
+      var H = canvas.height;
+
+      // Navy base fill
+      ctx.fillStyle = "#000d18";
+      ctx.fillRect(0, 0, W, H);
+
+      for (var i = 0; i < spots.length; i++) {
+        var s = spots[i];
+
+        if (!reduce) {
+          s.phase += dt * 0.0004;
+          // Drift center — oscillate around original cx/cy
+          s.cx += s.dx;
+          s.cy += s.dy;
+          // Bounce drift within range (keep roughly in quadrant)
+          var ox = [0.12, 0.92, 0.80][i];
+          var oy = [0.08, 0.00, 1.00][i];
+          if (Math.abs(s.cx - ox) > DRIFT) s.dx *= -1;
+          if (Math.abs(s.cy - oy) > DRIFT) s.dy *= -1;
+          // Pulse radius
+          s.rx += s.drx;
+          s.ry += s.dry;
+          var brx = [0.60, 0.50, 0.70][i];
+          var bry = [0.55, 0.50, 0.60][i];
+          if (Math.abs(s.rx - brx) > PULSE * brx) s.drx *= -1;
+          if (Math.abs(s.ry - bry) > PULSE * bry) s.dry *= -1;
+        }
+
+        var px = s.cx * W;
+        var py = s.cy * H;
+        var rw = s.rx * W;
+        var rh = s.ry * H;
+        var r = Math.max(rw, rh);
+
+        // Draw as ellipse via scale transform
+        ctx.save();
+        ctx.translate(px, py);
+        ctx.scale(rw / r, rh / r);
+        var grad = ctx.createRadialGradient(0, 0, 0, 0, 0, r);
+        grad.addColorStop(0, "rgba(" + s.color + "," + s.alpha + ")");
+        grad.addColorStop(1, "rgba(" + s.color + ",0)");
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(function (now) {
+      then = now;
+      requestAnimationFrame(draw);
+    });
+  }
+
   /* ---- Nav: frost on scroll ---- */
   var nav = document.querySelector("[data-nav]");
   if (nav) {
