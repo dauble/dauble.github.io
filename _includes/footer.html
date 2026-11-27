@@ -40,5 +40,16 @@
       <span>© <span data-year>{{ site.time | date: '%Y' }}</span> David M. Auble · Made with ♥ in Indianapolis</span>
       <span style="font-family:var(--font-mono);">davidauble.com</span>
     </div>
+    {% if site.amazon_associate_tag %}
+    <p class="text-muted" style="margin:12px 0 0;font-size:0.85rem;">
+      As an Amazon Associate, I earn from qualifying purchases.
+      <a
+        href="https://www.amazon.com/?tag={{ site.amazon_associate_tag | uri_escape }}"
+        rel="sponsored nofollow noopener"
+        target="_blank"
+        >Shop at Amazon</a
+      >
+    </p>
+    {% endif %}
   </div>
 </footer>
